@@ -20,7 +20,11 @@
             float: left;
             width: 15%;
             height: 92%;
-            border-right: solid 2px black;
+            background-color: black;
+            background-image: url("img/mailDirSel.png");
+            background-position: right;
+            background-repeat: repeat-y;
+            color: #f1f8ff;
         }
 
         #mailList {
@@ -35,7 +39,7 @@
 </head>
 <body ng-controller="MyController as controller">
   <header>
-      <div id="user">моя_почта@где-то.там</div>
+      <div id="user">Моя_Почта@где-то.там</div>
 
       <div id="menu">
           <div id="newLetter">Написать письмо</div>
