@@ -2,9 +2,19 @@ html, body {
     height: 100%;
     width: 100%;
     overflow: hidden;
+    background-color: black;
 }
 
 /*--- mails ---*/
+
+#mailList {
+    position: relative;
+    float: right;
+    width: 84%;
+    height: 92%;
+    overflow: auto;
+    color: #F4F1B4;
+}
 
 .mail {
     position: relative;
@@ -13,7 +23,7 @@ html, body {
     min-width: 860px;
     height: 5em;
     margin: 1em auto;
-    border-bottom: 2px solid;
+    border-bottom: 2px solid green;
     overflow: hidden;
 
 }
@@ -70,11 +80,25 @@ html, body {
 
 .unreaded {
     font-weight: bold;
+    color: red;
 }
 
 /* ----------------- */
 
 /* ---- Mail directories ----*/
+#mailDir {
+    position: relative;
+    top: -1px;
+    float: left;
+    width: 15%;
+    height: 92%;
+    background-color: black;
+    background-image: url("../img/mailDirSel.png");
+    background-position: right;
+    background-repeat: repeat-y;
+    color: #cdd4db;
+}
+
 
 #mailDir div {
     width: 100%;
@@ -103,17 +127,29 @@ html, body {
 /* --------------------- */
 
 /* ------- header -------*/
+header {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 3.7em;
+    background-color: black;
+    background-image: url("../img/menu2.png");
+    background-position: bottom;
+    background-repeat: repeat-x;
+}
 
 #user {
     float: left;
     width: 18%;
-    height: 100%;
-    border-right: double 5px greenyellow;
+    height: 97%;
+    border-right: double 5px green;
     text-align: center;
     line-height: 3.1em;
     font-family: Verdana, Geneva, sans-serif;
     font-style: italic;
     font-size: 1.2em;
+    color: #cdd4db;
 }
 
 #menu {
@@ -122,47 +158,55 @@ html, body {
     width: 80%;
     height: 100%;
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.3em;
+    font-size: 1.1em;
+    color: #cdd4db;
 }
 
 #loginOut {
     position: absolute;
     width: 6em;
-    height: 70%;
-    right: 2em;
-    top: 14%;
-    border: solid 1px;
+    height: 56%;
+    right: 1em;
+    top: 23%;
+    border-left: double 3px green;
     line-height: 2em;
-    text-align: center;
+    text-align: left;
+    padding-left: 0.4em;
 }
 
 #settingsButton {
     position: absolute;
-    width: 1.3em;
-    height: 1.3em;
+    width: 1.5em;
+    height: 1.5em;
     right: 10em;
-    top: 0.8em;
-    border: solid 1px;
+    top: 1em;
+    border: solid 1px green;
+    border-radius: 15px;
+    background-image: url("../img/settings.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #newLetter {
     position: absolute;
     width: 10em;
-    height: 70%;
+    height: 56%;
     left: 2em;
-    top: 14%;
-    border: solid 1px;
+    top: 23%;
+    border-left: double 3px green;
     line-height: 2em;
-    text-align: center;
+    text-align: left;
+    padding-left: 0.4em;
 }
 
 #send {
     position: absolute;
     width: 10em;
-    height: 70%;
+    height: 56%;
     left: 14em;
-    top: 14%;
-    border: solid 1px;
+    top: 23%;
+    border-left: double 3px green;
     line-height: 2em;
-    text-align: center;
+    text-align: left;
+    padding-left: 0.4em;
 }
