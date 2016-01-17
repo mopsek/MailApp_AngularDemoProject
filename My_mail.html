@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="mailApp">
+<head lang="ru">
+    <meta charset="UTF-8">
+    <title>My mail</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/master.css">
+    <style>
+        header {
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 3.7em;
+            border-bottom: solid 2px;
+        }
+
+        #mailDir {
+            position: relative;
+            float: left;
+            width: 15%;
+            height: 92%;
+            border-right: solid 2px black;
+        }
+
+        #mailList {
+            position: relative;
+            float: right;
+            width: 84%;
+            height: 92%;
+            overflow: auto;
+        }
+    </style>
+    <script data-require="angular.js@1.4.8" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular.js"></script>
+</head>
+<body ng-controller="MyController as controller">
+  <header>
+      <div id="user">моя_почта@где-то.там</div>
+
+      <div id="menu">
+          <div id="newLetter">Написать письмо</div>
+          <div id="send" ng-show="true">Отправить</div>
+          <div id="settingsButton"></div>
+          <div id="loginOut">Выйти</div>
+      </div>
+  </header>
+
+  <mail-directories></mail-directories>
+
+  <div id="mailList">
+      <div id="inboxLetters" ng-show="controller.x.inbox">
+          <letter></letter>
+          <letter></letter>
+          <letter></letter>
+          <letter></letter>
+          <letter></letter>
+          <letter></letter>
+          <letter></letter>
+      </div>
+      <div id="setLetters" ng-show="controller.x.sent">
+          <letter></letter>
+          <letter></letter>
+          <letter></letter>
+          <letter></letter>
+      </div>
+      <div id="cartLetters" ng-show="controller.x.cart">
+          <letter></letter>
+      </div>
+  </div>
+
+  <script src="mailApp/mail_app.js"></script>
+</body>
+</html>
