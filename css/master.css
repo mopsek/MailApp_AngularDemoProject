@@ -143,13 +143,14 @@ header {
     float: left;
     width: 18%;
     height: 97%;
-    border-right: double 5px green;
+    border-right: double 5px #8a0000;
     text-align: center;
     line-height: 3.1em;
     font-family: Verdana, Geneva, sans-serif;
     font-style: italic;
     font-size: 1.2em;
     color: #cdd4db;
+    cursor: default;
 }
 
 #menu {
@@ -168,10 +169,11 @@ header {
     height: 56%;
     right: 1em;
     top: 23%;
-    border-left: double 3px green;
+    border-left: double 3px #8a0000;
     line-height: 2em;
     text-align: left;
     padding-left: 0.4em;
+    cursor: pointer;
 }
 
 #settingsButton {
@@ -179,12 +181,13 @@ header {
     width: 1.5em;
     height: 1.5em;
     right: 10em;
-    top: 1em;
-    border: solid 1px green;
+    top: 0.9em;
+    border: solid 2px #8a0000;
     border-radius: 15px;
     background-image: url("../img/settings.png");
     background-repeat: no-repeat;
     background-size: cover;
+    cursor: pointer;
 }
 
 #newLetter {
@@ -193,10 +196,11 @@ header {
     height: 56%;
     left: 2em;
     top: 23%;
-    border-left: double 3px green;
+    border-left: double 3px #8a0000;
     line-height: 2em;
     text-align: left;
     padding-left: 0.4em;
+    cursor: pointer;
 }
 
 #send {
@@ -205,8 +209,21 @@ header {
     height: 56%;
     left: 14em;
     top: 23%;
-    border-left: double 3px green;
+    border-left: double 3px #8a0000;
     line-height: 2em;
     text-align: left;
     padding-left: 0.4em;
+    cursor: pointer;
+}
+
+/* ---------------------------- */
+
+/* ---- New Letter Form ---- */
+
+form {
+    position: relative;
+    box-sizing: border-box;
+    width: 90%;
+    min-width: 860px;
+    margin: 3em auto;
 }

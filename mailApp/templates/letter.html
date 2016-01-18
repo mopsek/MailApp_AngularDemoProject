@@ -1,10 +1,10 @@
 <div class="mail">
     <div class="mailHeader">
-        <div class="mailDate">{{ mail.letter.date }}</div>
-        <div class="senderName">{{ mail.letter.sender }}</div>
-        <div class="mailTitle">{{ mail.letter.title }}</div>
+        <div class="mailDate">{{ letter.date }}</div>
+        <div class="senderName">{{ letter.sender }}</div>
+        <div class="mailTitle">{{ letter.title }}</div>
     </div>
     <p class="mailContent">
-        {{ mail.letter.content }}
+        {{ letter.content | short_content }}
     </p>
 </div>
