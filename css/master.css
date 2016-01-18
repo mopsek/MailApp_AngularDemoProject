@@ -124,6 +124,12 @@ html, body {
     transition: 0.5s;
 }
 
+#mailDir .activeDir {
+    background-image: url("../img/mailDirSelHov.png");
+    background-position: right;
+    background-repeat: repeat-y;
+}
+
 /* --------------------- */
 
 /* ------- header -------*/

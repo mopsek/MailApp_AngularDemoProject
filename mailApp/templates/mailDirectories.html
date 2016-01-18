@@ -1,5 +1,5 @@
 <div id="mailDir">
-    <div id="inbox" ng-click="directory.set('inbox')">Inbox</div>
-    <div id="sent" ng-click="directory.set('sent')">Sent</div>
-    <div id="cart" ng-click="directory.set('cart')">Cart</div>
+    <div id="inbox" ng-click="directory.set('inbox')" ng-class="directory.checkClass('inbox')">Inbox</div>
+    <div id="sent" ng-click="directory.set('sent')" ng-class="directory.checkClass('sent')">Sent</div>
+    <div id="cart" ng-click="directory.set('cart')" ng-class="directory.checkClass('cart')">Cart</div>
 </div>

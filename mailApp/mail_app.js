@@ -11,7 +11,13 @@ angular.module('mailApp').factory('dirController', function() {
         return val === _activeDir;
     }
 
+    function setDirActiveClass(val) {
+        var activeClass = _activeDir === val ? 'activeDir' : '';
+        return activeClass;
+    }
+
     return {
+        checkDirClass: setDirActiveClass,
         setActiveDir: setActiveDir,
         compareDir: compareDir
     }
@@ -34,6 +40,7 @@ angular.module('mailApp').directive('mailDirectories', function () {
         templateUrl: 'mailApp/templates/mailDirectories.html',
         controller: function (dirController) {
             this.set = dirController.setActiveDir;
+            this.checkClass = dirController.checkDirClass;
         },
         controllerAs: 'directory'
     }
@@ -51,12 +58,14 @@ angular.module('mailApp').directive('menu', function() {
     }
 });
 
-angular.module('mailApp').directive('temp', function() {
+angular.module('mailApp').directive('newLetter', function() {
     return {
+        restrict: 'E',
+        templateUrl: 'mailApp/templates/newLetter.html',
         controller: function(dirController) {
-            this.check = dirController.compareDir;
+            this.active = dirController.compareDir;
         },
-        controllerAs: 'c'
+        controllerAs: 'newLetters'
     }
 });
 
@@ -95,6 +104,12 @@ angular.module('mailApp').directive('inboxLetters', function() {
                     sender: 'Masha Dashkina',
                     title: 'New big title',
                     content: 'retrieval of the scope associated with DOM node where {{greeting}} is defined in template. In this example this is the same scope as the scope which was passed into MyController. (We will discuss scope hierarchies later.)'
+                },
+                {
+                    date: 'Привет',
+                    sender: 'маша дашкина',
+                    title: 'New big title',
+                    content: 'цуацудла цудальцдлуа цдулаьцдлуа цдлуаьцьмзлпи кдье рщукьзцл азцщьазщцбац каьу епдлкеьдлк дль'
                 }
             ];
 

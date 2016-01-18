@@ -20,18 +20,7 @@
       <inbox-letters ng-show="inboxLetters.active('inbox')"></inbox-letters>
       <sent-letters ng-show="sentLetters.active('sent')"></sent-letters>
       <cart-letters ng-show="cartLetters.active('cart')"></cart-letters>
-      <div temp class="newLetterForm" ng-show="c.check('newLetterForm')">
-          <form name="newLetter">
-              <div class="addressee">
-                  <label><div>Кому:</div><input type="text"></label>
-              </div>
-              <div class="title">
-                  <label><div>Тема:</div><input type="text"></label>
-              </div>
-              <div class="hrLine"></div>
-              <textarea></textarea>
-          </form>
-      </div>
+      <new-letter ng-show="newLetters.active('newLetterForm')"></new-letter>
   </div>
 
   <script src="mailApp/mail_app.js"></script>
