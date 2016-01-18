@@ -3,10 +3,6 @@ angular.module('mailApp', []);
 angular.module('mailApp').factory('dirController', function() {
     var _activeDir = 'inbox';
 
-    function getActiveDir() {
-        return _activeDir;
-    }
-
     function setActiveDir(val) {
         _activeDir = val;
     }
@@ -16,7 +12,6 @@ angular.module('mailApp').factory('dirController', function() {
     }
 
     return {
-        getActiveDir: getActiveDir,
         setActiveDir: setActiveDir,
         compareDir: compareDir
     }
@@ -25,7 +20,11 @@ angular.module('mailApp').factory('dirController', function() {
 angular.module('mailApp').directive('letter', function() {
     return {
         restrict: 'E',
-        templateUrl: 'mailApp/templates/letter.html'
+        templateUrl: 'mailApp/templates/letter.html',
+        controller: function() {
+            this.a = function(v){alert(v)}
+        },
+        controllerAs: 'c'
     };
 });
 
@@ -37,6 +36,27 @@ angular.module('mailApp').directive('mailDirectories', function () {
             this.set = dirController.setActiveDir;
         },
         controllerAs: 'directory'
+    }
+});
+
+angular.module('mailApp').directive('menu', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'mailApp/templates/menu.html',
+        controller: function (dirController) {
+            this.setDirectory = dirController.setActiveDir;
+            this.checkDirectory = dirController.compareDir;
+        },
+        controllerAs: 'menu'
+    }
+});
+
+angular.module('mailApp').directive('temp', function() {
+    return {
+        controller: function(dirController) {
+            this.check = dirController.compareDir;
+        },
+        controllerAs: 'c'
     }
 });
 

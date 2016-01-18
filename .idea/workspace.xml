@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57f7562b-5f69-45af-b48d-8aa3fb74d345" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mailApp/templates/inboxLetters.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mailApp/templates/sentLetters.html" />
-      <change type="MOVED" beforePath="C:\Users\Владимир\WebstormProjects\Mailer\mailApp\templates\inboxLetters" afterPath="$PROJECT_DIR$/mailApp/templates/cartLetters.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mailApp/templates/menu.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/My_mail.html" afterPath="$PROJECT_DIR$/My_mail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mailApp/templates/letter.html" afterPath="$PROJECT_DIR$/mailApp/templates/letter.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mailApp/templates/mailDirectories.html" afterPath="$PROJECT_DIR$/mailApp/templates/mailDirectories.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mailApp/mail_app.js" afterPath="$PROJECT_DIR$/mailApp/mail_app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/master.css" afterPath="$PROJECT_DIR$/css/master.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -31,41 +28,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="master.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/master.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.9417808">
+              <caret line="280" column="18" selection-start-line="280" selection-start-column="18" selection-end-line="280" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="mail_app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mailApp/mail_app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+              <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="My_mail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="My_mail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/My_mail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.11648746">
-              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+            <state vertical-scroll-proportion="-16.076923">
+              <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="master.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/master.css">
+      <file leaf-file-name="menu.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mailApp/templates/menu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="227" column="13" selection-start-line="227" selection-start-column="13" selection-end-line="227" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mailDirectories.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mailApp/templates/mailDirectories.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384">
-              <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
+            <state vertical-scroll-proportion="-0.65384614">
+              <caret line="1" column="67" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -89,14 +86,15 @@
       <list>
         <option value="$PROJECT_DIR$/mail_app.js" />
         <option value="$PROJECT_DIR$/mailApp/templates/inboxLetters" />
-        <option value="$PROJECT_DIR$/mailApp/templates/inboxLetters.html" />
         <option value="$PROJECT_DIR$/mailApp/templates/cartLetters.html" />
         <option value="$PROJECT_DIR$/mailApp/templates/sentLetters.html" />
-        <option value="$PROJECT_DIR$/mailApp/templates/letter.html" />
-        <option value="$PROJECT_DIR$/css/master.css" />
         <option value="$PROJECT_DIR$/mailApp/templates/mailDirectories.html" />
-        <option value="$PROJECT_DIR$/My_mail.html" />
+        <option value="$PROJECT_DIR$/mailApp/templates/inboxLetters.html" />
+        <option value="$PROJECT_DIR$/mailApp/templates/letter.html" />
+        <option value="$PROJECT_DIR$/mailApp/templates/menu.html" />
         <option value="$PROJECT_DIR$/mailApp/mail_app.js" />
+        <option value="$PROJECT_DIR$/My_mail.html" />
+        <option value="$PROJECT_DIR$/css/master.css" />
       </list>
     </option>
   </component>
@@ -319,7 +317,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -375,14 +373,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mailApp/templates/inboxLetters.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="51" selection-start-line="0" selection-start-column="51" selection-end-line="0" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mailApp/templates/sentLetters.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -399,26 +389,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mailApp/templates/letter.html">
+    <entry file="file://$PROJECT_DIR$/mailApp/templates/inboxLetters.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21326165">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="50" selection-start-line="0" selection-start-column="50" selection-end-line="0" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mailApp/templates/mailDirectories.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384">
+        <state vertical-scroll-proportion="0.09139785">
           <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/master.css">
+    <entry file="file://$PROJECT_DIR$/mailApp/templates/letter.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="227" column="13" selection-start-line="227" selection-start-column="13" selection-end-line="227" selection-end-column="13" />
+          <caret line="0" column="44" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mailApp/templates/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="1" column="67" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="67" />
           <folding />
         </state>
       </provider>
@@ -426,15 +424,23 @@
     <entry file="file://$PROJECT_DIR$/mailApp/mail_app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+          <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/My_mail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11648746">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        <state vertical-scroll-proportion="-16.076923">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/master.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9417808">
+          <caret line="280" column="18" selection-start-line="280" selection-start-column="18" selection-end-line="280" selection-end-column="18" />
           <folding />
         </state>
       </provider>

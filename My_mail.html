@@ -11,13 +11,7 @@
 <body>
   <header>
       <div id="user">Моя_Почта@где-то.там</div>
-
-      <div id="menu">
-          <div id="newLetter" ng-click="controller.change('newLetter')">Написать письмо</div>
-          <div id="send" ng-show="true">Отправить</div>
-          <div id="settingsButton"></div>
-          <div id="loginOut">Выйти</div>
-      </div>
+      <menu id="menu"></menu>
   </header>
 
   <mail-directories></mail-directories>
@@ -26,12 +20,14 @@
       <inbox-letters ng-show="inboxLetters.active('inbox')"></inbox-letters>
       <sent-letters ng-show="sentLetters.active('sent')"></sent-letters>
       <cart-letters ng-show="cartLetters.active('cart')"></cart-letters>
-      <div class="newLetterForm" ng-show="controller.activeDir === 'newLetter'">
+      <div temp class="newLetterForm" ng-show="c.check('newLetterForm')">
           <form name="newLetter">
               <div class="addressee">
-                  <label><span>Кому:</span><input type="text"></label>
+                  <label><div>Кому:</div><input type="text"></label>
               </div>
-              <input type="text">
+              <div class="title">
+                  <label><div>Тема:</div><input type="text"></label>
+              </div>
               <div class="hrLine"></div>
               <textarea></textarea>
           </form>
