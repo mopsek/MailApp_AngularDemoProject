@@ -16,11 +16,11 @@
 
   <mail-directories></mail-directories>
 
-  <div id="mailList">
-      <inbox-letters ng-show="inboxLetters.active('inbox')"></inbox-letters>
-      <sent-letters ng-show="sentLetters.active('sent')"></sent-letters>
-      <cart-letters ng-show="cartLetters.active('cart')"></cart-letters>
-      <new-letter ng-show="newLetters.active('newLetterForm')"></new-letter>
+  <div id="mainContainer" main-container>
+      <inbox-letters ng-show="directory.active('inbox')"></inbox-letters>
+      <sent-letters ng-show="directory.active('sent')"></sent-letters>
+      <cart-letters ng-show="directory.active('cart')"></cart-letters>
+      <new-letter ng-show="directory.active('newLetterForm')"></new-letter>
   </div>
 
   <script src="mailApp/mail_app.js"></script>

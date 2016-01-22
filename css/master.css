@@ -1,13 +1,14 @@
 html, body {
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    overflow-y: hidden;
     background-color: black;
+    min-width: 1000px;
 }
 
 /*--- mails ---*/
 
-#mailList {
+#mainContainer {
     position: relative;
     float: right;
     width: 84%;
@@ -166,6 +167,7 @@ header {
     height: 100%;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.1em;
+    font-style: italic;
     color: #cdd4db;
 }
 
