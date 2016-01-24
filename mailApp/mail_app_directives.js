@@ -41,10 +41,12 @@ angular.module('mailApp').directive('mainContainer', function() {
             load.then(function(data) {
                 self.letters = data;
                 dirController.setActiveDir('inbox');
+                self.destroy = true;
             });
 
             this.letters = {};
             this.active = dirController.compareDir;
+            this.destroy = false;
         },
         controllerAs: 'directory'
     }
@@ -87,27 +89,18 @@ angular.module('mailApp').directive('newLetter', function() {
     }
 });
 
-angular.module('mailApp').directive('loading', function() {
+angular.module('mailApp').directive('loading', function(animating) {
     return {
         restrict: 'E',
         templateUrl: 'mailApp/templates/loading.html',
-        controller: function(animating, $element) {
-            var self = this;
-
-            function addComa(elem) {
-                function add() {
-                    if(elem.innerHTML.length === 21) elem.innerHTML = 'Loading lettersgit add';
-                    elem.innerHTML += '.';
-                    setTimeout(add, 500)
-                }
-                add()
-            }
-
-            animating.loading($element.children()[0]);
-            addComa($element.children()[0]);
-
-            console.log($element.children()[0].innerHTML)
+        scope: {
+            destroy: '='
         },
-        controllerAs: 'loading'
+        link: function(scope, element) {
+            animating.loading(element.children()[0]);
+            scope.$watch('destroy', function(newV){
+                if (newV) element.remove();
+            });
+        }
     }
 })

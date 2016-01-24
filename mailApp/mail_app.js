@@ -70,10 +70,18 @@ angular.module('mailApp').factory('animating', function() {
         incr();
     }
 
-
+    function addComa(elem) {
+        function add() {
+            if(elem.innerHTML.length === 21) elem.innerHTML = 'Loading letters';
+            elem.innerHTML += '.';
+            setTimeout(add, 500)
+        }
+        add()
+    }
 
     function loading(element) {
         light(element);
+        addComa(element)
     }
 
     return {

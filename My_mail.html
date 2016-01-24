@@ -15,12 +15,12 @@
 
   <mail-directories></mail-directories>
 
-  <div id="mainContainer" main-container ng-click="cons()">
+  <div id="mainContainer" main-container>
       <inbox-letters ng-show="directory.active('inbox')" letters="directory.letters.inbox"></inbox-letters>
       <sent-letters ng-show="directory.active('sent')" letters="directory.letters.sent"></sent-letters>
       <cart-letters ng-show="directory.active('cart')" letters="directory.letters.trash"></cart-letters>
       <new-letter ng-show="directory.active('newLetterForm')"></new-letter>
-      <loading ng-show="directory.active('Loading')"></loading>
+      <loading ng-show="directory.active('Loading')" destroy="directory.destroy"></loading>
   </div>
 
   <script src="mailApp/mail_app.js"></script>
