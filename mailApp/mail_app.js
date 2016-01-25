@@ -1,9 +1,15 @@
 angular.module('mailApp', []);
 
 angular.module('mailApp').factory('dirController', function() {
-    var _activeDir = 'Loading';
+    var _activeDir = 'Loading',
+        initialization = true;
+
+    function finishInit() {
+        initialization = false;
+    }
 
     function setActiveDir(val) {
+        if (initialization) return;
         _activeDir = val;
     }
 
@@ -17,17 +23,21 @@ angular.module('mailApp').factory('dirController', function() {
     }
 
     return {
+        finishInit: finishInit,
         checkDirClass: setDirActiveClass,
         setActiveDir: setActiveDir,
         compareDir: compareDir
     }
 });
 
-angular.module('mailApp').factory('letterController', function($q, $http) {
-    function initialisation() {
+angular.module('mailApp').factory('letterController', function($q, $http, dirController) {
+    var base = {},
+        selected = {};
+
+    (function initialisation() {
         var def = $q.defer();
         setTimeout(function() {
-            $http({method: 'GET', url: 'mails.json'}).
+            $http({method: 'GET', url: 'mails/mails.json'}).
                 success(function(data){
                     def.resolve(data)
                 }).
@@ -37,10 +47,51 @@ angular.module('mailApp').factory('letterController', function($q, $http) {
         }, 5000);
 
         return def.promise;
+    })().then(function(data) {
+        base.letters = data;
+        dirController.finishInit();
+        dirController.setActiveDir('inbox');
+    });
+
+    function setInfo(scope) {
+        selected.letter.info = {
+            positionNow: {
+                index: scope.$index,
+                directory: scope.directory
+            }
+        }
     }
 
+    function selectLetter(scope) {
+        selected.letter = scope.letter;
+        setInfo(scope);
+    }
+
+    function unselectLetter() {
+        if(selected.letter) selected.letter = null;
+    }
+
+    /* info: {
+        positionNow: {
+            index:,
+            directory:,
+        },
+        positionPrev: {
+            index:,
+            directory,
+        }
+
+    } */
+
+    //function unselectLetter() {};
+    //function moveToDir() {};
+    //function removeLetter() {};
+
+
     return {
-        init: initialisation
+        base: base,
+        select: selectLetter,
+        selected: selected
     }
 
 });

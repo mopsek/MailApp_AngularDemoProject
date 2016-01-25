@@ -3,12 +3,14 @@
     {
       "date": "Mn, 49 july 3019",
       "sender": "Masha Dashkina",
+      "to": "Me",
       "title": "Letter not Found",
       "content": "Mopnn fyc hvh hctrxxrc vguutdc c hh! Jbvgh ug hvnv  v uyuyguy uygug v vjk jgcxdxseetk. Lnjnkvzwyuo[lkdx"
     },
     {
       "date": "Mn, 08 may 2740",
       "sender": "Masha Dashkina",
+      "to": "Me",
       "title": "Hello! It`s your turn!",
       "content": "mkmklmklkj bouiytf rt utrdutrf tfyf yguyg uhiuhiuh igkvf yvf ytvy tvf ytft"
     }
@@ -16,19 +18,22 @@
   "sent": [
     {
       "date": "Fr, 15 july 3076",
-      "sender": "Petya Koshkin",
+      "sender": "I",
+      "to": "Petya Koshkin",
       "title": "Big news today! ",
       "content": "Omkwefkwe wefkmwkef krg wkjrg wongowt gwotgmwormgwkrg ka! Pmskld sdslv sb s bs bkrmbkamdfkl avalfkvmalf vakvlakv l?sdsl,dsdf sfkfkfml!"
     },
     {
       "date": "Thu, 29 january 2019",
-      "sender": "Masha Dashkina",
+      "sender": "I",
+      "to": "Masha Dashkina",
       "title": "Letter not Found",
       "content": "Not for this sdmklsf law !ml efmwlefm wklmP fmwelkmfw .wefwef wefwefwlkmefl weflkwmefwdioidvsoidnwoefnwke fwkefdkfmsdfef wefkmdlfkmsdf"
     },
     {
       "date": "Sun, 01 eio 1000",
-      "sender": "Vasya Petkin",
+      "sender": "I",
+      "to": "Vasya Petkin",
       "title": "Realy very-very-very big-big-big title!!!!!!!",
       "content": "nothing interesting nothing interesting nothing interesting nothing interesting nothing interesting nothing interesting nothing interesting nothing interesting"
     }
@@ -37,6 +42,7 @@
     {
       "date": "Sat, 03 may 2740",
       "sender": "Katya Dikaya",
+      "to": "Me",
       "title": "!!!Nice to eat you!!!",
       "content": "Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! "
     }

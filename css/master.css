@@ -192,11 +192,13 @@ header {
     cursor: pointer;
 }
 
-.newLetterMenu {
+.newLetterMenu,
+.previewLetterMenu {
     float: left;
 }
 
-#send, #save {
+#send, #save,
+#reply, #delete {
     display: inline-block;
     margin: 0.5em 1em;
     padding-left: 0.4em;
@@ -279,3 +281,51 @@ form textarea {
     font-size: 2.3em;
     padding: 0.5em 0.3em;
 }
+
+/* ----------------*/
+
+/* ---- Preview Dir ---- */
+
+#mainContainer preview  {
+    position: relative;
+    color: #F4F1B4;
+}
+
+preview .header {
+    margin: 2em 1em;
+    font-size: 1.2em;
+}
+
+preview .header .from {
+    float: left;
+    margin-bottom: 1em;
+}
+
+preview .header .to {
+    float: left;
+    clear: both;
+}
+
+preview .header .date {
+    float: right;
+}
+
+preview .header div span {
+    font-size: 1.1em;
+    font-style: italic;
+    margin-left: 1em;
+}
+
+preview .title {
+    margin: 2em;
+    text-decoration: underline;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+preview .content {
+    margin-left: 1em;
+    font-size: 1.1em;
+}
+
+/* ---------------- */

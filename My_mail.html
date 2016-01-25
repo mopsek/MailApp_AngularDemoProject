@@ -16,14 +16,16 @@
   <mail-directories></mail-directories>
 
   <div id="mainContainer" main-container>
-      <inbox-letters ng-show="directory.active('inbox')" letters="directory.letters.inbox"></inbox-letters>
-      <sent-letters ng-show="directory.active('sent')" letters="directory.letters.sent"></sent-letters>
-      <cart-letters ng-show="directory.active('cart')" letters="directory.letters.trash"></cart-letters>
+      <inbox-letters ng-show="directory.active('inbox')" letters="directory.base.letters.inbox"></inbox-letters>
+      <sent-letters ng-show="directory.active('sent')" letters="directory.base.letters.sent"></sent-letters>
+      <cart-letters ng-show="directory.active('cart')" letters="directory.base.letters.trash"></cart-letters>
       <new-letter ng-show="directory.active('newLetterForm')"></new-letter>
-      <loading ng-show="directory.active('Loading')" destroy="directory.destroy"></loading>
+      <loading ng-show="directory.active('Loading')" destroy="directory.destroy()"></loading>
+      <preview ng-show="directory.active('preview')" selected="directory.selected"></preview>
   </div>
 
   <script src="mailApp/mail_app.js"></script>
   <script src="mailApp/mail_app_directives.js"></script>
+  <script src="mailApp/mail_app_directivesForDirectorys.js"></script>
 </body>
 </html>

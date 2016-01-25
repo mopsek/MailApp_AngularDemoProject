@@ -1,7 +1,13 @@
-angular.module('mailApp').directive('letter', function() {
+angular.module('mailApp').directive('letter', function(letterController, dirController) {
     return {
         restrict: 'E',
-        templateUrl: 'mailApp/templates/letter.html'
+        templateUrl: 'mailApp/templates/letter.html',
+        link: function(scope) {
+            scope.preview = function(scope) {
+                letterController.select(scope);
+                dirController.setActiveDir('preview');
+            }
+        }
     };
 });
 
@@ -35,72 +41,20 @@ angular.module('mailApp').directive('mainContainer', function() {
         restrict:'A',
         scope: true,
         controller: function(dirController, letterController) {
-            var load = letterController.init(),
-                self = this;
+            var self = this;
 
-            load.then(function(data) {
-                self.letters = data;
-                dirController.setActiveDir('inbox');
-                self.destroy = true;
-            });
-
-            this.letters = {};
+            this.base = letterController.base;
             this.active = dirController.compareDir;
-            this.destroy = false;
+            this.selected = letterController.selected;
+
+
+            this.destroy = function() {
+                if (!self.base.letters) return false;
+                return true;
+            };
+
         },
         controllerAs: 'directory'
     }
 });
 
-angular.module('mailApp').directive('inboxLetters', function() {
-    return {
-        restrict: 'E',
-        templateUrl: 'mailApp/templates/inboxLetters.html',
-        scope: {
-            letters: '='
-        }
-    }
-});
-
-angular.module('mailApp').directive('sentLetters', function() {
-    return {
-        restrict: 'E',
-        templateUrl: 'mailApp/templates/sentLetters.html',
-        scope: {
-            letters: '='
-        }
-    }
-});
-
-angular.module('mailApp').directive('cartLetters', function() {
-    return {
-        restrict: 'E',
-        templateUrl: 'mailApp/templates/cartLetters.html',
-        scope: {
-            letters: '='
-        }
-    }
-});
-
-angular.module('mailApp').directive('newLetter', function() {
-    return {
-        restrict: 'E',
-        templateUrl: 'mailApp/templates/newLetter.html'
-    }
-});
-
-angular.module('mailApp').directive('loading', function(animating) {
-    return {
-        restrict: 'E',
-        templateUrl: 'mailApp/templates/loading.html',
-        scope: {
-            destroy: '='
-        },
-        link: function(scope, element) {
-            animating.loading(element.children()[0]);
-            scope.$watch('destroy', function(newV){
-                if (newV) element.remove();
-            });
-        }
-    }
-})
