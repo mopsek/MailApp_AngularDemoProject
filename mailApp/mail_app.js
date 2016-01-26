@@ -54,6 +54,7 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
     });
 
     function setInfo(scope) {
+        if (selected.letter.info) return;
         selected.letter.info = {
             positionNow: {
                 index: scope.$index,
@@ -67,31 +68,39 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         setInfo(scope);
     }
 
-    function unselectLetter() {
-        if(selected.letter) selected.letter = null;
+    function moveToDir(to, remove) {
+        selected.letter.info.positionPrev = selected.letter.info.positionNow;
+        var now = selected.letter.info.positionNow;
+        base.letters[now.directory].splice(now.index, 1);
+        if(remove) return;
+        selected.letter.info.positionNow = {
+            index: to.index,
+            directory: to.directory
+        };
+        base.letters[to.directory].splice(to.index, 0, selected.letter);
     }
 
-    /* info: {
-        positionNow: {
-            index:,
-            directory:,
-        },
-        positionPrev: {
-            index:,
-            directory,
+    function removeLetter(scope) {
+        if(scope) selectLetter(scope);
+        if (selected.letter.info.positionNow.directory === 'trash') {
+            moveToDir(null, true);
+            dirController.setActiveDir('trash');
+        } else {
+            moveToDir({directory: 'trash', index: 0})
         }
+    }
 
-    } */
-
-    //function unselectLetter() {};
-    //function moveToDir() {};
-    //function removeLetter() {};
-
+    function recoverLetter() {
+        var to = selected.letter.info.positionPrev;
+        moveToDir({directory: to.directory, index: to.index})
+    }
 
     return {
         base: base,
         select: selectLetter,
-        selected: selected
+        selected: selected,
+        remove: removeLetter,
+        recover: recoverLetter
     }
 
 });

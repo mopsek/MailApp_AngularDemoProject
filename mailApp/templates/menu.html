@@ -1,7 +1,7 @@
 <div>
     <div id="user">Моя_Почта@где-то.там</div>
     <div class="userSettings">
-        <div id="loginOut" ng-click="menu.setDirectory('preview')">Выйти</div>
+        <div id="loginOut">Выйти</div>
         <div id="settingsButton"></div>
     </div>
     <div id="newLetter" ng-click="menu.setDirectory('newLetterForm')">Написать письмо</div>
@@ -10,7 +10,9 @@
         <div id="save">Сохранить черновик</div>
     </div>
     <div class="previewLetterMenu" ng-show="menu.checkDirectory('preview')">
-        <div id="reply">Ответить</div>
-        <div id="delete">Удалить</div>
+        <div id="reply" ng-show="menu.getPreviewDir() === 'inbox'">Ответить</div>
+        <div id="recover" ng-show="menu.getPreviewDir() === 'trash'" ng-click="menu.recover()">Восстановить</div>
+        <div id="delete" ng-click="menu.remove()">Удалить</div>
     </div>
+
 </div>

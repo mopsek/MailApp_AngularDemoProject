@@ -6,6 +6,10 @@ angular.module('mailApp').directive('letter', function(letterController, dirCont
             scope.preview = function(scope) {
                 letterController.select(scope);
                 dirController.setActiveDir('preview');
+            };
+            scope.remove = function(sc, event) {
+                event.stopPropagation();
+                letterController.remove(sc);
             }
         }
     };
@@ -27,10 +31,15 @@ angular.module('mailApp').directive('menu', function() {
     return {
         restrict: 'E',
         templateUrl: 'mailApp/templates/menu.html',
-        controller: function (dirController, $q) {
+        controller: function (dirController, letterController) {
             this.setDirectory = dirController.setActiveDir;
             this.checkDirectory = dirController.compareDir;
-
+            this.getPreviewDir = function() {
+                if (!letterController.selected.letter) return;
+                return letterController.selected.letter.info.positionNow.directory;
+            };
+            this.recover = letterController.recover;
+            this.remove = letterController.remove;
         },
         controllerAs: 'menu'
     }

@@ -61,6 +61,16 @@ html, body {
     margin-bottom: 1.1em;
 }
 
+.mail .remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.mail .remove:hover {
+    color: red;
+}
+
 .unreaded {
     font-weight: bold;
     color: red;
@@ -89,7 +99,8 @@ html, body {
     height: 3.7em;
     border-bottom: solid 1px #8a0000;
     line-height: 3.8em;
-    text-align: center;
+    padding-left: 0.7em;
+    box-sizing: border-box;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     font-weight: bold;
     font-style: italic;
@@ -198,7 +209,8 @@ header {
 }
 
 #send, #save,
-#reply, #delete {
+#reply, #delete,
+#recover {
     display: inline-block;
     margin: 0.5em 1em;
     padding-left: 0.4em;
@@ -292,7 +304,7 @@ form textarea {
 }
 
 preview .header {
-    margin: 2em 1em;
+    margin: 2.5em 1em;
     font-size: 1.2em;
 }
 
@@ -326,6 +338,32 @@ preview .title {
 preview .content {
     margin-left: 1em;
     font-size: 1.1em;
+}
+
+preview .back {
+    position: relative;
+    top: -1.2em;
+    padding-right: 0.3em;
+    cursor: pointer;
+    font-size: 2em;
+    font-weight: bold;
+    color: rgba(205, 212, 219, 0.8);
+    transition: 0.8s;
+}
+
+preview .backText {
+    display: inline-block;
+    padding-bottom: 0.1em;
+    border-bottom: double 4px green;
+    font-style: italic;
+    font-size: 0.6em;
+    font-weight: lighter;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+preview .back:hover {
+    text-shadow: 3px 0 9px rgba(0, 255, 0, 1);
+    transition: 0.8s;
 }
 
 /* ---------------- */

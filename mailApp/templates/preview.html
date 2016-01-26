@@ -1,8 +1,9 @@
 <div class="header group">
-    <div class="from">От кого: <span>{{ selectedLetter.letter.sender }}</span></div>
-    <div class="date">Дата: <span>{{ selectedLetter.letter.date }}</span></div>
-    <div class="to">Кому: <span>{{ selectedLetter.letter.to }}</span></div>
+    <div class="back" ng-click="back()">&#8592 <div class="backText">Назад</div></div>
+    <div class="from">От кого: <span>{{ selected.letter.sender }}</span></div>
+    <div class="date">Дата: <span>{{ selected.letter.date }}</span></div>
+    <div class="to">Кому: <span>{{ selected.letter.to }}</span></div>
 </div>
-<div class="title">{{ selectedLetter.letter.title }}</div>
+<div class="title">{{ selected.letter.title }}</div>
 
-<p class="content">{{ selectedLetter.letter.content }}</p>
+<p class="content">{{ selected.letter.content }}</p>

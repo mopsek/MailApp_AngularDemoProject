@@ -18,7 +18,7 @@
   <div id="mainContainer" main-container>
       <inbox-letters ng-show="directory.active('inbox')" letters="directory.base.letters.inbox"></inbox-letters>
       <sent-letters ng-show="directory.active('sent')" letters="directory.base.letters.sent"></sent-letters>
-      <cart-letters ng-show="directory.active('cart')" letters="directory.base.letters.trash"></cart-letters>
+      <cart-letters ng-show="directory.active('trash')" letters="directory.base.letters.trash"></cart-letters>
       <new-letter ng-show="directory.active('newLetterForm')"></new-letter>
       <loading ng-show="directory.active('Loading')" destroy="directory.destroy()"></loading>
       <preview ng-show="directory.active('preview')" selected="directory.selected"></preview>

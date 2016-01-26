@@ -60,7 +60,7 @@ angular.module('mailApp').directive('loading', function(animating) {
     }
 });
 
-angular.module('mailApp').directive('preview', function() {
+angular.module('mailApp').directive('preview', function(dirController) {
     return {
         restrict: 'E',
         templateUrl: 'mailApp/templates/preview.html',
@@ -68,7 +68,9 @@ angular.module('mailApp').directive('preview', function() {
             selected: '='
         },
         link: function(scope) {
-            scope.selectedLetter = scope.selected;
+            scope.back = function() {
+                dirController.setActiveDir(scope.selected.letter.info.positionNow.directory)
+            }
         }
     }
 })
