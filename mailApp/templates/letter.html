@@ -1,11 +1,12 @@
 <div class="mail">
     <div class="mailHeader">
-        <div class="mailDate">{{ letter.date }}</div>
+        <div class="mailDate">{{ letter.date | date: 'EEE, dd MMMM yyyy - HH:mm'}}</div>
         <div class="senderName">{{ letter.sender }}</div>
-        <div class="mailTitle">{{ letter.title }}</div>
+        <div class="mailTitle">{{ letter.tittle }}</div>
     </div>
     <p class="mailContent">
         {{ letter.content | short_content }}
     </p>
-    <div class="remove" ng-click="remove(this, $event)">!!!</div>
+    <div class="remove" ng-click="remove(this, $event)"></div>
+    <div class="addToFavorite" ng-click="toggleFavorite(this, $event)" ng-class="checkFavoriteClass()"></div>
 </div>

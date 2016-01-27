@@ -1,7 +1,7 @@
 angular.module('mailApp').directive('inboxLetters', function() {
     return {
         restrict: 'E',
-        templateUrl: 'mailApp/templates/inboxLetters.html',
+        templateUrl: 'mailApp/templates/forMainContainer/inboxLetters.html',
         scope: {
             letters: '='
         },
@@ -14,7 +14,7 @@ angular.module('mailApp').directive('inboxLetters', function() {
 angular.module('mailApp').directive('sentLetters', function() {
     return {
         restrict: 'E',
-        templateUrl: 'mailApp/templates/sentLetters.html',
+        templateUrl: 'mailApp/templates/forMainContainer/sentLetters.html',
         scope: {
             letters: '='
         },
@@ -27,7 +27,7 @@ angular.module('mailApp').directive('sentLetters', function() {
 angular.module('mailApp').directive('cartLetters', function() {
     return {
         restrict: 'E',
-        templateUrl: 'mailApp/templates/cartLetters.html',
+        templateUrl: 'mailApp/templates/forMainContainer/cartLetters.html',
         scope: {
             letters: '='
         },
@@ -40,14 +40,17 @@ angular.module('mailApp').directive('cartLetters', function() {
 angular.module('mailApp').directive('newLetter', function() {
     return {
         restrict: 'E',
-        templateUrl: 'mailApp/templates/newLetter.html'
+        templateUrl: 'mailApp/templates/forMainContainer/newLetter.html',
+        scope: {
+            selected: '='
+        }
     }
 });
 
 angular.module('mailApp').directive('loading', function(animating) {
     return {
         restrict: 'E',
-        templateUrl: 'mailApp/templates/loading.html',
+        templateUrl: 'mailApp/templates/forMainContainer/loading.html',
         scope: {
             destroy: '='
         },
@@ -63,14 +66,40 @@ angular.module('mailApp').directive('loading', function(animating) {
 angular.module('mailApp').directive('preview', function(dirController) {
     return {
         restrict: 'E',
-        templateUrl: 'mailApp/templates/preview.html',
+        templateUrl: 'mailApp/templates/forMainContainer/preview.html',
         scope: {
             selected: '='
         },
         link: function(scope) {
             scope.back = function() {
-                dirController.setActiveDir(scope.selected.letter.info.positionNow.directory)
+                dirController.setActiveDir(scope.selected.letter.info.dir)
             }
+        }
+    }
+});
+
+angular.module('mailApp').directive('drafts', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'mailApp/templates/forMainContainer/drafts.html',
+        scope: {
+            letters: '='
+        },
+        link: function(scope) {
+            scope.directory = 'drafts'
+        }
+    }
+});
+
+angular.module('mailApp').directive('favorites', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'mailApp/templates/forMainContainer/favorites.html',
+        scope: {
+            letters: '='
+        },
+        link: function(scope) {
+            scope.directory = 'favorites'
         }
     }
 })

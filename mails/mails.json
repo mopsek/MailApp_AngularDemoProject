@@ -1,53 +1,54 @@
 {
   "inbox": [
     {
-      "date": "Mn, 49 july 3019",
+      "date": 1288320000000,
       "sender": "Masha Dashkina",
       "to": "Me",
-      "title": "Letter not Found",
+      "tittle": "Letter not Found",
       "content": "Mopnn fyc hvh hctrxxrc vguutdc c hh! Jbvgh ug hvnv  v uyuyguy uygug v vjk jgcxdxseetk. Lnjnkvzwyuo[lkdx"
     },
     {
-      "date": "Mn, 08 may 2740",
+      "date": 1288323623006,
       "sender": "Masha Dashkina",
       "to": "Me",
-      "title": "Hello! It`s your turn!",
+      "tittle": "Hello! It`s your turn!",
       "content": "mkmklmklkj bouiytf rt utrdutrf tfyf yguyg uhiuhiuh igkvf yvf ytvy tvf ytft"
     }
   ],
   "sent": [
     {
-      "date": "Fr, 15 july 3076",
+      "date": 1288323333333,
       "sender": "I",
       "to": "Petya Koshkin",
-      "title": "Big news today! ",
+      "tittle": "Big news today! ",
       "content": "Omkwefkwe wefkmwkef krg wkjrg wongowt gwotgmwormgwkrg ka! Pmskld sdslv sb s bs bkrmbkamdfkl avalfkvmalf vakvlakv l?sdsl,dsdf sfkfkfml!"
     },
     {
-      "date": "Thu, 29 january 2019",
+      "date": 1288321111111,
       "sender": "I",
       "to": "Masha Dashkina",
-      "title": "Letter not Found",
+      "tittle": "Letter not Found",
       "content": "Not for this sdmklsf law !ml efmwlefm wklmP fmwelkmfw .wefwef wefwefwlkmefl weflkwmefwdioidvsoidnwoefnwke fwkefdkfmsdfef wefkmdlfkmsdf"
     },
     {
-      "date": "Sun, 01 eio 1000",
+      "date": 1288326666666,
       "sender": "I",
       "to": "Vasya Petkin",
-      "title": "Realy very-very-very big-big-big title!!!!!!!",
+      "tittle": "Realy very-very-very big-big-big title!!!!!!!",
       "content": "nothing interesting nothing interesting nothing interesting nothing interesting nothing interesting nothing interesting nothing interesting nothing interesting"
     }
   ],
   "trash": [
     {
-      "date": "Sat, 03 may 2740",
+      "date": 1288323623006,
       "sender": "Katya Dikaya",
       "to": "Me",
-      "title": "!!!Nice to eat you!!!",
+      "tittle": "!!!Nice to eat you!!!",
       "content": "Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! "
     }
   ],
-  "n": []
+  "drafts": [],
+  "favorites": []
 }
 
 

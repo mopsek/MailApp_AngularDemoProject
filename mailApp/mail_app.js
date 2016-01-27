@@ -54,13 +54,11 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
     });
 
     function setInfo(scope) {
-        if (selected.letter.info) return;
-        selected.letter.info = {
-            positionNow: {
-                index: scope.$index,
-                directory: scope.directory
-            }
-        }
+       if (!scope.letter.fromDir) scope.letter.fromDir = scope.directory;
+        scope.letter.info = {};
+        scope.letter.info.dir = scope.directory;
+        scope.letter.info.index = base.letters[scope.letter.info.dir].indexOf(selected.letter);
+
     }
 
     function selectLetter(scope) {
@@ -68,31 +66,59 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         setInfo(scope);
     }
 
-    function moveToDir(to, remove) {
-        selected.letter.info.positionPrev = selected.letter.info.positionNow;
-        var now = selected.letter.info.positionNow;
-        base.letters[now.directory].splice(now.index, 1);
-        if(remove) return;
-        selected.letter.info.positionNow = {
-            index: to.index,
-            directory: to.directory
+    function createLetter() {
+        selected.letter = {
+            date: new Date().getTime(),
+            sender: 'I',
+            to: '',
+            tittle: '',
+            content: '',
+            info: ''
         };
-        base.letters[to.directory].splice(to.index, 0, selected.letter);
     }
 
-    function removeLetter(scope) {
+    function removeFromDir() {
+        var now = selected.letter.info;
+        base.letters[now.dir].splice(now.index, 1);
+    }
+
+    function setToDir(to) {
+        base.letters[to].push(selected.letter);
+    }
+
+    function removeLetter(scope, link) {
         if(scope) selectLetter(scope);
-        if (selected.letter.info.positionNow.directory === 'trash') {
-            moveToDir(null, true);
-            dirController.setActiveDir('trash');
-        } else {
-            moveToDir({directory: 'trash', index: 0})
+        if (link || (selected.letter.link && selected.letter.info.dir !== 'favorites')) {
+            var fav = base.letters.favorites;
+            fav.splice(fav.indexOf(link), 1);
+            delete selected.letter.link;
+            if (link) return;
+        }
+        switch (selected.letter.info.dir) {
+            case 'drafts':
+                removeFromDir();
+                break;
+            case 'favorites':
+                var pos = base.letters[selected.letter.fromDir].indexOf(selected.letter);
+                base.letters[selected.letter.fromDir].splice(pos, 1);
+                delete selected.letter.link;
+                removeFromDir();
+                setToDir('trash');
+                break;
+            case 'trash':
+                removeFromDir();
+                break;
+            default:
+                removeFromDir();
+                setToDir('trash');
         }
     }
 
     function recoverLetter() {
-        var to = selected.letter.info.positionPrev;
-        moveToDir({directory: to.directory, index: to.index})
+        var to = selected.letter.fromDir;
+        removeFromDir();
+        setToDir(to);
+        dirController.setActiveDir(to);
     }
 
     return {
@@ -100,7 +126,9 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         select: selectLetter,
         selected: selected,
         remove: removeLetter,
-        recover: recoverLetter
+        recover: recoverLetter,
+        setTo: setToDir,
+        create: createLetter
     }
 
 });

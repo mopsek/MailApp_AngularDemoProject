@@ -63,12 +63,46 @@ html, body {
 
 .mail .remove {
     position: absolute;
-    top: 0;
+    top: 0.13em;
     right: 0;
+    width: 1em;
+    height: 1em;
+    background: url("../img/trash.png") no-repeat;
+    background-position: top left;
+    background-size: contain;
+    transition: 0.8s;
 }
 
 .mail .remove:hover {
-    color: red;
+    background: url("../img/trashActive.png") no-repeat;
+    background-position: top left;
+    background-size: contain;
+    transition: 0.8s;
+}
+
+.mail .addToFavorite {
+    position: absolute;
+    top: 0.1em;
+    right: 1.3em;
+    width: 1em;
+    height: 1em;
+    background: url("../img/flag.png") no-repeat;
+    background-position: top left;
+    background-size: contain;
+    transition: 0.8s;
+}
+
+.mail .addToFavorite:hover {
+    background: url("../img/flagActive.png") no-repeat;
+    background-position: top left;
+    background-size: contain;
+    transition: 0.8s;
+}
+
+.mail .activeFavorite {
+    background: url("../img/flagActive.png") no-repeat;
+    background-position: top left;
+    background-size: contain;
 }
 
 .unreaded {
@@ -210,7 +244,7 @@ header {
 
 #send, #save,
 #reply, #delete,
-#recover {
+#recover, #edit {
     display: inline-block;
     margin: 0.5em 1em;
     padding-left: 0.4em;
@@ -342,6 +376,7 @@ preview .content {
 
 preview .back {
     position: relative;
+    width: 3.7em;
     top: -1.2em;
     padding-right: 0.3em;
     cursor: pointer;

@@ -1,5 +1,7 @@
 <div id="mailDir">
     <div id="inbox" ng-click="directory.set('inbox')" ng-class="directory.checkClass('inbox')">Входящие</div>
+    <div id="ch" ng-click="directory.set('drafts')" ng-class="directory.checkClass('drafts')">Черновики</div>
     <div id="sent" ng-click="directory.set('sent')" ng-class="directory.checkClass('sent')">Отправленные</div>
+    <div id="favorites" ng-click="directory.set('favorites')" ng-class="directory.checkClass('favorites')">Избранное</div>
     <div id="cart" ng-click="directory.set('trash')" ng-class="directory.checkClass('trash')">Корзина</div>
 </div>
