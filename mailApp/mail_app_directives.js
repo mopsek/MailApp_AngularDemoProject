@@ -29,6 +29,20 @@ angular.module('mailApp').directive('letter', function(letterController, dirCont
     };
 });
 
+angular.module('mailApp').directive('user', function(letterController) {
+    return {
+        restrict: 'E',
+        templateUrl: 'mailApp/templates/user.html',
+        link: function(scope) {
+            scope.editMode = false;
+            scope.toggleMode = function() {
+                scope.editMode = !scope.editMode;
+                letterController.saveUserToStorage();
+            }
+        }
+    }
+});
+
 angular.module('mailApp').directive('mailDirectories', function () {
     return {
         restrict: 'E',
@@ -45,6 +59,7 @@ angular.module('mailApp').directive('menu', function() {
     return {
         restrict: 'E',
         templateUrl: 'mailApp/templates/menu.html',
+        scope: {},
         controller: function (dirController, letterController) {
             this.setDirectory = dirController.setActiveDir;
             this.checkDirectory = dirController.compareDir;
@@ -73,6 +88,11 @@ angular.module('mailApp').directive('menu', function() {
                 letterController.selected.letter.fromDir = to;
                 dirController.setActiveDir(to);
             };
+
+            this.repply = function() {
+                letterController.create(letterController.selected.letter.sender);
+                dirController.setActiveDir('newLetterForm');
+            }
 
 
         },

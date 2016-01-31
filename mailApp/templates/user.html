@@ -1,0 +1,42 @@
+<div class="contact group">
+
+    <div class="avatar">
+        <img ng-src="{{ user.avatar || 'img/defaultAvatar.png' }}">
+    </div>
+
+    <table class="info">
+        <tr>
+            <td class="keys">Имя:</td>
+            <td>
+                <div ng-show="!editMode">{{ user.name }}</div>
+                <input type="text" ng-model="user.name" ng-show="editMode"></td>
+        </tr>
+        <tr>
+            <td class="keys">Дата рождения:</td>
+            <td>
+                <div ng-show="!editMode">{{ user.birthDate }}</div>
+                <input type="text" ng-model="user.birthDate" ng-show="editMode"></td>
+        </tr>
+        <tr>
+            <td class="keys">Пол:</td>
+            <td>
+                <div ng-show="!editMode">{{ user.gender }}</div>
+                <input type="text" ng-model="user.gender" ng-show="editMode"></td>
+        </tr>
+        <tr>
+            <td class="keys">Адрес:</td>
+            <td>
+                <div ng-show="!editMode">{{ user.address }}</div>
+                <input type="text" ng-model="user.address" ng-show="editMode"></td>
+        </tr>
+        <tr>
+            <td class="keys">Email:</td>
+            <td>
+                <div ng-show="!editMode">{{ user.email }}</div>
+                <input type="text" ng-model="user.email" ng-show="editMode"></td>
+        </tr>
+    </table>
+    <div class="edit" ng-click="toggleMode()" ng-show="!editMode">Редактировать</div>
+    <div class="save" ng-click="toggleMode()" ng-show="editMode">Сохранить</div>
+    <div class="removeContact" ng-click="removeContact($index)">Удалить</div>
+</div>

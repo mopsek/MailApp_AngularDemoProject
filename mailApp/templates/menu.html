@@ -4,13 +4,19 @@
         <div id="loginOut">Выйти</div>
         <div id="settingsButton"></div>
     </div>
+    <div class="settingsMenu" ng-show="false">
+        <ul>
+            <li>Настройки профиля</li>
+            <li>Контакты</li>
+        </ul>
+    </div>
     <div id="newLetter" ng-click="menu.setDirectory('newLetterForm'); menu.create()">Написать письмо</div>
     <div class="newLetterMenu" ng-show="menu.checkDirectory('newLetterForm')">
         <div id="send" ng-click="menu.moveTo('sent')">Отправить</div>
         <div id="save" ng-click="menu.moveTo('drafts')">Сохранить черновик</div>
     </div>
     <div class="previewLetterMenu" ng-show="menu.checkDirectory('preview')">
-        <div id="reply" ng-show="menu.getPreviewDir() === 'inbox'">Ответить</div>
+        <div id="reply"  ng-show="menu.getPreviewDir() === 'inbox'"  ng-click="menu.repply(letter.sender)">Ответить</div>
         <div id="recover" ng-show="menu.getPreviewDir() === 'trash'" ng-click="menu.recover()">Восстановить</div>
         <div id="edit" ng-show="menu.getPreviewDir() === 'drafts'" ng-click="menu.setDirectory('newLetterForm')">Редактировать черновик</div>
         <div id="delete" ng-click="menu.remove()">Удалить</div>

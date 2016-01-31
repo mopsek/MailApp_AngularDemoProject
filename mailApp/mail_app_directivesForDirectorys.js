@@ -102,4 +102,26 @@ angular.module('mailApp').directive('favorites', function() {
             scope.directory = 'favorites'
         }
     }
-})
+});
+
+angular.module('mailApp').directive('contacts', function(letterController) {
+   return {
+       restrict: 'E',
+       templateUrl: 'mailApp/templates/forMainContainer/contacts.html',
+       scope: {
+           users: '='
+       },
+       link: function(scope) {
+           scope.newUser = {};
+           scope.addContact = function() {
+               scope.users.push(scope.newUser);
+               scope.newUser = {};
+               letterController.saveUserToStorage();
+           };
+           scope.removeContact = function(id) {
+               scope.users.splice(id, 1);
+               letterController.saveUserToStorage();
+           };
+       }
+   }
+});

@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Иванов Иван",
+    "birthDate": "1976.10.10",
+    "gender": "М",
+    "address": "ул. Звенигороская, 47б",
+    "email": "ivanov@mail.ru",
+    "avatar": "https://randomuser.me/api/portraits/thumb/men/57.jpg"
+  },
+  {
+    "name": "Василий Юрочкин",
+    "birthDate": "09.02.1980",
+    "gender": "М",
+    "address": "ул. Ваньковского, 23/3-70",
+    "email": "goopv123@mail.com"
+  },
+  {
+    "name": "Петров Петр",
+    "birthDate": "1957.01.14",
+    "gender": "М",
+    "address": "ул.Пушкиская, 13",
+    "email": "petrov@mail.ru",
+    "avatar": "https://randomuser.me/api/portraits/thumb/men/7.jpg"
+  },
+  {
+    "name": "Натальина Наталья",
+    "birthDate": "1990.07.03",
+    "gender": "Ж",
+    "address": "ул. Лермонтова, 59",
+    "email": "natali@mail.ru",
+    "avatar": "https://randomuser.me/api/portraits/thumb/women/7.jpg"
+  },
+  {
+    "name": "Юрий Васичкин",
+    "birthDate": "19.12.1973",
+    "gender": "М",
+    "address": "ул. Коржумякиного, 3/20-98",
+    "email": "goopv123@mail.com"
+  }
+]

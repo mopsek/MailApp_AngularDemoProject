@@ -34,6 +34,23 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
     var base = {},
         selected = {};
 
+    base.users = window.localStorage.users ? JSON.parse(window.localStorage.users) : getUsers();
+
+    function getUsers() {
+        $http.get('mails/users.json').
+            success(function(data) {
+                base.users = data;
+            }).
+            error(function(err,status){
+                console.log(err + status);
+            });
+    }
+
+    function saveUsersToStorage() {
+        if (!window.localStorage) return;
+        window.localStorage.users = JSON.stringify(base.users);
+    }
+
     (function initialisation() {
         var def = $q.defer();
         setTimeout(function() {
@@ -50,7 +67,7 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
     })().then(function(data) {
         base.letters = data;
         dirController.finishInit();
-        dirController.setActiveDir('inbox');
+        dirController.setActiveDir('contacts');
     });
 
     function setInfo(scope) {
@@ -66,11 +83,11 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         setInfo(scope);
     }
 
-    function createLetter() {
+    function createLetter(to) {
         selected.letter = {
             date: new Date().getTime(),
             sender: 'I',
-            to: '',
+            to: to || '',
             tittle: '',
             content: '',
             info: ''
@@ -123,12 +140,13 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
 
     return {
         base: base,
-        select: selectLetter,
         selected: selected,
+        select: selectLetter,
         remove: removeLetter,
         recover: recoverLetter,
         setTo: setToDir,
-        create: createLetter
+        create: createLetter,
+        saveUserToStorage: saveUsersToStorage
     }
 
 });

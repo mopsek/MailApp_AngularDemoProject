@@ -254,6 +254,35 @@ header {
     cursor: pointer;
 }
 
+/* settingsMenu */
+.settingsMenu {
+    position:absolute;
+    background-color: rgba(205,212,219, 0.93);
+    border: solid rgba(199, 207, 214, 0.7) 2px;
+    border-radius: 0.5em;
+    top: 3em;
+    right: 5.5em;
+    padding: 0.4em 0.6em;
+    cursor: default;
+    z-index: 100;
+    color: black;
+}
+
+.settingsMenu:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 10px solid;
+    border-bottom-color: rgba(199, 207, 214, 0.8);
+    bottom: 103%;
+    left: 85%;
+    border-top-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+}
+
+
 /* ---------------------------- */
 
 /* ---- New Letter Form ---- */
@@ -402,3 +431,115 @@ preview .back:hover {
 }
 
 /* ---------------- */
+
+/* --------- Contacts -------------*/
+
+contacts .tittle {
+    font-size: 3em;
+    text-align: center;
+    margin-top: 0.6em;
+    color: rgba(205, 212, 219, 1);
+    text-shadow: 2px 1px 9px rgba(205, 212, 219, 0.9);
+    font-style: italic;
+}
+
+contacts .tittle .line {
+    border-top: solid 1px #8a0000;
+    width: 5em;
+    display: inline-block;
+    vertical-align: top;
+    box-shadow: 0 8px 7px -7px rgba(255,52,52,1);
+}
+
+contacts .contact {
+    width: 90%;
+    margin: 1em auto;
+    border-bottom: 2px solid green;
+}
+
+contacts .contact .avatar {
+    margin-bottom: 1em;
+    float: left;
+    box-shadow: 0 0 30px 4px rgba(255,52,52,1);
+}
+
+contacts .contact .avatar img {
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+contacts .contact .info,
+contacts .newUser .info {
+    float: left;
+    margin-left: 4em;
+    margin-bottom: 1em;
+}
+
+contacts .info td {
+    padding: 0.2em 0;
+}
+
+contacts .info td:nth-child(2) div {
+    font-style: italic;
+    font-size: 1.1em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+contacts .info .keys {
+    font-size: 1.6em;
+    font-weight: bold;
+    font-style: italic;
+    padding-right: 1em;
+}
+
+contacts .info input {
+    background-color: rgba(0, 0, 0, 0);
+    color: #F4F1B4;
+    border: 1px groove rgba(205, 212, 219, 1);
+    font: italic 1.1em 'Open Sans', sans-Serif;
+}
+
+contacts .edit,
+contacts .save,
+contacts .addContact,
+contacts .removeContact {
+    float: left;
+    margin-left: 2em;
+    color: #6a6d86;
+    text-decoration: underline;
+    font-size: 1.05em;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+contacts .removeContact {
+    color: #8a0000;
+}
+
+contacts .edit:hover,
+contacts .removeContact:hover {
+    text-shadow: 3px 0 9px rgba(255, 0, 0, 1);
+    transition: 0.8s;
+}
+
+contacts .save:hover,
+contacts .addContact:hover {
+    text-shadow: 3px 0 9px rgba(0, 255, 0, 1);
+    transition: 0.8s;
+}
+
+contacts .newUser {
+    width: 90%;
+    margin: 1em auto;
+}
+
+
+contacts .newUserTittle {
+    float: left;
+    font-size: 1.6em;
+    font-weight: bold;
+    padding-top: 0.4em;
+    margin-right: 2em;
+    text-decoration: underline;
+}
