@@ -543,3 +543,15 @@ contacts .newUserTittle {
     margin-right: 2em;
     text-decoration: underline;
 }
+
+contacts .info .contactEmail {
+    text-decoration: underline;
+    color: #688668;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+contacts .info .contactEmail:hover {
+    color: #726dae ;
+    transition: 0.4s;
+}

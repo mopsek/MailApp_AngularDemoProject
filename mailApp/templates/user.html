@@ -32,7 +32,7 @@
         <tr>
             <td class="keys">Email:</td>
             <td>
-                <div ng-show="!editMode">{{ user.email }}</div>
+                <div class="contactEmail" ng-click="mailTo(user.email)" ng-show="!editMode">{{ user.email }}</div>
                 <input type="text" ng-model="user.email" ng-show="editMode"></td>
         </tr>
     </table>

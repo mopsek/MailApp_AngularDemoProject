@@ -104,7 +104,7 @@ angular.module('mailApp').directive('favorites', function() {
     }
 });
 
-angular.module('mailApp').directive('contacts', function(letterController) {
+angular.module('mailApp').directive('contacts', function(letterController, dirController) {
    return {
        restrict: 'E',
        templateUrl: 'mailApp/templates/forMainContainer/contacts.html',
@@ -122,6 +122,10 @@ angular.module('mailApp').directive('contacts', function(letterController) {
                scope.users.splice(id, 1);
                letterController.saveUserToStorage();
            };
+           scope.mailTo = function(mail) {
+               letterController.create(mail);
+               dirController.setActiveDir('newLetterForm')
+           }
        }
    }
 });
