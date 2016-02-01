@@ -4,7 +4,6 @@ angular.module('mailApp').directive('letter', function(letterController, dirCont
         templateUrl: 'mailApp/templates/letter.html',
         link: function(scope) {
             scope.preview = function(scope) {
-                debugger;
                 letterController.select(scope);
                 dirController.setActiveDir('preview');
                 if (scope.letter.unread) scope.letter.unread = false;
