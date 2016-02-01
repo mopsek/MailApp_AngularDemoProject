@@ -105,9 +105,9 @@ html, body {
     background-size: contain;
 }
 
-.unreaded {
+.unread {
     font-weight: bold;
-    color: red;
+    color: #8a0000;
 }
 
 /* ----------------- */
@@ -218,6 +218,23 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     cursor: pointer;
+    transition: 0.6s;
+}
+
+#settingsButton:hover {
+    background-image: url("../img/settingsActive.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 25px 1px rgba(255, 0, 0, 1);
+    transition: 0.6s;
+}
+
+#settingsButton.activeSetting {
+    background-image: url("../img/settingsActive.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 25px 1px rgba(255, 0, 0, 1);
+    transition: 0.6s;
 }
 
 .letterMenu {
@@ -257,6 +274,7 @@ header {
 /* settingsMenu */
 .settingsMenu {
     position:absolute;
+    width: 10em;
     background-color: rgba(205,212,219, 0.93);
     border: solid rgba(199, 207, 214, 0.7) 2px;
     border-radius: 0.5em;
@@ -274,12 +292,24 @@ header {
     width: 0;
     height: 0;
     border: 10px solid;
-    border-bottom-color: rgba(199, 207, 214, 0.8);
+    border-bottom-color: rgba(199, 207, 214, 0.93);
     bottom: 103%;
     left: 85%;
     border-top-color: rgba(0, 0, 0, 0);
     border-left-color: rgba(0, 0, 0, 0);
     border-right-color: rgba(0, 0, 0, 0);
+}
+
+.settingsMenu ul li:not(:last-child) {
+    margin-bottom: 0.3em;
+}
+
+.settingsMenu ul li {
+    cursor: pointer;
+}
+
+.settingsMenu ul li:hover {
+    text-decoration: underline;
 }
 
 
@@ -482,12 +512,12 @@ contacts .info td {
 
 contacts .info td:nth-child(2) div {
     font-style: italic;
-    font-size: 1.1em;
+    font-size: 1em;
     font-family: 'Open Sans', sans-serif;
 }
 
 contacts .info .keys {
-    font-size: 1.6em;
+    font-size: 1.4em;
     font-weight: bold;
     font-style: italic;
     padding-right: 1em;
@@ -497,7 +527,7 @@ contacts .info input {
     background-color: rgba(0, 0, 0, 0);
     color: #F4F1B4;
     border: 1px groove rgba(205, 212, 219, 1);
-    font: italic 1.1em 'Open Sans', sans-Serif;
+    font: italic 1em 'Open Sans', sans-Serif;
 }
 
 contacts .edit,

@@ -1,8 +1,9 @@
 angular.module('mailApp', []);
 
-angular.module('mailApp').factory('dirController', function() {
+angular.module('mailApp').factory('dirController', function($document) {
     var _activeDir = 'Loading',
-        initialization = true;
+        initialization = true,
+        showMenu = false;
 
     function finishInit() {
         initialization = false;
@@ -22,7 +23,10 @@ angular.module('mailApp').factory('dirController', function() {
         return activeClass;
     }
 
+
+
     return {
+        showMenu: showMenu,
         finishInit: finishInit,
         checkDirClass: setDirActiveClass,
         setActiveDir: setActiveDir,
@@ -67,7 +71,7 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
     })().then(function(data) {
         base.letters = data;
         dirController.finishInit();
-        dirController.setActiveDir('contacts');
+        dirController.setActiveDir('inbox');
     });
 
     function setInfo(scope) {

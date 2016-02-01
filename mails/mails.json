@@ -1,18 +1,49 @@
 {
   "inbox": [
     {
+      "date": 1474294087915,
+      "sender": "Натальина Наталья",
+      "to": "Me",
+      "tittle": "Самое первое письмо на данный момент",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus, elit vitae elementum convallis, mauris ipsum posuere magna, sit amet sodales quam enim a libero. Phasellus consectetur blandit velit eget varius. Pellentesque volutpat, elit molestie finibus pharetra, tortor urna egestas neque, at gravida ligula turpis a lorem. Nullam non lorem id neque ultrices dignissim. Aliquam ipsum nulla, pellentesque ut diam id, faucibus cursus lectus. Cras sodales consequat ex vel aliquet. Sed sit amet laoreet magna, ac convallis augue. Ut diam nisi, placerat eu nibh sit amet, euismod fringilla urna. Integer hendrerit tellus non diam congue dapibus. Nunc pretium sem felis, semper iaculis sapien ornare eu. Quisque nec luctus tortor.Donec ullamcorper, dolor ac maximus ornare, nulla nulla facilisis ipsum, id laoreet arcu erat eu mi. Morbi quam libero, vehicula eu felis at, bibendum rutrum nibh. Morbi vel sapien a turpis rhoncus tempor. Etiam scelerisque magna ac leo lacinia, sed accumsan ipsum lacinia. Cras leo metus, laoreet vitae ipsum et, mattis molestie tellus. Morbi pharetra diam sit amet velit gravida volutpat. Etiam vel blandit arcu, a accumsan quam.Vestibulum ac neque turpis. Curabitur convallis leo risus, eget ornare lorem sollicitudin a. Praesent in quam ipsum. Aenean ornare feugiat mauris, a iaculis nulla rhoncus et. Cras scelerisque risus vel leo finibus dapibus. Ut interdum tincidunt nisi sed mattis. Donec quis finibus sapien. Quisque porta posuere tristique. Integer in interdum eros, vel eleifend dolor. Sed sed lacinia enim, in interdum dolor.In posuere tellus id ante suscipit, id sollicitudin erat facilisis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris tincidunt, ipsum iaculis eleifend sagittis, magna nisi malesuada nunc, congue rutrum sem nunc in ligula. Aliquam ut eros fermentum, tincidunt nibh sed, mattis urna. Proin velit dui, scelerisque a ullamcorper sit amet, porttitor at dui. Nunc nec eros leo. Curabitur hendrerit accumsan condimentum. Morbi tincidunt ornare scelerisque. Donec vel efficitur nibh. Ut eu aliquet velit, id viverra mauris.",
+      "favorite": false,
+      "unread": true
+    },
+    {
+      "date": 1424246887915,
+      "sender": "Иванов Иван",
+      "to": "Me",
+      "tittle": "Просто обычная тема для нового письма",
+      "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+      "favorite": false,
+      "unread": true
+    },
+    {
+      "date": 1414274887915,
+      "sender": "Петров Петр",
+      "to": "Me",
+      "tittle": "Вот такая вот тема у письма",
+      "content": "Нет ни элитных, ни «слабеньких». В самой крупной школе страны учится 960 учеников. В самой маленькой — 11. Все имеют абсолютно одинаковое оборудование, возможности и пропорциональное финансирование. Почти все школы — государственные, есть десяток частно-государственных. Разница, кроме того, что родители вносят частичную оплату, — в повышенных требованиях к ученикам. Как правило, это своеобразные «педагогические» лаборатории, следующие выбранной педагогике: Монтессори, Френе, Мортана и Вальдорфская школы. К частным относятся и учреждения с преподаванием на английском, немецком, французском Следуя принципу равенства, в Финляндии существует параллельная система образования «от детских садов до университетов» на шведском языке. Не забыты и интересы саамского народа, на севере страны можно обучаться на родном языке.До недавнего времени финнам было запрещено выбирать школу, следовало отдавать детей в «ближайшую». Запрет сняли, но большинство родителей так и отдают детей «поближе», ведь все школы одинаково хороши.",
+      "favorite": true,
+      "unread": false
+    },
+    {
       "date": 1288320000000,
       "sender": "Masha Dashkina",
       "to": "Me",
       "tittle": "Letter not Found",
-      "content": "Mopnn fyc hvh hctrxxrc vguutdc c hh! Jbvgh ug hvnv  v uyuyguy uygug v vjk jgcxdxseetk. Lnjnkvzwyuo[lkdx"
+      "content": "Mopnn fyc hvh hctrxxrc vguutdc c hh! Jbvgh ug hvnv  v uyuyguy uygug v vjk jgcxdxseetk. Lnjnkvzwyuo[lkdx",
+      "favorite": true,
+      "unread": false
     },
     {
       "date": 1288323623006,
       "sender": "Masha Dashkina",
       "to": "Me",
       "tittle": "Hello! It`s your turn!",
-      "content": "mkmklmklkj bouiytf rt utrdutrf tfyf yguyg uhiuhiuh igkvf yvf ytvy tvf ytft"
+      "content": "mkmklmklkj bouiytf rt utrdutrf tfyf yguyg uhiuhiuh igkvf yvf ytvy tvf ytft",
+      "favorite": false,
+      "unread": false
     }
   ],
   "sent": [
@@ -21,21 +52,27 @@
       "sender": "I",
       "to": "Petya Koshkin",
       "tittle": "Big news today! ",
-      "content": "Omkwefkwe wefkmwkef krg wkjrg wongowt gwotgmwormgwkrg ka! Pmskld sdslv sb s bs bkrmbkamdfkl avalfkvmalf vakvlakv l?sdsl,dsdf sfkfkfml!"
+      "content": "Omkwefkwe wefkmwkef krg wkjrg wongowt gwotgmwormgwkrg ka! Pmskld sdslv sb s bs bkrmbkamdfkl avalfkvmalf vakvlakv l?sdsl,dsdf sfkfkfml!",
+      "favorite": false,
+      "unread": false
     },
     {
       "date": 1288321111111,
       "sender": "I",
       "to": "Masha Dashkina",
       "tittle": "Letter not Found",
-      "content": "Not for this sdmklsf law !ml efmwlefm wklmP fmwelkmfw .wefwef wefwefwlkmefl weflkwmefwdioidvsoidnwoefnwke fwkefdkfmsdfef wefkmdlfkmsdf"
+      "content": "Not for this sdmklsf law !ml efmwlefm wklmP fmwelkmfw .wefwef wefwefwlkmefl weflkwmefwdioidvsoidnwoefnwke fwkefdkfmsdfef wefkmdlfkmsdf",
+      "favorite": true,
+      "unread": false
     },
     {
       "date": 1288326666666,
       "sender": "I",
       "to": "Vasya Petkin",
       "tittle": "Realy very-very-very big-big-big title!!!!!!!",
-      "content": "nothing interesting nothing interesting nothing interesting nothing interesting nothing interesting nothing interesting nothing interesting nothing interesting"
+      "content": "nothing interesting nothing interesting nothing interesting nothing interesting nothing interesting nothing interesting nothing interesting nothing interesting",
+      "favorite": false,
+      "unread": false
     }
   ],
   "trash": [
@@ -44,11 +81,41 @@
       "sender": "Katya Dikaya",
       "to": "Me",
       "tittle": "!!!Nice to eat you!!!",
-      "content": "Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! "
+      "content": "Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! Vary tasty! ",
+      "favorite": false,
+      "unread": false
     }
   ],
   "drafts": [],
-  "favorites": []
+  "favorites": [
+    {
+      "date": 1288320000000,
+      "sender": "Masha Dashkina",
+      "to": "Me",
+      "tittle": "Letter not Found",
+      "content": "Mopnn fyc hvh hctrxxrc vguutdc c hh! Jbvgh ug hvnv  v uyuyguy uygug v vjk jgcxdxseetk. Lnjnkvzwyuo[lkdx",
+      "favorite": true,
+      "unread": false
+    },
+    {
+      "date": 1288321111111,
+      "sender": "I",
+      "to": "Masha Dashkina",
+      "tittle": "Letter not Found",
+      "content": "Not for this sdmklsf law !ml efmwlefm wklmP fmwelkmfw .wefwef wefwefwlkmefl weflkwmefwdioidvsoidnwoefnwke fwkefdkfmsdfef wefkmdlfkmsdf",
+      "favorite": true,
+      "unread": false
+    },
+    {
+      "date": 1414274887915,
+      "sender": "Петров Петр",
+      "to": "Me",
+      "tittle": "Вот такая вот тема у письма",
+      "content": "Нет ни элитных, ни «слабеньких». В самой крупной школе страны учится 960 учеников. В самой маленькой — 11. Все имеют абсолютно одинаковое оборудование, возможности и пропорциональное финансирование. Почти все школы — государственные, есть десяток частно-государственных. Разница, кроме того, что родители вносят частичную оплату, — в повышенных требованиях к ученикам. Как правило, это своеобразные «педагогические» лаборатории, следующие выбранной педагогике: Монтессори, Френе, Мортана и Вальдорфская школы. К частным относятся и учреждения с преподаванием на английском, немецком, французском Следуя принципу равенства, в Финляндии существует параллельная система образования «от детских садов до университетов» на шведском языке. Не забыты и интересы саамского народа, на севере страны можно обучаться на родном языке.До недавнего времени финнам было запрещено выбирать школу, следовало отдавать детей в «ближайшую». Запрет сняли, но большинство родителей так и отдают детей «поближе», ведь все школы одинаково хороши.",
+      "favorite": true,
+      "unread": false
+    }
+  ]
 }
 
 

@@ -2,12 +2,11 @@
     <div id="user">Моя_Почта@где-то.там</div>
     <div class="userSettings">
         <div id="loginOut">Выйти</div>
-        <div id="settingsButton"></div>
+        <div id="settingsButton" ></div>
     </div>
-    <div class="settingsMenu" ng-show="false">
+    <div class="settingsMenu" ng-show="showMenu" >
         <ul>
-            <li>Настройки профиля</li>
-            <li>Контакты</li>
+            <li ng-click="menu.setDirectory('contacts')">Контакты</li>
         </ul>
     </div>
     <div id="newLetter" ng-click="menu.setDirectory('newLetterForm'); menu.create()">Написать письмо</div>

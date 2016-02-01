@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57f7562b-5f69-45af-b48d-8aa3fb74d345" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mailApp/mail_app_directivesForDirectorys.js" afterPath="$PROJECT_DIR$/mailApp/mail_app_directivesForDirectorys.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/Thumbs.db" afterPath="$PROJECT_DIR$/img/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mailApp/templates/letter.html" afterPath="$PROJECT_DIR$/mailApp/templates/letter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mailApp/mail_app.js" afterPath="$PROJECT_DIR$/mailApp/mail_app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mailApp/mail_app_directives.js" afterPath="$PROJECT_DIR$/mailApp/mail_app_directives.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mails/mails.json" afterPath="$PROJECT_DIR$/mails/mails.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/master.css" afterPath="$PROJECT_DIR$/css/master.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mailApp/templates/user.html" afterPath="$PROJECT_DIR$/mailApp/templates/user.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mailApp/templates/menu.html" afterPath="$PROJECT_DIR$/mailApp/templates/menu.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Mailer.iws" />
@@ -30,30 +34,17 @@
         <entry file="file://$PROJECT_DIR$/mailApp/mail_app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="56" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="81" />
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
-                <element signature="e#94#701#0" expanded="false" />
-                <element signature="e#1938#2197#0" expanded="false" />
-                <element signature="e#2232#2303#0" expanded="false" />
-                <element signature="e#2573#2672#0" expanded="false" />
-                <element signature="e#2700#2755#0" expanded="false" />
-                <element signature="e#2796#3739#0" expanded="false" />
-                <element signature="e#3770#3906#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mail_app_directives.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mailApp/mail_app_directives.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="53" selection-start-line="39" selection-start-column="53" selection-end-line="39" selection-end-column="53" />
-              <folding>
-                <element signature="e#88#1099#0" expanded="false" />
-                <element signature="e#1582#1892#0" expanded="false" />
-                <element signature="e#1951#3503#0" expanded="false" />
-                <element signature="e#3571#4071#0" expanded="false" />
+                <element signature="e#859#4232#0" expanded="false" />
+                <element signature="e#2000#2259#0" expanded="false" />
+                <element signature="e#2294#2365#0" expanded="false" />
+                <element signature="e#2635#2734#0" expanded="false" />
+                <element signature="e#2762#2817#0" expanded="false" />
+                <element signature="e#2858#3801#0" expanded="false" />
+                <element signature="e#3832#3968#0" expanded="false" />
+                <element signature="e#4294#5309#0" expanded="false" />
+                <element signature="e#5374#5460#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -63,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/mailApp/mail_app_directivesForDirectorys.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="126" column="56" selection-start-line="126" selection-start-column="56" selection-end-line="126" selection-end-column="56" />
+              <caret line="106" column="90" selection-start-line="106" selection-start-column="90" selection-end-line="106" selection-end-column="90" />
               <folding>
                 <element signature="e#63#318#0" expanded="false" />
                 <element signature="e#384#637#0" expanded="false" />
@@ -73,6 +64,7 @@
                 <element signature="e#1726#2066#0" expanded="false" />
                 <element signature="e#2127#2377#0" expanded="false" />
                 <element signature="e#2441#2697#0" expanded="false" />
+                <element signature="e#2791#3535#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -81,8 +73,8 @@
       <file leaf-file-name="My_mail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/My_mail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.076923">
-              <caret line="26" column="82" selection-start-line="26" selection-start-column="82" selection-end-line="26" selection-end-column="82" />
+            <state vertical-scroll-proportion="-17.538462">
+              <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
               <folding>
                 <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -90,12 +82,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mailApp/templates/user.html">
+      <file leaf-file-name="menu.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mailApp/templates/menu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6344086">
-              <caret line="34" column="69" selection-start-line="34" selection-start-column="69" selection-end-line="34" selection-end-column="69" />
+            <state vertical-scroll-proportion="-4.576923">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mail_app_directives.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mailApp/mail_app_directives.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.50513697">
+              <caret line="117" column="96" selection-start-line="117" selection-start-column="96" selection-end-line="117" selection-end-column="96" />
+              <folding>
+                <element signature="e#88#1397#0" expanded="false" />
+                <element signature="e#210#1388#0" expanded="false" />
+                <element signature="e#1472#1809#0" expanded="false" />
+                <element signature="e#1880#2190#0" expanded="false" />
+                <element signature="e#4590#5090#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,7 +112,7 @@
         <entry file="file://$PROJECT_DIR$/css/master.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="554" column="18" selection-start-line="554" selection-start-column="18" selection-end-line="554" selection-end-column="18" />
+              <caret line="236" column="21" selection-start-line="236" selection-start-column="21" selection-end-line="236" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -143,24 +151,24 @@
         <option value="$PROJECT_DIR$/mailApp/templates/newLetter.html" />
         <option value="$PROJECT_DIR$/mailApp/templates/forMainContainer/ch.html" />
         <option value="$PROJECT_DIR$/mailApp/templates/mailDirectories.html" />
-        <option value="$PROJECT_DIR$/mails/mails.json" />
         <option value="$PROJECT_DIR$/mailApp/templates/forMainContainer/sentLetters.html" />
         <option value="$PROJECT_DIR$/mailApp/templates/forMainContainer/inboxLetters.html" />
         <option value="$PROJECT_DIR$/mailApp/templates/forMainContainer/cartLetters.html" />
         <option value="$PROJECT_DIR$/mailApp/templates/forMainContainer/drafts.html" />
         <option value="$PROJECT_DIR$/mailApp/templates/forMainContainer/favorites.html" />
-        <option value="$PROJECT_DIR$/mailApp/templates/letter.html" />
         <option value="$PROJECT_DIR$/mailApp/templates/forMainContainer/preview.html" />
-        <option value="$PROJECT_DIR$/mailApp/templates/menu.html" />
         <option value="$PROJECT_DIR$/mails/user.json" />
         <option value="$PROJECT_DIR$/mails/users.json" />
         <option value="$PROJECT_DIR$/My_mail.html" />
         <option value="$PROJECT_DIR$/mailApp/templates/forMainContainer/contacts.html" />
-        <option value="$PROJECT_DIR$/mailApp/mail_app_directives.js" />
-        <option value="$PROJECT_DIR$/mailApp/mail_app.js" />
-        <option value="$PROJECT_DIR$/css/master.css" />
         <option value="$PROJECT_DIR$/mailApp/mail_app_directivesForDirectorys.js" />
         <option value="$PROJECT_DIR$/mailApp/templates/user.html" />
+        <option value="$PROJECT_DIR$/mails/mails.json" />
+        <option value="$PROJECT_DIR$/mailApp/templates/letter.html" />
+        <option value="$PROJECT_DIR$/mailApp/mail_app.js" />
+        <option value="$PROJECT_DIR$/mailApp/templates/menu.html" />
+        <option value="$PROJECT_DIR$/css/master.css" />
+        <option value="$PROJECT_DIR$/mailApp/mail_app_directives.js" />
       </list>
     </option>
   </component>
@@ -322,8 +330,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -454,18 +462,78 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/mailApp/mail_app_directivesForDirectorys.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="106" column="90" selection-start-line="106" selection-start-column="90" selection-end-line="106" selection-end-column="90" />
+          <folding>
+            <element signature="e#63#318#0" expanded="false" />
+            <element signature="e#384#637#0" expanded="false" />
+            <element signature="e#703#957#0" expanded="false" />
+            <element signature="e#1021#1193#0" expanded="false" />
+            <element signature="e#1264#1651#0" expanded="false" />
+            <element signature="e#1726#2066#0" expanded="false" />
+            <element signature="e#2127#2377#0" expanded="false" />
+            <element signature="e#2441#2697#0" expanded="false" />
+            <element signature="e#2791#3535#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/My_mail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="82" selection-start-line="26" selection-start-column="82" selection-end-line="26" selection-end-column="82" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mailApp/templates/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mailApp/mail_app_directives.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="115" column="43" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
+          <folding>
+            <element signature="e#88#1397#0" expanded="false" />
+            <element signature="e#210#1388#0" expanded="false" />
+            <element signature="e#1472#1809#0" expanded="false" />
+            <element signature="e#1880#2190#0" expanded="false" />
+            <element signature="e#4590#5090#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/master.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mailApp/mail_app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="60" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
           <folding>
-            <element signature="e#94#701#0" expanded="false" />
-            <element signature="e#1938#2197#0" expanded="false" />
-            <element signature="e#2232#2303#0" expanded="false" />
-            <element signature="e#2573#2672#0" expanded="false" />
-            <element signature="e#2700#2755#0" expanded="false" />
-            <element signature="e#2796#3739#0" expanded="false" />
-            <element signature="e#3770#3906#0" expanded="false" />
+            <element signature="e#859#4232#0" expanded="false" />
+            <element signature="e#2000#2259#0" expanded="false" />
+            <element signature="e#2294#2365#0" expanded="false" />
+            <element signature="e#2635#2734#0" expanded="false" />
+            <element signature="e#2762#2817#0" expanded="false" />
+            <element signature="e#2858#3801#0" expanded="false" />
+            <element signature="e#3832#3968#0" expanded="false" />
+            <element signature="e#4294#5309#0" expanded="false" />
+            <element signature="e#5374#5460#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -475,10 +543,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
           <folding>
-            <element signature="e#88#1099#0" expanded="false" />
-            <element signature="e#1582#1892#0" expanded="false" />
-            <element signature="e#1951#3503#0" expanded="false" />
-            <element signature="e#3571#4071#0" expanded="false" />
+            <element signature="e#88#1397#0" expanded="false" />
+            <element signature="e#210#1388#0" expanded="false" />
+            <element signature="e#1472#1809#0" expanded="false" />
+            <element signature="e#1880#2190#0" expanded="false" />
+            <element signature="e#4590#5090#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -496,6 +565,7 @@
             <element signature="e#1726#2066#0" expanded="false" />
             <element signature="e#2127#2377#0" expanded="false" />
             <element signature="e#2441#2697#0" expanded="false" />
+            <element signature="e#2791#3535#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -525,13 +595,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
           <folding>
-            <element signature="e#94#701#0" expanded="false" />
-            <element signature="e#1938#2197#0" expanded="false" />
-            <element signature="e#2232#2303#0" expanded="false" />
-            <element signature="e#2573#2672#0" expanded="false" />
-            <element signature="e#2700#2755#0" expanded="false" />
-            <element signature="e#2796#3739#0" expanded="false" />
-            <element signature="e#3770#3906#0" expanded="false" />
+            <element signature="e#859#4232#0" expanded="false" />
+            <element signature="e#2000#2259#0" expanded="false" />
+            <element signature="e#2294#2365#0" expanded="false" />
+            <element signature="e#2635#2734#0" expanded="false" />
+            <element signature="e#2762#2817#0" expanded="false" />
+            <element signature="e#2858#3801#0" expanded="false" />
+            <element signature="e#3832#3968#0" expanded="false" />
+            <element signature="e#4294#5309#0" expanded="false" />
+            <element signature="e#5374#5460#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -551,13 +623,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#94#701#0" expanded="false" />
-            <element signature="e#1938#2197#0" expanded="false" />
-            <element signature="e#2232#2303#0" expanded="false" />
-            <element signature="e#2573#2672#0" expanded="false" />
-            <element signature="e#2700#2755#0" expanded="false" />
-            <element signature="e#2796#3739#0" expanded="false" />
-            <element signature="e#3770#3906#0" expanded="false" />
+            <element signature="e#859#4232#0" expanded="false" />
+            <element signature="e#2000#2259#0" expanded="false" />
+            <element signature="e#2294#2365#0" expanded="false" />
+            <element signature="e#2635#2734#0" expanded="false" />
+            <element signature="e#2762#2817#0" expanded="false" />
+            <element signature="e#2858#3801#0" expanded="false" />
+            <element signature="e#3832#3968#0" expanded="false" />
+            <element signature="e#4294#5309#0" expanded="false" />
+            <element signature="e#5374#5460#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -577,13 +651,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#94#701#0" expanded="false" />
-            <element signature="e#1938#2197#0" expanded="false" />
-            <element signature="e#2232#2303#0" expanded="false" />
-            <element signature="e#2573#2672#0" expanded="false" />
-            <element signature="e#2700#2755#0" expanded="false" />
-            <element signature="e#2796#3739#0" expanded="false" />
-            <element signature="e#3770#3906#0" expanded="false" />
+            <element signature="e#859#4232#0" expanded="false" />
+            <element signature="e#2000#2259#0" expanded="false" />
+            <element signature="e#2294#2365#0" expanded="false" />
+            <element signature="e#2635#2734#0" expanded="false" />
+            <element signature="e#2762#2817#0" expanded="false" />
+            <element signature="e#2858#3801#0" expanded="false" />
+            <element signature="e#3832#3968#0" expanded="false" />
+            <element signature="e#4294#5309#0" expanded="false" />
+            <element signature="e#5374#5460#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -611,13 +687,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="168" column="21" selection-start-line="168" selection-start-column="21" selection-end-line="168" selection-end-column="21" />
           <folding>
-            <element signature="e#94#701#0" expanded="false" />
-            <element signature="e#1938#2197#0" expanded="false" />
-            <element signature="e#2232#2303#0" expanded="false" />
-            <element signature="e#2573#2672#0" expanded="false" />
-            <element signature="e#2700#2755#0" expanded="false" />
-            <element signature="e#2796#3739#0" expanded="false" />
-            <element signature="e#3770#3906#0" expanded="false" />
+            <element signature="e#859#4232#0" expanded="false" />
+            <element signature="e#2000#2259#0" expanded="false" />
+            <element signature="e#2294#2365#0" expanded="false" />
+            <element signature="e#2635#2734#0" expanded="false" />
+            <element signature="e#2762#2817#0" expanded="false" />
+            <element signature="e#2858#3801#0" expanded="false" />
+            <element signature="e#3832#3968#0" expanded="false" />
+            <element signature="e#4294#5309#0" expanded="false" />
+            <element signature="e#5374#5460#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -645,13 +723,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="168" column="21" selection-start-line="168" selection-start-column="21" selection-end-line="168" selection-end-column="21" />
           <folding>
-            <element signature="e#94#701#0" expanded="false" />
-            <element signature="e#1938#2197#0" expanded="false" />
-            <element signature="e#2232#2303#0" expanded="false" />
-            <element signature="e#2573#2672#0" expanded="false" />
-            <element signature="e#2700#2755#0" expanded="false" />
-            <element signature="e#2796#3739#0" expanded="false" />
-            <element signature="e#3770#3906#0" expanded="false" />
+            <element signature="e#859#4232#0" expanded="false" />
+            <element signature="e#2000#2259#0" expanded="false" />
+            <element signature="e#2294#2365#0" expanded="false" />
+            <element signature="e#2635#2734#0" expanded="false" />
+            <element signature="e#2762#2817#0" expanded="false" />
+            <element signature="e#2858#3801#0" expanded="false" />
+            <element signature="e#3832#3968#0" expanded="false" />
+            <element signature="e#4294#5309#0" expanded="false" />
+            <element signature="e#5374#5460#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -679,13 +759,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#94#701#0" expanded="false" />
-            <element signature="e#1938#2197#0" expanded="false" />
-            <element signature="e#2232#2303#0" expanded="false" />
-            <element signature="e#2573#2672#0" expanded="false" />
-            <element signature="e#2700#2755#0" expanded="false" />
-            <element signature="e#2796#3739#0" expanded="false" />
-            <element signature="e#3770#3906#0" expanded="false" />
+            <element signature="e#859#4232#0" expanded="false" />
+            <element signature="e#2000#2259#0" expanded="false" />
+            <element signature="e#2294#2365#0" expanded="false" />
+            <element signature="e#2635#2734#0" expanded="false" />
+            <element signature="e#2762#2817#0" expanded="false" />
+            <element signature="e#2858#3801#0" expanded="false" />
+            <element signature="e#3832#3968#0" expanded="false" />
+            <element signature="e#4294#5309#0" expanded="false" />
+            <element signature="e#5374#5460#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -725,7 +807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +819,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="60" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,7 +826,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="37" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -754,7 +833,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="60" selection-start-line="0" selection-start-column="60" selection-end-line="0" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -762,15 +840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="60" selection-start-line="0" selection-start-column="60" selection-end-line="0" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mails/mails.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0053763">
-          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -778,7 +847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="60" selection-start-line="0" selection-start-column="60" selection-end-line="0" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -790,19 +858,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mailApp/templates/letter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923">
-          <caret line="2" column="80" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mailApp/templates/forMainContainer/preview.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09139785">
           <caret line="3" column="94" selection-start-line="3" selection-start-column="94" selection-end-line="3" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,15 +869,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27419356">
           <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mailApp/templates/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2437276">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,15 +876,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mails/users.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8637993">
-          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -842,61 +883,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.5232975">
           <caret line="50" column="59" selection-start-line="50" selection-start-column="59" selection-end-line="50" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mailApp/templates/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5125448">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mails/users.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.5">
+          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mails/mails.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.653847">
+          <caret line="116" column="5" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mailApp/templates/letter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="1" column="56" selection-start-line="1" selection-start-column="56" selection-end-line="1" selection-end-column="56" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/My_mail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923">
-          <caret line="26" column="82" selection-start-line="26" selection-start-column="82" selection-end-line="26" selection-end-column="82" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mailApp/mail_app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="56" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="81" />
-          <folding>
-            <element signature="e#94#701#0" expanded="false" />
-            <element signature="e#1938#2197#0" expanded="false" />
-            <element signature="e#2232#2303#0" expanded="false" />
-            <element signature="e#2573#2672#0" expanded="false" />
-            <element signature="e#2700#2755#0" expanded="false" />
-            <element signature="e#2796#3739#0" expanded="false" />
-            <element signature="e#3770#3906#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/master.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="554" column="18" selection-start-line="554" selection-start-column="18" selection-end-line="554" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mailApp/mail_app_directives.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="53" selection-start-line="39" selection-start-column="53" selection-end-line="39" selection-end-column="53" />
-          <folding>
-            <element signature="e#88#1099#0" expanded="false" />
-            <element signature="e#1582#1892#0" expanded="false" />
-            <element signature="e#1951#3503#0" expanded="false" />
-            <element signature="e#3571#4071#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mailApp/mail_app_directivesForDirectorys.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="126" column="56" selection-start-line="126" selection-start-column="56" selection-end-line="126" selection-end-column="56" />
+          <caret line="106" column="90" selection-start-line="106" selection-start-column="90" selection-end-line="106" selection-end-column="90" />
           <folding>
             <element signature="e#63#318#0" expanded="false" />
             <element signature="e#384#637#0" expanded="false" />
@@ -906,15 +928,66 @@
             <element signature="e#1726#2066#0" expanded="false" />
             <element signature="e#2127#2377#0" expanded="false" />
             <element signature="e#2441#2697#0" expanded="false" />
+            <element signature="e#2791#3535#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mailApp/templates/user.html">
+    <entry file="file://$PROJECT_DIR$/mailApp/mail_app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6344086">
-          <caret line="34" column="69" selection-start-line="34" selection-start-column="69" selection-end-line="34" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="e#859#4232#0" expanded="false" />
+            <element signature="e#2000#2259#0" expanded="false" />
+            <element signature="e#2294#2365#0" expanded="false" />
+            <element signature="e#2635#2734#0" expanded="false" />
+            <element signature="e#2762#2817#0" expanded="false" />
+            <element signature="e#2858#3801#0" expanded="false" />
+            <element signature="e#3832#3968#0" expanded="false" />
+            <element signature="e#4294#5309#0" expanded="false" />
+            <element signature="e#5374#5460#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/My_mail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.538462">
+          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mailApp/templates/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/master.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="236" column="21" selection-start-line="236" selection-start-column="21" selection-end-line="236" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mailApp/mail_app_directives.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50513697">
+          <caret line="117" column="96" selection-start-line="117" selection-start-column="96" selection-end-line="117" selection-end-column="96" />
+          <folding>
+            <element signature="e#88#1397#0" expanded="false" />
+            <element signature="e#210#1388#0" expanded="false" />
+            <element signature="e#1472#1809#0" expanded="false" />
+            <element signature="e#1880#2190#0" expanded="false" />
+            <element signature="e#4590#5090#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
