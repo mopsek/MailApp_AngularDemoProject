@@ -25,6 +25,7 @@
       <loading ng-show="directory.active('Loading')" destroy="directory.destroy()"></loading>
       <preview ng-show="directory.active('preview')" selected="directory.selected"></preview>
       <contacts ng-show="directory.active('contacts')" users="directory.base.users"></contacts>
+      <filtered-letters ng-show="directory.active('filteredLetters')" letters="directory.base.letters.inbox" user="directory.selected.user"></filtered-letters>
   </div>
 
   <script src="mailApp/mail_app.js"></script>

@@ -4,6 +4,7 @@ angular.module('mailApp').directive('letter', function(letterController, dirCont
         templateUrl: 'mailApp/templates/letter.html',
         link: function(scope) {
             scope.preview = function(scope) {
+                debugger;
                 letterController.select(scope);
                 dirController.setActiveDir('preview');
                 if (scope.letter.unread) scope.letter.unread = false;
@@ -39,7 +40,7 @@ angular.module('mailApp').directive('letter', function(letterController, dirCont
     };
 });
 
-angular.module('mailApp').directive('user', function(letterController) {
+angular.module('mailApp').directive('user', function(letterController, dirController) {
     return {
         restrict: 'E',
         templateUrl: 'mailApp/templates/user.html',
@@ -48,6 +49,14 @@ angular.module('mailApp').directive('user', function(letterController) {
             scope.toggleMode = function() {
                 scope.editMode = !scope.editMode;
                 letterController.saveUserToStorage();
+            };
+
+            scope.selectUser = function() {
+                if (!scope.user.email) {
+                    alert('У данного контакта нет Email!!!')
+                }
+                letterController.selected.user = scope.user.name;
+                dirController.setActiveDir('filteredLetters')
             }
         }
     }

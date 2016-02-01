@@ -1,0 +1,2 @@
+<div class="back" ng-click="filterDir.back()">&#8592 <div class="backText">Вернуться к контактам</div></div>
+<letter ng-repeat="letter in letters | filter: user | orderBy: 'date': true"  ng-click="preview(this)"></letter>

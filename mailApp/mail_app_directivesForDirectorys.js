@@ -129,3 +129,23 @@ angular.module('mailApp').directive('contacts', function(letterController, dirCo
        }
    }
 });
+
+angular.module('mailApp').directive('filteredLetters', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'mailApp/templates/forMainContainer/filteredLetters.html',
+        scope: {
+            letters: '=',
+            user: '='
+        },
+        controller: function(dirController) {
+            this.back = function() {
+                dirController.setActiveDir('contacts')
+            }
+        },
+        controllerAs: 'filterDir',
+        link: function(scope) {
+            scope.directory = 'inbox';
+        }
+    }
+});
