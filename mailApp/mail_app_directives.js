@@ -3,34 +3,18 @@ angular.module('mailApp').directive('letter', function(letterController, dirCont
         restrict: 'E',
         templateUrl: 'mailApp/templates/letter.html',
         link: function(scope) {
+
+            scope.remove = function($event) {
+                $event.preventDefault();
+                letterController.removeLetter(scope.letter)
+            };
+
             scope.preview = function(scope) {
-                letterController.select(scope);
-                dirController.setActiveDir('preview');
+                var index = letterController.base.letters[scope.directory].indexOf(scope.letter);
+                dirController.setActiveDir('preview',{dir: scope.directory, index: index});
                 if (scope.letter.unread) scope.letter.unread = false;
             };
 
-            scope.remove = function(sc, event) {
-
-                event.stopPropagation();
-                letterController.remove(sc);
-            };
-
-            scope.toggleFavorite = function(sc, event) {
-                event.stopPropagation();
-                if (sc.letter.favorite) {
-                    letterController.remove(sc, sc.letter);
-                    sc.letter.favorite = false;
-                } else {
-                    letterController.select(sc);
-                    sc.letter.link = letterController.selected;
-                    letterController.setTo('favorites');
-                    sc.letter.favorite = true;
-                }
-            };
-
-            scope.checkFavoriteClass = function(favorite) {
-                return favorite ? 'activeFavorite' : '';
-            };
 
             scope.checkUnreadClass = function() {
                 return scope.letter.unread ? 'unread' : ''
@@ -78,40 +62,18 @@ angular.module('mailApp').directive('menu', function($document) {
         restrict: 'E',
         templateUrl: 'mailApp/templates/menu.html',
         scope: {},
-        controller: function (dirController, letterController) {
-            var self = this;
-
+        controller: function (dirController, letterController, $stateParams) {
             this.setDirectory = dirController.setActiveDir;
-            this.checkDirectory = dirController.compareDir;
-            this.recover = letterController.recover;
-            this.create = letterController.create;
+            this.currentState = dirController.currentState;
 
             this.getPreviewDir = function() {
                 if (!letterController.selected.letter) return;
-                return letterController.selected.letter.info.dir;
+                return $stateParams.directory;
             };
 
-            this.remove = function() {
-                letterController.remove();
-                dirController.setActiveDir(letterController.selected.letter.info.dir)
-            };
+            this.remove = letterController.removeLetter;
 
-            this.moveTo = function(to) {
-                if (letterController.selected.letter.$$hashKey && to === 'drafts') {
-                    dirController.setActiveDir(to);
-                    return;
-                } else if (letterController.selected.letter.$$hashKey && to === 'sent') {
-                    letterController.remove();
-                }
-                letterController.setTo(to);
-                letterController.selected.letter.fromDir = to;
-                dirController.setActiveDir(to);
-            };
 
-            this.repply = function() {
-                letterController.create(letterController.selected.letter.sender);
-                dirController.setActiveDir('newLetterForm');
-            };
         },
         controllerAs: 'menu',
         link: function(scope) {
@@ -139,9 +101,8 @@ angular.module('mailApp').directive('mainContainer', function() {
             var self = this;
 
             this.base = letterController.base;
-            this.active = dirController.compareDir;
             this.selected = letterController.selected;
-
+            this.newLetter = letterController.newLetter;
 
 
             this.destroy = function() {

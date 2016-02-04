@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="./css/reset.css">
     <link rel="stylesheet" type="text/css" href="./css/master.css">
     <script data-require="angular.js@1.4.8" data-semver="1.4.8" src="mailApp/angularjs1.4.8.js"></script>
+    <script src="mailApp/ui-router.js"></script>
 </head>
 
 <body>
@@ -15,21 +16,14 @@
 
   <mail-directories></mail-directories>
 
-  <div id="mainContainer" main-container>
-      <inbox-letters ng-show="directory.active('inbox')" letters="directory.base.letters.inbox"></inbox-letters>
-      <drafts ng-show="directory.active('drafts')" letters="directory.base.letters.drafts"></drafts>
-      <sent-letters ng-show="directory.active('sent')" letters="directory.base.letters.sent"></sent-letters>
-      <favorites ng-show="directory.active('favorites')" letters="directory.base.letters.favorites"></favorites>
-      <cart-letters ng-show="directory.active('trash')" letters="directory.base.letters.trash"></cart-letters>
-      <new-letter ng-show="directory.active('newLetterForm')" selected="directory.selected"></new-letter>
-      <loading ng-show="directory.active('Loading')" destroy="directory.destroy()"></loading>
-      <preview ng-show="directory.active('preview')" selected="directory.selected"></preview>
-      <contacts ng-show="directory.active('contacts')" users="directory.base.users"></contacts>
-      <filtered-letters ng-show="directory.active('filteredLetters')" letters="directory.base.letters.inbox" user="directory.selected.user"></filtered-letters>
+  <div id="mainContainer" main-container ui-view>
+
+      <filtered-letters ng-show="false" letters="directory.base.letters.inbox" user="directory.selected.user"></filtered-letters>
   </div>
 
   <script src="mailApp/mail_app.js"></script>
   <script src="mailApp/mail_app_directives.js"></script>
   <script src="mailApp/mail_app_directivesForDirectories.js"></script>
+  <script src="mailApp/router-config.js"></script>
 </body>
 </html>

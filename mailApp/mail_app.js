@@ -1,42 +1,45 @@
-angular.module('mailApp', []);
+angular.module('mailApp', ['ui.router']);
 
-angular.module('mailApp').factory('dirController', function($document) {
-    var _activeDir = 'Loading',
-        initialization = true,
+angular.module('mailApp').factory('dirController', function($state) {
+    var initialization = true,
         showMenu = false;
+
+    function getState() {
+        return  $state.current.name.slice(5);
+    }
 
     function finishInit() {
         initialization = false;
     }
 
-    function setActiveDir(val) {
+    function setActiveDir(val, params_obj) {
         if (initialization) return;
-        _activeDir = val;
-    }
-
-    function compareDir(val) {
-        return val === _activeDir;
+        if (val === 'preview') {
+            $state.go('mail.' + val, {directory: params_obj.dir, index: params_obj.index});
+            return;
+        }
+        $state.go('mail.' + val)
     }
 
     function setDirActiveClass(val) {
-        var activeClass = _activeDir === val ? 'activeDir' : '';
+        var activeClass = getState() === val ? 'activeDir' : '';
         return activeClass;
     }
-
-
 
     return {
         showMenu: showMenu,
         finishInit: finishInit,
         checkDirClass: setDirActiveClass,
         setActiveDir: setActiveDir,
-        compareDir: compareDir
+        currentState: getState
     }
 });
 
-angular.module('mailApp').factory('letterController', function($q, $http, dirController) {
+angular.module('mailApp').factory('letterController', function($q, $http, dirController, $stateParams) {
     var base = {},
-        selected = {};
+        selected = {},
+        newLetter = {};
+
 
     base.users = window.localStorage.users ? JSON.parse(window.localStorage.users) : getUsers();
 
@@ -74,82 +77,30 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         dirController.setActiveDir('inbox');
     });
 
-    function setInfo(scope) {
-       if (!scope.letter.fromDir) scope.letter.fromDir = scope.directory;
-        scope.letter.info = {};
-        scope.letter.info.dir = scope.directory;
-        scope.letter.info.index = base.letters[scope.letter.info.dir].indexOf(selected.letter);
-
-    }
-
-    function selectLetter(scope) {
-        selected.letter = scope.letter;
-        setInfo(scope);
-    }
-
-    function createLetter(to) {
-        selected.letter = {
-            date: new Date().getTime(),
-            sender: 'I',
-            to: to || '',
-            tittle: '',
-            content: '',
-            info: ''
-        };
+    function moveToDir(dir) {
+        base.letter[dir].push(selected.letter);
     }
 
     function removeFromDir() {
-        var now = selected.letter.info;
-        base.letters[now.dir].splice(now.index, 1);
+        console.log(dirController.currentState())
+       // var index = base.letters[dirController.currentState()].indexOf(selected.letter);
+        //base.letters[dirController.currentState()].splice(index, 1)
     }
 
-    function setToDir(to) {
-        base.letters[to].push(selected.letter);
-    }
-
-    function removeLetter(scope, link) {
-        if(scope) selectLetter(scope);
-        if (link || (selected.letter.link && selected.letter.info.dir !== 'favorites')) {
-            var fav = base.letters.favorites;
-            fav.splice(fav.indexOf(link), 1);
-            delete selected.letter.link;
-            if (link) return;
-        }
-        switch (selected.letter.info.dir) {
-            case 'drafts':
-                removeFromDir();
-                break;
-            case 'favorites':
-                var pos = base.letters[selected.letter.fromDir].indexOf(selected.letter);
-                base.letters[selected.letter.fromDir].splice(pos, 1);
-                delete selected.letter.link;
-                removeFromDir();
-                setToDir('trash');
-                break;
-            case 'trash':
-                removeFromDir();
-                break;
-            default:
-                removeFromDir();
-                setToDir('trash');
-        }
-    }
-
-    function recoverLetter() {
-        var to = selected.letter.fromDir;
+    function removeLetter(letter) {
+        if (letter) selected.letter = letter;
         removeFromDir();
-        setToDir(to);
-        dirController.setActiveDir(to);
+        //dirController.setActiveDir(dirController.currentState());
+       // if(selected.letter.deleted === false) {
+       //     moveToDir('trash')
+        //}
     }
 
     return {
         base: base,
         selected: selected,
-        select: selectLetter,
-        remove: removeLetter,
-        recover: recoverLetter,
-        setTo: setToDir,
-        create: createLetter,
+        newLetter: newLetter,
+        removeLetter: removeLetter,
         saveUserToStorage: saveUsersToStorage
     }
 

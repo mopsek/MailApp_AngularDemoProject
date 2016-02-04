@@ -70,11 +70,14 @@ angular.module('mailApp').directive('preview', function(dirController) {
         scope: {
             selected: '='
         },
-        link: function(scope) {
-            scope.back = function() {
-                dirController.setActiveDir(scope.selected.letter.info.dir)
+        controller: function($stateParams, letterController) {
+            letterController.selected.letter = letterController.base.letters[$stateParams.directory][$stateParams.index];
+
+            this.back = function() {
+                dirController.setActiveDir($stateParams.directory)
             }
-        }
+        },
+        controllerAs: 'preview'
     }
 });
 
