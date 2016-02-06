@@ -4,8 +4,8 @@ angular.module('mailApp').directive('letter', function(letterController, dirCont
         templateUrl: 'mailApp/templates/letter.html',
         link: function(scope) {
 
-            scope.remove = function($event) {
-                $event.preventDefault();
+            scope.remove = function(event) {
+                event.stopPropagation();
                 letterController.removeLetter(scope.letter)
             };
 
@@ -72,7 +72,19 @@ angular.module('mailApp').directive('menu', function($document) {
             };
 
             this.remove = letterController.removeLetter;
+            this.recover = letterController.recoverLetter;
+            this.send = letterController.moveNewLetter;
+            this.edit = letterController.editDraft;
 
+            this.newLetter = function() {
+                letterController.newLetter.letter = {};
+                dirController.setActiveDir('newLetterForm');
+            };
+
+            this.replay = function() {
+                letterController.newLetter.letter.to = letterController.selected.letter.sender;
+                dirController.setActiveDir('newLetterForm');
+            }
 
         },
         controllerAs: 'menu',

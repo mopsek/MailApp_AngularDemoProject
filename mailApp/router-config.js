@@ -27,7 +27,7 @@ angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
         })
         .state('mail.newLetterForm', {
             url: '/new_letter',
-            template: '<new-letter newLetter="directory.newLetter"></new-letter>'
+            template: '<new-letter new="directory.newLetter"></new-letter>'
         })
         .state('mail.contacts', {
             url: '/contacts',

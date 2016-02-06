@@ -9,7 +9,7 @@
       "favorite": false,
       "unread": false,
       "directory": "inbox",
-      "deleted": "false"
+      "deleted": false
     },
     {
       "date": 1222224887915,
@@ -20,7 +20,7 @@
       "favorite": false,
       "unread": false,
       "directory": "inbox",
-      "deleted": "false"
+      "deleted": false
     },
     {
       "date": 1474294087915,
@@ -31,7 +31,7 @@
       "favorite": false,
       "unread": true,
       "directory": "inbox",
-      "deleted": "false"
+      "deleted": false
     },
     {
       "date": 1424246887915,
@@ -42,7 +42,7 @@
       "favorite": false,
       "unread": true,
       "directory": "inbox",
-      "deleted": "false"
+      "deleted": false
     },
     {
       "date": 1414274887915,
@@ -53,7 +53,7 @@
       "favorite": false,
       "unread": false,
       "directory": "inbox",
-      "deleted": "false"
+      "deleted": false
     },
     {
       "date": 1288320000000,
@@ -64,7 +64,7 @@
       "favorite": false,
       "unread": false,
       "directory": "inbox",
-      "deleted": "false"
+      "deleted": false
     },
     {
       "date": 1288323623006,
@@ -75,7 +75,7 @@
       "favorite": false,
       "unread": false,
       "directory": "inbox",
-      "deleted": "false"
+      "deleted": false
     }
   ],
   "sent": [
@@ -88,7 +88,7 @@
       "favorite": false,
       "unread": false,
       "directory": "sent",
-      "deleted": "false"
+      "deleted": false
     },
     {
       "date": 1288321111111,
@@ -99,7 +99,7 @@
       "favorite": true,
       "unread": false,
       "directory": "sent",
-      "deleted": "false"
+      "deleted": false
     },
     {
       "date": 1288326666666,
@@ -110,7 +110,7 @@
       "favorite": false,
       "unread": false,
       "directory": "sent",
-      "deleted": "false"
+      "deleted": false
     }
   ],
   "trash": [
@@ -123,7 +123,7 @@
       "favorite": false,
       "unread": false,
       "directory": "inbox",
-      "deleted": "true"
+      "deleted": true
     }
   ],
   "drafts": [],

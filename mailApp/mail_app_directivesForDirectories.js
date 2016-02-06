@@ -42,7 +42,7 @@ angular.module('mailApp').directive('newLetter', function() {
         restrict: 'E',
         templateUrl: 'mailApp/templates/forMainContainer/newLetter.html',
         scope: {
-            selected: '='
+            new: '='
         }
     }
 });

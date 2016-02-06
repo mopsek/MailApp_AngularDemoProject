@@ -38,7 +38,9 @@ angular.module('mailApp').factory('dirController', function($state) {
 angular.module('mailApp').factory('letterController', function($q, $http, dirController, $stateParams) {
     var base = {},
         selected = {},
-        newLetter = {};
+        newLetter = {
+            letter: {}
+        };
 
 
     base.users = window.localStorage.users ? JSON.parse(window.localStorage.users) : getUsers();
@@ -78,22 +80,67 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
     });
 
     function moveToDir(dir) {
-        base.letter[dir].push(selected.letter);
+        base.letters[dir].push(selected.letter);
     }
 
     function removeFromDir() {
-        console.log(dirController.currentState())
-       // var index = base.letters[dirController.currentState()].indexOf(selected.letter);
-        //base.letters[dirController.currentState()].splice(index, 1)
+        var currentDir = dirController.currentState();
+        if (currentDir === 'preview') currentDir = $stateParams.directory;
+        var index = base.letters[currentDir].indexOf(selected.letter);
+        base.letters[currentDir].splice(index, 1)
     }
 
     function removeLetter(letter) {
+        var currentDir = dirController.currentState();
+        if (currentDir === 'preview') currentDir = $stateParams.directory;
         if (letter) selected.letter = letter;
         removeFromDir();
-        //dirController.setActiveDir(dirController.currentState());
-       // if(selected.letter.deleted === false) {
-       //     moveToDir('trash')
-        //}
+        dirController.setActiveDir(currentDir);
+        if(selected.letter.deleted === false && selected.letter.directory !== 'drafts') {
+            selected.letter.deleted = true;
+            moveToDir('trash')
+        }
+    }
+
+    function recoverLetter() {
+        removeFromDir();
+        moveToDir(selected.letter.directory);
+        selected.letter.deleted = false;
+        dirController.setActiveDir(selected.letter.directory)
+    }
+
+    function setInfo(dir) {
+        var obj = {
+            sender: 'I',
+            date: new Date().getTime(),
+            favorite: false,
+            unread: false,
+            deleted: false,
+            directory: dir
+        };
+
+        for (var key in obj) selected.letter[key] = obj[key];
+        selected.letter.tittle = selected.letter.tittle || 'Без темы...';
+        selected.letter.content = selected.letter.content || '';
+    }
+
+    function moveNewLetter(dir) {
+        selected.letter = newLetter.letter;
+        setInfo(dir);
+        if (dir === 'sent' && !selected.letter.to) {
+            alert('Нет адреса получателя!!!');
+            return;
+        }
+        moveToDir(dir);
+        dirController.setActiveDir(dir);
+        newLetter.letter = {};
+    }
+
+    function editDraft() {
+        newLetter.letter = selected.letter;
+        selected.letter = {};
+        removeFromDir();
+        dirController.setActiveDir('newLetterForm');
     }
 
     return {
@@ -101,6 +148,9 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         selected: selected,
         newLetter: newLetter,
         removeLetter: removeLetter,
+        recoverLetter: recoverLetter,
+        moveNewLetter: moveNewLetter,
+        editDraft: editDraft,
         saveUserToStorage: saveUsersToStorage
     }
 

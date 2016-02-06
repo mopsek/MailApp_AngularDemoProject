@@ -9,15 +9,15 @@
             <li ng-click="menu.setDirectory('contacts')">Контакты</li>
         </ul>
     </div>
-    <div id="newLetter" ng-click="menu.setDirectory('newLetterForm')">Написать письмо</div>
+    <div id="newLetter" ng-click="menu.newLetter()">Написать письмо</div>
     <div class="newLetterMenu" ng-show="menu.currentState() === 'newLetterForm'">
-        <div id="send" ng-click="">Отправить</div>
-        <div id="save" ng-click="">Сохранить черновик</div>
+        <div id="send" ng-click="menu.send('sent')">Отправить</div>
+        <div id="save" ng-click="menu.send('drafts')">Сохранить черновик</div>
     </div>
     <div class="previewLetterMenu" ng-show="menu.currentState() === 'preview'">
-        <div id="reply"  ng-show="menu.getPreviewDir() === 'inbox'"  ng-click="">Ответить</div>
-        <div id="recover" ng-show="menu.getPreviewDir() === 'trash'" ng-click="">Восстановить</div>
-        <div id="edit" ng-show="menu.getPreviewDir() === 'drafts'" ng-click="">Редактировать черновик</div>
+        <div id="reply"  ng-show="menu.getPreviewDir() === 'inbox'"  ng-click="menu.replay()">Ответить</div>
+        <div id="recover" ng-show="menu.getPreviewDir() === 'trash'" ng-click="menu.recover()">Восстановить</div>
+        <div id="edit" ng-show="menu.getPreviewDir() === 'drafts'" ng-click="menu.edit()">Редактировать черновик</div>
         <div id="delete" ng-click="menu.remove()">Удалить</div>
     </div>
 
