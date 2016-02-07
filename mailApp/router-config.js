@@ -23,7 +23,7 @@ angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
         })
         .state('mail.favorites', {
             url: '/favorites',
-            template: '<favorites letters="directory.base.letters.favorites"></favorites>'
+            template: '<favorites inbox="directory.base.letters.inbox" sent="directory.base.letters.sent"></favorites>'
         })
         .state('mail.newLetterForm', {
             url: '/new_letter',
@@ -40,6 +40,10 @@ angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
         .state('loading', {
             url: "/loading",
             template: '<loading destroy="directory.destroy()"></loading>'
+        })
+        .state('mail.filtered', {
+            url: '/filtered',
+            template: '<filtered-letters letters="directory.base.letters.inbox" user="directory.selected.user"></filtered-letters>'
         });
 
     $urlRouterProvider.otherwise('/loading')

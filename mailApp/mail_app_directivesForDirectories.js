@@ -71,7 +71,9 @@ angular.module('mailApp').directive('preview', function(dirController) {
             selected: '='
         },
         controller: function($stateParams, letterController) {
-            letterController.selected.letter = letterController.base.letters[$stateParams.directory][$stateParams.index];
+            var directory = $stateParams.directory;
+            if (directory === 'filtered') directory = 'inbox';
+            letterController.selected.letter = letterController.base.letters[directory][$stateParams.index];
 
             this.back = function() {
                 dirController.setActiveDir($stateParams.directory)
@@ -99,7 +101,8 @@ angular.module('mailApp').directive('favorites', function() {
         restrict: 'E',
         templateUrl: 'mailApp/templates/forMainContainer/favorites.html',
         scope: {
-            letters: '='
+            inbox: '=',
+            sent: '='
         },
         link: function(scope) {
             scope.directory = 'favorites'
@@ -126,7 +129,9 @@ angular.module('mailApp').directive('contacts', function(letterController, dirCo
                letterController.saveUserToStorage();
            };
            scope.mailTo = function(mail) {
-               letterController.create(mail);
+               letterController.newLetter.letter = {
+                   to: mail
+               };
                dirController.setActiveDir('newLetterForm')
            }
        }
@@ -148,7 +153,7 @@ angular.module('mailApp').directive('filteredLetters', function() {
         },
         controllerAs: 'filterDir',
         link: function(scope) {
-            scope.directory = 'inbox';
+            scope.directory = 'filtered';
         }
     }
 });

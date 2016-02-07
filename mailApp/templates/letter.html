@@ -8,5 +8,5 @@
         {{ letter.content | short_content }}
     </p>
     <div class="remove" ng-click="remove($event)"></div>
-    <div class="addToFavorite" ng-click="" ng-class=""></div>
+    <div class="addToFavorite" ng-click="toggleFavorite(letter, $event)" ng-class="checkFavorite()"></div>
 </div>

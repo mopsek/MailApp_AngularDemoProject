@@ -124,7 +124,7 @@ html, body {
     background-image: url("../img/mailDirSel.png");
     background-position: right;
     background-repeat: repeat-y;
-    color: #cdd4db;
+    color: rgba(205, 212, 219, 0.7);
 }
 
 
@@ -142,7 +142,7 @@ html, body {
     background-image: url("../img/mailDirSel.png");;
     background-position: right;
     background-repeat: repeat-y;
-    transition: 0.5s;
+    transition: 0.8s;
 }
 
 #mailDir div:hover {
@@ -150,14 +150,28 @@ html, body {
     background-image: url("../img/mailDirSelHov.png");
     background-position: right;
     background-repeat: repeat-y;
-    transition: 0.5s;
+    transition: 0.8s;
 }
 
 #mailDir .activeDir {
     background-image: url("../img/mailDirSelHov.png");
     background-position: right;
     background-repeat: repeat-y;
+
+
 }
+
+#mailDir .activeDir span {
+    box-shadow: 0 10px 30px -7px #FF0000;
+    text-shadow: 5px 0 10px rgba(255, 0, 0, 1);
+    text-decoration: underline;
+    transition: 0.8s;
+}
+
+#mailDir .activeDir2 {
+    background-color: white;
+}
+
 
 /* --------------------- */
 

@@ -1,6 +1,6 @@
 angular.module('mailApp', ['ui.router']);
 
-angular.module('mailApp').factory('dirController', function($state) {
+angular.module('mailApp').factory('dirController', function($state, $timeout) {
     var initialization = true,
         showMenu = false;
 
@@ -21,8 +21,11 @@ angular.module('mailApp').factory('dirController', function($state) {
         $state.go('mail.' + val)
     }
 
+    var classD = 'activeDir';
+
     function setDirActiveClass(val) {
-        var activeClass = getState() === val ? 'activeDir' : '';
+        var activeClass = getState() === val ? classD : '';
+
         return activeClass;
     }
 
@@ -86,14 +89,18 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
     function removeFromDir() {
         var currentDir = dirController.currentState();
         if (currentDir === 'preview') currentDir = $stateParams.directory;
+        if (currentDir === 'favorites' || currentDir === 'filtered') currentDir = selected.letter.directory;
         var index = base.letters[currentDir].indexOf(selected.letter);
         base.letters[currentDir].splice(index, 1)
     }
 
     function removeLetter(letter) {
+        if (letter) selected.letter = letter;
         var currentDir = dirController.currentState();
         if (currentDir === 'preview') currentDir = $stateParams.directory;
-        if (letter) selected.letter = letter;
+        if (selected.letter.favorite) {
+            toggleFavorite(selected.letter);
+        }
         removeFromDir();
         dirController.setActiveDir(currentDir);
         if(selected.letter.deleted === false && selected.letter.directory !== 'drafts') {
@@ -143,6 +150,11 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         dirController.setActiveDir('newLetterForm');
     }
 
+    function toggleFavorite(letter) {
+        letter.favorite = !letter.favorite;
+    }
+
+
     return {
         base: base,
         selected: selected,
@@ -151,6 +163,7 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         recoverLetter: recoverLetter,
         moveNewLetter: moveNewLetter,
         editDraft: editDraft,
+        toggleFavorite: toggleFavorite,
         saveUserToStorage: saveUsersToStorage
     }
 

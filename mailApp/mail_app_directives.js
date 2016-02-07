@@ -10,15 +10,25 @@ angular.module('mailApp').directive('letter', function(letterController, dirCont
             };
 
             scope.preview = function(scope) {
-                var index = letterController.base.letters[scope.directory].indexOf(scope.letter);
+                var directory = scope.directory;
+                if (directory === 'filtered') directory = 'inbox';
+                var index = letterController.base.letters[directory].indexOf(scope.letter);
                 dirController.setActiveDir('preview',{dir: scope.directory, index: index});
                 if (scope.letter.unread) scope.letter.unread = false;
             };
 
+            scope.toggleFavorite = function(letter, event) {
+                if(event) event.stopPropagation();
+                letterController.toggleFavorite(letter);
+            };
 
             scope.checkUnreadClass = function() {
                 return scope.letter.unread ? 'unread' : ''
-            }
+            };
+
+            scope.checkFavorite = function() {
+                return scope.letter.favorite ? 'activeFavorite' : ''
+            };
         }
     };
 });
@@ -39,7 +49,7 @@ angular.module('mailApp').directive('user', function(letterController, dirContro
                     alert('У данного контакта нет Email!!!')
                 }
                 letterController.selected.user = scope.user.name;
-                dirController.setActiveDir('filteredLetters')
+                dirController.setActiveDir('filtered')
             }
         }
     }

@@ -17,7 +17,7 @@
       "to": "Me",
       "tittle": "faefmke e JNNKJNK NKn nkenfkwe jjjjJJJJJJ!",
       "content": "fkaldmflka dflkamdslfk aelk w;jtkr gwtr gw;jr w;jr fwekjr fwjrk fwkjrnf;kjwnr e;fkj wr;kjnf ;wjkr g;jkwrn g;jkwr g;kjw r;gjknfs;kjnsf;kjdn wkrg ;wkjrgn;kjnfg;skjdfngkjw rgkjwrng;jksnfoig[origj[woirmgwr gwkjrgkwjfng;kjndf;jgksn;kgnw; gw;krg;kwfng;skndfg;jkwnr;gkjwnr;gjnsfogmsodifmgwoeikmrgwej rgkjwerng;jkwe rgwnrgjwke rgkj gs;dfjkvfgn wjrgnwejrng;jdfg sdfgerfkqwrf ekgs fdgsndf glwekjrgn;wjerngwkjr gw;ekjrgnwirjfpoirgjsogkjernglkj rekjnrka dvnz;dfjk va; naif ka dfjvnainvna fvjka d;ifna;j ja rj aerjg eirgn;ajk gajr ;gkja er;gjknrg;jks gkjs r;ijgnerign;j rg;k r;gjn;ireng;sing;isngoinreg[oiwnrg[oiw gwnrgiwnrger g",
-      "favorite": false,
+      "favorite": true,
       "unread": false,
       "directory": "inbox",
       "deleted": false
@@ -50,7 +50,7 @@
       "to": "Me",
       "tittle": "Вот такая вот тема у письма",
       "content": "Нет ни элитных, ни «слабеньких». В самой крупной школе страны учится 960 учеников. В самой маленькой — 11. Все имеют абсолютно одинаковое оборудование, возможности и пропорциональное финансирование. Почти все школы — государственные, есть десяток частно-государственных. Разница, кроме того, что родители вносят частичную оплату, — в повышенных требованиях к ученикам. Как правило, это своеобразные «педагогические» лаборатории, следующие выбранной педагогике: Монтессори, Френе, Мортана и Вальдорфская школы. К частным относятся и учреждения с преподаванием на английском, немецком, французском Следуя принципу равенства, в Финляндии существует параллельная система образования «от детских садов до университетов» на шведском языке. Не забыты и интересы саамского народа, на севере страны можно обучаться на родном языке.До недавнего времени финнам было запрещено выбирать школу, следовало отдавать детей в «ближайшую». Запрет сняли, но большинство родителей так и отдают детей «поближе», ведь все школы одинаково хороши.",
-      "favorite": false,
+      "favorite": true,
       "unread": false,
       "directory": "inbox",
       "deleted": false
@@ -72,7 +72,7 @@
       "to": "Me",
       "tittle": "Hello! It`s your turn!",
       "content": "mkmklmklkj bouiytf rt utrdutrf tfyf yguyg uhiuhiuh igkvf yvf ytvy tvf ytft",
-      "favorite": false,
+      "favorite": true,
       "unread": false,
       "directory": "inbox",
       "deleted": false
@@ -85,7 +85,7 @@
       "to": "Petya Koshkin",
       "tittle": "Big news today! ",
       "content": "Omkwefkwe wefkmwkef krg wkjrg wongowt gwotgmwormgwkrg ka! Pmskld sdslv sb s bs bkrmbkamdfkl avalfkvmalf vakvlakv l?sdsl,dsdf sfkfkfml!",
-      "favorite": false,
+      "favorite": true,
       "unread": false,
       "directory": "sent",
       "deleted": false
@@ -96,7 +96,7 @@
       "to": "Masha Dashkina",
       "tittle": "Letter not Found",
       "content": "Not for this sdmklsf law !ml efmwlefm wklmP fmwelkmfw .wefwef wefwefwlkmefl weflkwmefwdioidvsoidnwoefnwke fwkefdkfmsdfef wefkmdlfkmsdf",
-      "favorite": true,
+      "favorite": false,
       "unread": false,
       "directory": "sent",
       "deleted": false
@@ -126,8 +126,19 @@
       "deleted": true
     }
   ],
-  "drafts": [],
-  "favorites": []
+  "drafts": [
+    {
+      "date": 1288326232323,
+      "sender": "I",
+      "to": "",
+      "tittle": "Без темы...",
+      "content": "",
+      "favorite": false,
+      "unread": false,
+      "directory": "drafts",
+      "deleted": false
+    }
+  ]
 }
 
 
