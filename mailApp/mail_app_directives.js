@@ -12,7 +12,10 @@ angular.module('mailApp').directive('letter', function(letterController, dirCont
             scope.preview = function(scope) {
                 var directory = scope.directory;
                 if (directory === 'filtered') directory = 'inbox';
-                var index = letterController.base.letters[directory].indexOf(scope.letter);
+                if (directory === 'favorites') {
+                    directory = scope.letter.directory;
+                }
+                var index = (letterController.base.letters[directory].indexOf(scope.letter)) + '_' + directory;
                 dirController.setActiveDir('preview',{dir: scope.directory, index: index});
                 if (scope.letter.unread) scope.letter.unread = false;
             };
