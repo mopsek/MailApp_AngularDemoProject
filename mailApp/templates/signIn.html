@@ -2,11 +2,18 @@
 <table>
     <tr>
         <td>Логин:</td>
-        <td><input type="text" ng-model="user.login"></td>
+        <td><input type="text" ng-model="user.login" ng-keypress="user.enter($event)"></td>
     </tr>
     <tr>
         <td>Пароль:</td>
-        <td><input type="password" ng-model="user.password"></td>
+        <td><input type="password" ng-model="user.password"ng-keypress="user.enter($event)"></td>
     </tr>
 </table>
 <div class="signIn" ng-click="user.signIn()">Войти</div>
+
+<div id="note">
+    <span class="z">Логин:</span>
+    <span>test</span>
+    <span class="z">Пороль:</span>
+    <span>123</span>
+</div>

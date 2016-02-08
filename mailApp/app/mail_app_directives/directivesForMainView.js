@@ -63,29 +63,7 @@ angular.module('mailApp').directive('loading', function(animating) {
     }
 });
 
-angular.module('mailApp').directive('preview', function(dirController) {
-    return {
-        restrict: 'E',
-        templateUrl: 'mailApp/templates/forMainContainer/preview.html',
-        scope: {
-            selected: '='
-        },
-        controller: function($stateParams, letterController) {
-            var directory = $stateParams.directory,
-                index = $stateParams.index.slice(0, 1);
-            if (directory === 'filtered') directory = 'inbox';
-            if (directory === 'favorites') {
-                directory = $stateParams.index.slice(2);
-            }
-            letterController.selected.letter = letterController.base.letters[directory][index];
 
-            this.back = function() {
-                dirController.setActiveDir($stateParams.directory)
-            }
-        },
-        controllerAs: 'preview'
-    }
-});
 
 angular.module('mailApp').directive('drafts', function() {
     return {
@@ -115,33 +93,7 @@ angular.module('mailApp').directive('favorites', function() {
     }
 });
 
-angular.module('mailApp').directive('contacts', function(letterController, dirController) {
-   return {
-       restrict: 'E',
-       templateUrl: 'mailApp/templates/forMainContainer/contacts.html',
-       scope: {
-           users: '='
-       },
-       link: function(scope) {
-           scope.newUser = {};
-           scope.addContact = function() {
-               scope.users.push(scope.newUser);
-               scope.newUser = {};
-               letterController.saveUserToStorage();
-           };
-           scope.removeContact = function(id) {
-               scope.users.splice(id, 1);
-               letterController.saveUserToStorage();
-           };
-           scope.mailTo = function(mail) {
-               letterController.newLetter.letter = {
-                   to: mail
-               };
-               dirController.setActiveDir('newLetterForm')
-           }
-       }
-   }
-});
+
 
 angular.module('mailApp').directive('filteredLetters', function() {
     return {

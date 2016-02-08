@@ -679,3 +679,13 @@ sign-in div.signIn:hover {
 sign-in table input {
     background-color: rgba(180, 175, 243, 1);
 }
+
+sign-in #note {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 1em;
+    padding: 0.5em;
+    color: red;
+    font-size: 1.4em;
+}

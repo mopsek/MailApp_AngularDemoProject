@@ -7,7 +7,15 @@ angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
         .state('mail', {
             url: '/mail',
             abstract: true,
-            templateUrl: 'mailApp/templates/main.html'
+            templateUrl: 'mailApp/templates/main.html',
+            resolve: {
+                checkPermission: function(checkData, $q, $state) {
+                    if( !checkData.getPermission() ) {
+                        $state.go('/signin');
+                        return $q.reject();
+                    }
+                }
+            }
         })
         .state('mail.inbox', {
             url: '/inbox',
