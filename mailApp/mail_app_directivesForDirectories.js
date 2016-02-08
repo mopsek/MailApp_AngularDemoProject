@@ -109,6 +109,7 @@ angular.module('mailApp').directive('favorites', function() {
             sent: '='
         },
         link: function(scope) {
+            scope.letters = scope.inbox.concat(scope.sent);
             scope.directory = 'favorites'
         }
     }

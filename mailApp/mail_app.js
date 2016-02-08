@@ -64,26 +64,30 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
     }
 
     function initialisation() {
-        var def = $q.defer();
-        setTimeout(function() {
-            $http({method: 'GET', url: 'mails/mails.json'}).
-                success(function(data){
-                    def.resolve(data)
-                }).
-                error(function(err,status){
-                    console.log(err + status);
-                });
-        }, 5000);
+        (function () {
+            var def = $q.defer();
+            setTimeout(function () {
+                $http({method: 'GET', url: 'mails/mails.json'}).
+                    success(function (data) {
+                        def.resolve(data)
+                    }).
+                    error(function (err, status) {
+                        console.log(err + status);
+                    });
+            }, 5000);
 
-        return def.promise;
+            return def.promise;
+        })().then(function (data) {
+            base.letters = data;
+            console.log(base.letters);
+            dirController.finishInit();
+            dirController.setActiveDir('inbox');
+        })
     }
 
-    function afterInit(data) {
-        base.letters = data;
-        console.log(base.letters);
-        dirController.finishInit();
-        dirController.setActiveDir('inbox');
-    }
+
+
+
 
     function moveToDir(dir) {
         base.letters[dir].push(selected.letter);
@@ -163,7 +167,6 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         selected: selected,
         newLetter: newLetter,
         init: initialisation,
-        afterInit: afterInit,
         removeLetter: removeLetter,
         recoverLetter: recoverLetter,
         moveNewLetter: moveNewLetter,
@@ -234,7 +237,7 @@ angular.module('mailApp').factory('checkData', function($http, $state, letterCon
                     alert('Вход разрешен!');
                     permission = true;
                     $state.go('mail.loading');
-                    letterController.init().then(gitletterController.afterInit(data));
+                    letterController.init()
                 } else {
                     alert('Введенный пороль не верен!')
                 }
