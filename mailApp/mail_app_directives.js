@@ -120,7 +120,7 @@ angular.module('mailApp').directive('menu', function($document) {
 
 angular.module('mailApp').directive('mainContainer', function() {
     return {
-        restrict:'A',
+        restrict:'AE',
         scope: true,
         controller: function(dirController, letterController) {
             var self = this;
@@ -140,3 +140,19 @@ angular.module('mailApp').directive('mainContainer', function() {
     }
 });
 
+angular.module('mailApp').directive('signIn', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'mailApp/templates/signIn.html',
+        scope: {},
+        controller: function(checkData){
+            this.login = '';
+            this.password = '';
+
+            this.signIn = function() {
+                checkData.signIn({login: this.login, password: this.password})
+            }
+        },
+        controllerAs: 'user'
+    }
+});

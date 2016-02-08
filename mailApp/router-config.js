@@ -1,9 +1,13 @@
 angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
+        .state('signIn', {
+            url: '/signin',
+            template: '<sign-in></sign-in>'
+        })
         .state('mail', {
             url: '/mail',
             abstract: true,
-            template: '<ui-view />'
+            templateUrl: 'mailApp/templates/main.html'
         })
         .state('mail.inbox', {
             url: '/inbox',
@@ -37,7 +41,7 @@ angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
             url: '/:directory/:index',
             template: '<preview selected="directory.selected"></preview>'
         })
-        .state('loading', {
+        .state('mail.loading', {
             url: "/loading",
             template: '<loading destroy="directory.destroy()"></loading>'
         })
@@ -46,5 +50,5 @@ angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
             template: '<filtered-letters letters="directory.base.letters.inbox" user="directory.selected.user"></filtered-letters>'
         });
 
-    $urlRouterProvider.otherwise('/loading')
+    $urlRouterProvider.otherwise('/signin')
 });

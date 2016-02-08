@@ -63,7 +63,7 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         window.localStorage.users = JSON.stringify(base.users);
     }
 
-    (function initialisation() {
+    function initialisation() {
         var def = $q.defer();
         setTimeout(function() {
             $http({method: 'GET', url: 'mails/mails.json'}).
@@ -76,11 +76,14 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         }, 5000);
 
         return def.promise;
-    })().then(function(data) {
+    }
+
+    function afterInit(data) {
         base.letters = data;
+        console.log(base.letters);
         dirController.finishInit();
         dirController.setActiveDir('inbox');
-    });
+    }
 
     function moveToDir(dir) {
         base.letters[dir].push(selected.letter);
@@ -159,6 +162,8 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         base: base,
         selected: selected,
         newLetter: newLetter,
+        init: initialisation,
+        afterInit: afterInit,
         removeLetter: removeLetter,
         recoverLetter: recoverLetter,
         moveNewLetter: moveNewLetter,
@@ -211,6 +216,37 @@ angular.module('mailApp').factory('animating', function() {
     return {
         loading: loading
 
+    }
+});
+
+angular.module('mailApp').factory('checkData', function($http, $state, letterController) {
+    var permission = false;
+
+    function getPermission() {
+        return permission;
+    }
+
+    function signIn(data) {
+        $http.get('mails/usersProfiles.json')
+            .success(function(profiles) {
+                if (!profiles[data.login]) alert('Не верный логин!');
+                if (profiles[data.login] === data.password) {
+                    alert('Вход разрешен!');
+                    permission = true;
+                    $state.go('mail.loading');
+                    letterController.init().then(gitletterController.afterInit(data));
+                } else {
+                    alert('Введенный пороль не верен!')
+                }
+            })
+            .error(function() {
+                alert('Не удалось загрузить базы...')
+            })
+    }
+
+    return {
+        getPermission: getPermission,
+        signIn: signIn
     }
 });
 

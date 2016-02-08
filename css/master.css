@@ -1,4 +1,4 @@
-html, body {
+html, body, section {
     height: 100%;
     width: 100%;
     overflow-y: hidden;
@@ -634,4 +634,48 @@ filtered-letters .backText {
 filtered-letters .back:hover {
     text-shadow: 3px 0 9px rgba(0, 255, 0, 1);
     transition: 0.8s;
+}
+
+sign-in h1 {
+    border-bottom: 1px solid rgba(205, 212, 219, 0.8);
+    width: 40%;
+    margin: 1.5em 1.5em 0.6em;
+    padding: 0.1em 0.5em;
+    font-size: 3em;
+    color: rgba(205, 212, 219, 0.8);
+    text-shadow: 2px 2px 20px rgba(205, 212, 219, 0.8);
+    box-shadow: 0 10px 20px -12px rgba(205, 212, 219, 0.8);
+}
+
+sign-in table {
+    margin-left: 6em;
+    font-size: 1.1em;
+    color: rgba(205, 212, 219, 0.8);
+}
+
+sign-in table td {
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+}
+
+sign-in div.signIn {
+    width: 3.4em;
+    height: 1.3em;
+    margin: 1.5em 13em;
+    padding-left: 0.3em;
+    border-left: 5px double rgba(205, 212, 219, 0.8);
+    line-height: 1.3em;
+    font-size: 2em;
+    color: rgba(205, 212, 219, 0.8);
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+sign-in div.signIn:hover {
+    background-color: rgba(205, 212, 219, 0.1);
+    transition: 0.8s;
+}
+
+sign-in table input {
+    background-color: rgba(180, 175, 243, 1);
 }
