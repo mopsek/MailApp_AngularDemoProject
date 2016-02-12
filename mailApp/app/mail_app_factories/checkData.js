@@ -5,6 +5,12 @@ angular.module('mailApp').factory('checkData', function($http, $state, letterCon
         return permission;
     }
 
+    function loginOut() {
+        permission = false;
+        letterController.loginOut();
+        $state.go('signIn');
+    }
+
     function signIn(data) {
         $http.get('mails/usersProfiles.json')
             .success(function(profiles) {
@@ -15,7 +21,7 @@ angular.module('mailApp').factory('checkData', function($http, $state, letterCon
                 if (profiles[data.login] === data.password) {
                     permission = true;
                     $state.go('mail.loading');
-                    letterController.init()
+                    letterController.init();
                 } else {
                     alert('Введенный пороль не верен!')
                 }
@@ -27,6 +33,7 @@ angular.module('mailApp').factory('checkData', function($http, $state, letterCon
 
     return {
         getPermission: getPermission,
-        signIn: signIn
+        signIn: signIn,
+        loginOut: loginOut
     }
 });

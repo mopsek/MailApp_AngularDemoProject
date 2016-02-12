@@ -8,6 +8,11 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
 
     base.users = window.localStorage.users ? JSON.parse(window.localStorage.users) : getUsers();
 
+    function loginOut() {
+        selected = base = {};
+        dirController.resetInit();
+    }
+
     function getUsers() {
         $http.get('mails/users.json').
             success(function(data) {
@@ -39,7 +44,6 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
             return def.promise;
         })().then(function (data) {
             base.letters = data;
-            console.log(base.letters);
             dirController.finishInit();
             dirController.setActiveDir('inbox');
         })
@@ -132,7 +136,8 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         moveNewLetter: moveNewLetter,
         editDraft: editDraft,
         toggleFavorite: toggleFavorite,
-        saveUserToStorage: saveUsersToStorage
+        saveUserToStorage: saveUsersToStorage,
+        loginOut: loginOut
     }
 
 });

@@ -58,5 +58,10 @@ angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
             template: '<filtered-letters letters="directory.base.letters.inbox" user="directory.selected.user"></filtered-letters>'
         });
 
-    $urlRouterProvider.otherwise('/signin')
+
+    $urlRouterProvider.otherwise(function ($injector) {
+        if ($injector.get('checkData').getPermission()) return '/mail/inbox';
+        return '/signin';
+    });
 });
+

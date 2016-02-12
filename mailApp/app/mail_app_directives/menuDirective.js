@@ -3,7 +3,7 @@ angular.module('mailApp').directive('menu', function($document) {
         restrict: 'E',
         templateUrl: 'mailApp/templates/menu.html',
         scope: {},
-        controller: function (dirController, letterController, $stateParams) {
+        controller: function (dirController, letterController, $stateParams, checkData) {
             this.setDirectory = dirController.setActiveDir;
             this.currentState = dirController.currentState;
 
@@ -16,6 +16,7 @@ angular.module('mailApp').directive('menu', function($document) {
             this.recover = letterController.recoverLetter;
             this.send = letterController.moveNewLetter;
             this.edit = letterController.editDraft;
+            this.loginOut = checkData.loginOut;
 
             this.newLetter = function() {
                 letterController.newLetter.letter = {};

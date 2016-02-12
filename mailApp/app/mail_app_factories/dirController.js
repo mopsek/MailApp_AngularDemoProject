@@ -10,6 +10,10 @@ angular.module('mailApp').factory('dirController', function($state) {
         initialization = false;
     }
 
+    function resetInit() {
+        initialization = true;
+    }
+
     function setActiveDir(val, params_obj) {
         if (initialization) return;
         if (val === 'preview') {
@@ -30,6 +34,7 @@ angular.module('mailApp').factory('dirController', function($state) {
     return {
         showMenu: showMenu,
         finishInit: finishInit,
+        resetInit: resetInit,
         checkDirClass: setDirActiveClass,
         setActiveDir: setActiveDir,
         currentState: getState
