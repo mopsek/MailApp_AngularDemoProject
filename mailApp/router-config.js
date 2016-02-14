@@ -7,15 +7,7 @@ angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
         .state('mail', {
             url: '/mail',
             abstract: true,
-            templateUrl: 'mailApp/templates/main.html',
-            resolve: {
-                checkPermission: function(checkData, $q, $state) {
-                    if( !checkData.getPermission() ) {
-                        $state.go('/signin');
-                        return $q.reject();
-                    }
-                }
-            }
+            templateUrl: 'mailApp/templates/main.html'
         })
         .state('mail.inbox', {
             url: '/inbox',
@@ -62,6 +54,19 @@ angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise(function ($injector) {
         if ($injector.get('checkData').getPermission()) return '/mail/inbox';
         return '/signin';
+    });
+});
+
+angular.module('mailApp').run(function($rootScope, $state, checkData, letterController) {
+    $rootScope.$on('$stateChangeStart', function(event, toState) {
+        if (checkData.getPermission() && !letterController.base.letters) {
+            checkData.continueSession();
+            return;
+        }
+        if (toState.name !=='signIn' && !checkData.getPermission()) {
+            $state.go('signIn');
+            event.preventDefault();
+        }
     });
 });
 

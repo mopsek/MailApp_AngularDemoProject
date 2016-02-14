@@ -57,7 +57,11 @@ angular.module('mailApp').directive('loading', function(animating) {
         link: function(scope, element) {
             animating.loading(element.children()[0]);
             scope.$watch('destroy', function(newV){
-                if (newV) element.remove();
+                if (newV) {
+                    element.style.display = 'none'
+                } else {
+                    element.style.display = '';
+                }
             });
         }
     }

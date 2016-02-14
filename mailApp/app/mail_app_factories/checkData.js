@@ -1,12 +1,23 @@
-angular.module('mailApp').factory('checkData', function($http, $state, letterController) {
-    var permission = false;
+angular.module('mailApp').factory('checkData', function($http, $state, letterController, dirController) {
 
     function getPermission() {
-        return permission;
+        return !!(document.cookie.indexOf('session') + 1);
+    }
+
+    function continueSession() {
+        $http({method: 'GET', url: 'mails/mails.json'}).
+            success(function (data) {
+                letterController.base.letters = data;
+                dirController.finishInit();
+                permission = true;
+            }).
+            error(function (err, status) {
+                console.log(err + status);
+            });
     }
 
     function loginOut() {
-        permission = false;
+        document.cookie = 'session=' + '; max-age=0'
         letterController.loginOut();
         $state.go('signIn');
     }
@@ -19,7 +30,7 @@ angular.module('mailApp').factory('checkData', function($http, $state, letterCon
                     return;
                 }
                 if (profiles[data.login] === data.password) {
-                    permission = true;
+                    document.cookie = 'session=' + (Math.random() + '').slice(2);
                     $state.go('mail.loading');
                     letterController.init();
                 } else {
@@ -34,6 +45,7 @@ angular.module('mailApp').factory('checkData', function($http, $state, letterCon
     return {
         getPermission: getPermission,
         signIn: signIn,
-        loginOut: loginOut
+        loginOut: loginOut,
+        continueSession: continueSession
     }
 });
