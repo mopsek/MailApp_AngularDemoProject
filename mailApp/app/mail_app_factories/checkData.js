@@ -1,15 +1,18 @@
 angular.module('mailApp').factory('checkData', function($http, $state, letterController, dirController) {
 
+    var permission = false;
+
     function getPermission() {
-        return !!(document.cookie.indexOf('session') + 1);
+        return permission;
+
     }
 
     function continueSession() {
         $http({method: 'GET', url: 'mails/mails.json'}).
             success(function (data) {
+                permission = true;
                 letterController.base.letters = data;
                 dirController.finishInit();
-                permission = true;
             }).
             error(function (err, status) {
                 console.log(err + status);
@@ -30,7 +33,7 @@ angular.module('mailApp').factory('checkData', function($http, $state, letterCon
                     return;
                 }
                 if (profiles[data.login] === data.password) {
-                    document.cookie = 'session=' + (Math.random() + '').slice(2);
+                    permission = true;
                     $state.go('mail.loading');
                     letterController.init();
                 } else {

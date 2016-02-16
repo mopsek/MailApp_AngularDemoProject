@@ -51,18 +51,12 @@ angular.module('mailApp').directive('loading', function(animating) {
     return {
         restrict: 'E',
         templateUrl: 'mailApp/templates/forMainContainer/loading.html',
-        scope: {
-            destroy: '='
+        scope: {},
+        controller: function(dirController, $state) {
+            if (!dirController.getInit()) $state.go($state.current.name)
         },
         link: function(scope, element) {
             animating.loading(element.children()[0]);
-            scope.$watch('destroy', function(newV){
-                if (newV) {
-                    element.style.display = 'none'
-                } else {
-                    element.style.display = '';
-                }
-            });
         }
     }
 });

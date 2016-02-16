@@ -14,13 +14,14 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
     }
 
     function getUsers() {
-        $http.get('mails/users.json').
-            success(function(data) {
-                base.users = data;
-            }).
-            error(function(err,status){
+        return $http.get('mails/users.json').
+            then(function(data) {
+                base.users = data.data;
+                return data;
+            }, function(err,status){
                 console.log(err + status);
             });
+
     }
 
     function saveUsersToStorage() {
@@ -29,16 +30,18 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
     }
 
     function initialisation() {
-        (function () {
+        var promise = (function () {
             var def = $q.defer();
             setTimeout(function () {
+
                 $http({method: 'GET', url: 'mails/mails.json'}).
                     success(function (data) {
-                        def.resolve(data)
+                        def.resolve(data);
                     }).
                     error(function (err, status) {
                         console.log(err + status);
                     });
+
             }, 5000);
 
             return def.promise;
@@ -46,7 +49,10 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
             base.letters = data;
             dirController.finishInit();
             dirController.setActiveDir('inbox');
-        })
+            document.cookie = 'session=' + (Math.random() + '').slice(2);
+        });
+
+        return promise;
     }
 
 
@@ -125,8 +131,22 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         letter.favorite = !letter.favorite;
     }
 
+    //// тест
+    var testV;
+    function test() {
+        return $http.get('try.json').
+            then(function(data) {
+                testV = data.data;
+                return data.data
+            });
+    }
+
+
+
 
     return {
+        testV: testV,
+        test: test,
         base: base,
         selected: selected,
         newLetter: newLetter,
@@ -137,7 +157,8 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         editDraft: editDraft,
         toggleFavorite: toggleFavorite,
         saveUserToStorage: saveUsersToStorage,
-        loginOut: loginOut
+        loginOut: loginOut,
+        getUsers: getUsers
     }
 
 });

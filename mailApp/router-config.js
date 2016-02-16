@@ -43,7 +43,7 @@ angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
         })
         .state('mail.loading', {
             url: "/loading",
-            template: '<loading destroy="directory.destroy()"></loading>'
+            template: '<loading></loading>'
         })
         .state('mail.filtered', {
             url: '/filtered',
@@ -59,7 +59,8 @@ angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
 
 angular.module('mailApp').run(function($rootScope, $state, checkData, letterController) {
     $rootScope.$on('$stateChangeStart', function(event, toState) {
-        if (checkData.getPermission() && !letterController.base.letters) {
+        console.log($state);
+        if ( (document.cookie.indexOf('session') + 1) && !letterController.base.letters) {
             checkData.continueSession();
             return;
         }

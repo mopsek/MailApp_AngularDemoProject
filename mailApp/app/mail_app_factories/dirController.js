@@ -6,6 +6,10 @@ angular.module('mailApp').factory('dirController', function($state) {
         return  $state.current.name.slice(5);
     }
 
+    function getInit() {
+        return initialization;
+    }
+
     function finishInit() {
         initialization = false;
     }
@@ -33,6 +37,7 @@ angular.module('mailApp').factory('dirController', function($state) {
 
     return {
         showMenu: showMenu,
+        getInit: getInit,
         finishInit: finishInit,
         resetInit: resetInit,
         checkDirClass: setDirActiveClass,

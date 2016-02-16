@@ -37,7 +37,7 @@ angular.module('mailApp').directive('menu', function($document) {
                     scope.showMenu = !scope.showMenu;
                     e.target.classList.toggle('activeSetting');
                     scope.$digest();
-                } else {
+                } else if (document.getElementById('settingsButton')) {
                     scope.showMenu = false;
                     document.getElementById('settingsButton').classList.remove('activeSetting');
                     scope.$digest();

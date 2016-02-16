@@ -689,3 +689,7 @@ sign-in #note {
     color: red;
     font-size: 1.4em;
 }
+
+.hidden {
+    display: none;
+}
