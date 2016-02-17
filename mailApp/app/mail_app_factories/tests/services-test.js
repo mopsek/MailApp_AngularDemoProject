@@ -132,13 +132,15 @@ describe('tests', function () {
 
         var checkData,
             $httpBackend,
-            $rootScope;
+            $rootScope,
+            $state;
 
 
-        beforeEach(inject(function(_checkData_, _$httpBackend_, profiles, _$rootScope_, users) {
+        beforeEach(inject(function(_checkData_, _$httpBackend_, profiles, _$rootScope_, _$state_, users) {
             checkData = _checkData_;
             $httpBackend = _$httpBackend_;
             $rootScope = _$rootScope_;
+            $state = _$state_;
 
 
         }));
@@ -148,7 +150,8 @@ describe('tests', function () {
             checkData.signIn({login: 'test', password: '123'});
             //$rootScope.$digest();
             expect(checkData.getPermission()).toBe(true);
-            //$httpBackend.flush();
+            console.log($state.current.name)
+
         })
     })
 });

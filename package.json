@@ -1,0 +1,29 @@
+{
+  "name": "mail-app-project",
+  "version": "1.0.0",
+  "description": "2.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-mocks": "^1.5.0",
+    "angular-ui-router": "^0.2.18",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.19",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Awaken666/MailApp_AngularDemoProject.git"
+  },
+  "author": "Vladimir Urbanovich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Awaken666/MailApp_AngularDemoProject/issues"
+  },
+  "homepage": "https://github.com/Awaken666/MailApp_AngularDemoProject#readme"
+}
