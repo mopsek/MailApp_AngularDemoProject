@@ -59,7 +59,6 @@ angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
 
 angular.module('mailApp').run(function($rootScope, $state, checkData, letterController) {
     $rootScope.$on('$stateChangeStart', function(event, toState) {
-        console.log($state);
         if ( (document.cookie.indexOf('session') + 1) && !letterController.base.letters) {
             checkData.continueSession();
             return;

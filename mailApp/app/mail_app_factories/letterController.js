@@ -1,4 +1,6 @@
-angular.module('mailApp').factory('letterController', function($q, $http, dirController, $stateParams) {
+'use strict';
+
+angular.module('mailApp').factory('letterController', function($q, $http, dirController, $stateParams, $timeout) {
     var base = {},
         selected = {},
         newLetter = {
@@ -6,7 +8,8 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         };
 
 
-    base.users = window.localStorage.users ? JSON.parse(window.localStorage.users) : getUsers();
+    base.users = window.localStorage.users ? JSON.parse(window.localStorage.users) : undefined;
+    if (!base.users) getUsers();
 
     function loginOut() {
         selected = base = {};
@@ -17,7 +20,7 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         return $http.get('mails/users.json').
             then(function(data) {
                 base.users = data.data;
-                return data;
+                return data.data;
             }, function(err,status){
                 console.log(err + status);
             });
@@ -30,34 +33,26 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
     }
 
     function initialisation() {
-        var promise = (function () {
+        return (function () {
             var def = $q.defer();
-            setTimeout(function () {
+            $timeout(function () {
 
                 $http({method: 'GET', url: 'mails/mails.json'}).
-                    success(function (data) {
-                        def.resolve(data);
-                    }).
-                    error(function (err, status) {
-                        console.log(err + status);
-                    });
+                    then((data) => def.resolve(data), (err) => console.log(err + status));
 
             }, 5000);
 
             return def.promise;
         })().then(function (data) {
-            base.letters = data;
+            base.letters = data.data;
             dirController.finishInit();
             dirController.setActiveDir('inbox');
             document.cookie = 'session=' + (Math.random() + '').slice(2);
+            return data.data;
         });
 
-        return promise;
+
     }
-
-
-
-
 
     function moveToDir(dir) {
         base.letters[dir].push(selected.letter);
@@ -131,22 +126,7 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
         letter.favorite = !letter.favorite;
     }
 
-    //// тест
-    var testV;
-    function test() {
-        return $http.get('try.json').
-            then(function(data) {
-                testV = data.data;
-                return data.data
-            });
-    }
-
-
-
-
     return {
-        testV: testV,
-        test: test,
         base: base,
         selected: selected,
         newLetter: newLetter,

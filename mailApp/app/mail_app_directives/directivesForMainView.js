@@ -53,7 +53,7 @@ angular.module('mailApp').directive('loading', function(animating) {
         templateUrl: 'mailApp/templates/forMainContainer/loading.html',
         scope: {},
         controller: function(dirController, $state) {
-            if (!dirController.getInit()) $state.go($state.current.name)
+            if (!dirController.getInit()) $state.go('mail.inbox');
         },
         link: function(scope, element) {
             animating.loading(element.children()[0]);

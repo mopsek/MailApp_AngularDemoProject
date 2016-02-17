@@ -20,7 +20,8 @@ angular.module('mailApp').factory('checkData', function($http, $state, letterCon
     }
 
     function loginOut() {
-        document.cookie = 'session=' + '; max-age=0'
+        document.cookie = 'session=' + '; max-age=0';
+        permission = false;
         letterController.loginOut();
         $state.go('signIn');
     }
