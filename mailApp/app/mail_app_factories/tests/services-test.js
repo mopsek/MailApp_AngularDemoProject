@@ -2,7 +2,7 @@ describe('tests', function () {
 
     beforeEach(module('mailApp'));
 
-    describe('Letter Controller tests', function () {
+    xdescribe('Receive data tests', function () {
 
         var $httpBackend,
             letterController,
@@ -38,17 +38,18 @@ describe('tests', function () {
 
             letterController.init().
                 then(function(d) {
+                    $rootScope.$digest();
                     expect(d["inbox"]).toBeDefined();
                     expect(letterController.base.letters).toBeDefined();
                     done();
                 });
 
             $httpBackend.flush();
-            $rootScope.$digest();
+
         });
     });
 
-    describe('Directory Controller tests', function() {
+    xdescribe('Directory Controller tests', function() {
         var letterController,
             dirController,
             $state;
@@ -83,6 +84,71 @@ describe('tests', function () {
             }, 5000);
             jasmine.clock().tick(8000);
 
+        })
+    });
+
+    xdescribe('Letter controller tests', function() {
+
+        var letterController;
+
+        beforeEach(inject(function(_letterController_, $rootScope, $httpBackend, mails, users){
+            letterController =_letterController_;
+
+            $httpBackend.whenGET('mails/mails.json').respond(mails);
+            $httpBackend.whenGET('mails/users.json').respond(users);
+
+            _letterController_.base.letters = mails;
+        }));
+
+        it('d', function() {
+            expect(letterController.base.letters).toBeDefined();
+        });
+    });
+
+    xdescribe('State tests', function() {
+
+        var $state,
+            $rootScope,
+            dirController;
+
+        beforeEach(inject(function(_$state_, _$rootScope_, _dirController_, $httpBackend, users) {
+            $state = _$state_;
+            $rootScope = _$rootScope_;
+            dirController = _dirController_;
+
+            $httpBackend.whenGET('mails/users.json').respond(users);
+        }));
+
+        it('?', function() {
+            expect(dirController.currentState()).toBe('');
+            $state.go('mail.inbox');
+            $rootScope.$digest();
+            console.log($state.current);
+            expect(dirController.currentState()).toBe('');
+        })
+    });
+
+    describe('Authorisation tests', function() {
+
+        var checkData,
+            $httpBackend,
+            $rootScope;
+
+
+        beforeEach(inject(function(_checkData_, _$httpBackend_, profiles, _$rootScope_, users) {
+            checkData = _checkData_;
+            $httpBackend = _$httpBackend_;
+            $rootScope = _$rootScope_;
+
+
+        }));
+
+        it('should sign in', function() {
+            expect(checkData.getPermission()).toBe(false);
+            checkData.signIn({login: 'test', password: '123'});
+            //$rootScope.$digest();
+            expect(checkData.getPermission()).toBe(true);
+            //$httpBackend.flush();
         })
     })
 });

@@ -1,5 +1,5 @@
 angular.module('mailApp').factory('mails', function() {
-    var letters = {
+    return {
         "inbox": [
             {
                 "date": 1111111117915,
@@ -140,9 +140,5 @@ angular.module('mailApp').factory('mails', function() {
                 "deleted": false
             }
         ]
-    }
-
-
-
-    return letters;
+    };
 });

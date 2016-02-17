@@ -23,6 +23,7 @@ module.exports = function (config) {
             'mailApp/app/mail_app_factories/*.js',
             'mailApp/app/mail_app_factories/tests/mailsService.js',
             'mailApp/app/mail_app_factories/tests/userService.js',
+            'mailApp/app/mail_app_factories/tests/profileService.js',
             'mailApp/app/mail_app_directives/*.js',
             'mailApp/app/mail_app_factories/tests/services-test.js'
         ],
