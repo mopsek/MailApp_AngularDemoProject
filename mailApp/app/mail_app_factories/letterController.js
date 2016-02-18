@@ -17,7 +17,7 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
     }
 
     function getUsers() {
-        return $http.get('mails/users.json').
+        return $http.get('json-data/users.json').
             then(function(data) {
                 base.users = data.data;
                 return data.data;
@@ -37,7 +37,7 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
             var def = $q.defer();
             $timeout(function () {
 
-                $http({method: 'GET', url: 'mails/mails.json'}).
+                $http({method: 'GET', url: 'json-data/json-data.json'}).
                     then((data) => def.resolve(data), (err) => console.log(err + status));
 
             }, 5000);

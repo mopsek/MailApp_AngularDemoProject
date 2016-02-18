@@ -2,7 +2,7 @@ describe('tests', function () {
 
     beforeEach(module('mailApp'));
 
-    xdescribe('Receive data tests', function () {
+    describe('Receive data tests', function () {
 
         var $httpBackend,
             letterController,
@@ -13,8 +13,8 @@ describe('tests', function () {
             letterController = _letterController_;
             $rootScope = _$rootScope_;
 
-            $httpBackend.whenGET('mails/users.json').respond(_users_);
-            $httpBackend.whenGET('mails/mails.json').respond(_mails_);
+            $httpBackend.whenGET('json-data/users.json').respond(_users_);
+            $httpBackend.whenGET('json-data/json-data.json').respond(_mails_);
         }));
 
 
@@ -31,6 +31,7 @@ describe('tests', function () {
             $httpBackend.flush();
         });
 
+
         // --------- V вот этот V -----------
 
         it('should load letters', function (done) {
@@ -38,35 +39,31 @@ describe('tests', function () {
 
             letterController.init().
                 then(function(d) {
-                    $rootScope.$digest();
                     expect(d["inbox"]).toBeDefined();
                     expect(letterController.base.letters).toBeDefined();
                     done();
                 });
 
             $httpBackend.flush();
-
+            $rootScope.$digest();
         });
     });
 
-    xdescribe('Directory Controller tests', function() {
+    describe('Directory Controller tests', function() {
         var letterController,
             dirController,
-            $state;
+            $state,
+            $rootScope;
 
-        beforeEach(inject(function(_letterController_, _dirController_, _$state_) {
+        beforeEach(inject(function(_letterController_, _dirController_, _$state_, _$rootScope_,
+        $httpBackend, users) {
             letterController = _letterController_;
             dirController = _dirController_;
             $state = _$state_;
+            $rootScope = _$rootScope_;
+
+            $httpBackend.whenGET('json-data/users.json').respond(users)
         }));
-
-        beforeEach(function() {
-            jasmine.clock().install();
-        });
-
-        afterEach(function() {
-            jasmine.clock().uninstall();
-        });
 
         it('should check init', function() {
             expect(dirController.getInit()).toBe(true);
@@ -76,36 +73,28 @@ describe('tests', function () {
             expect(dirController.getInit()).toBe(true);
         });
 
-        xit('should return state', function() { // не работает
-            expect(dirController.currentState()).toBe('');
-            $state.go('mail.inbox');
-            setTimeout(function() {
-                expect(dirController.currentState()).toBe('inbox');
-            }, 5000);
-            jasmine.clock().tick(8000);
 
-        })
     });
 
-    xdescribe('Letter controller tests', function() {
+    describe('Letter controller tests', function() {
 
         var letterController;
 
         beforeEach(inject(function(_letterController_, $rootScope, $httpBackend, mails, users){
             letterController =_letterController_;
 
-            $httpBackend.whenGET('mails/mails.json').respond(mails);
-            $httpBackend.whenGET('mails/users.json').respond(users);
+            $httpBackend.whenGET('json-data/mails.json').respond(mails);
+            $httpBackend.whenGET('json-data/users.json').respond(users);
 
             _letterController_.base.letters = mails;
         }));
 
-        it('d', function() {
+        it('should check base.letters', function() {
             expect(letterController.base.letters).toBeDefined();
         });
     });
 
-    xdescribe('State tests', function() {
+    describe('State tests', function() {
 
         var $state,
             $rootScope,
@@ -116,15 +105,14 @@ describe('tests', function () {
             $rootScope = _$rootScope_;
             dirController = _dirController_;
 
-            $httpBackend.whenGET('mails/users.json').respond(users);
+            $httpBackend.whenGET('json-data/users.json').respond(users);
         }));
 
-        it('?', function() {
+        it('Must change state', function() {
             expect(dirController.currentState()).toBe('');
             $state.go('mail.inbox');
             $rootScope.$digest();
-            console.log($state.current);
-            expect(dirController.currentState()).toBe('');
+            expect($state.current.name).toBe('signIn');
         })
     });
 
@@ -142,13 +130,13 @@ describe('tests', function () {
             $rootScope = _$rootScope_;
             $state = _$state_;
 
-
+            $httpBackend.whenGET('json-data/users.json').respond(users);
         }));
 
         it('should sign in', function() {
             expect(checkData.getPermission()).toBe(false);
             checkData.signIn({login: 'test', password: '123'});
-            //$rootScope.$digest();
+            $rootScope.$digest();
             expect(checkData.getPermission()).toBe(true);
             console.log($state.current.name)
 

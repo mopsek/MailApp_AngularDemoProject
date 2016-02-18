@@ -12,7 +12,7 @@ angular.module('mailApp').factory('checkData', function($http, $state, letterCon
     }
 
     function continueSession() {
-        $http({method: 'GET', url: 'mails/mails.json'}).
+        $http({method: 'GET', url: 'json-data/json-data.json'}).
             success(function (data) {
                 permission = true;
                 letterController.base.letters = data;
@@ -38,14 +38,14 @@ angular.module('mailApp').factory('checkData', function($http, $state, letterCon
         if (data.login === 'test' && data.password === '123') {
             permission = true;
             $state.go('mail.loading');
-            letterController.init();
+            //letterController.init();
         } else {
             alert('Введенный пороль не верен!')
         }
     }
 /*
     function signIn(data) {
-        $http.get('mails/usersProfiles.json')
+        $http.get('json-data/usersProfiles.json')
             .then(function(profiles) {
                 profiles = profiles.data;
                 if (!profiles[data.login]) {
