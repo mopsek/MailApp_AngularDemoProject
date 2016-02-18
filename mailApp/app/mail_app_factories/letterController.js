@@ -37,7 +37,7 @@ angular.module('mailApp').factory('letterController', function($q, $http, dirCon
             var def = $q.defer();
             $timeout(function () {
 
-                $http({method: 'GET', url: 'json-data/json-data.json'}).
+                $http({method: 'GET', url: 'json-data/mails.json'}).
                     then((data) => def.resolve(data), (err) => console.log(err + status));
 
             }, 5000);

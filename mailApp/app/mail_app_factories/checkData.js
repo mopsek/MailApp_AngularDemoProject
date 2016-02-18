@@ -38,7 +38,7 @@ angular.module('mailApp').factory('checkData', function($http, $state, letterCon
         if (data.login === 'test' && data.password === '123') {
             permission = true;
             $state.go('mail.loading');
-            //letterController.init();
+            letterController.init();
         } else {
             alert('Введенный пороль не верен!')
         }
