@@ -18,6 +18,7 @@ module.exports = function (config) {
             'node_modules/angular/angular.js',
             'node_modules/angular-mocks/angular-mocks.js',
             'node_modules/angular-ui-router/release/angular-ui-router.js',
+            'mailApp/ngMockHttp.js',
             'mailApp/mail_app.js',
             'mailApp/router-config.js',
             'mailApp/app/mail_app_factories/*.js',

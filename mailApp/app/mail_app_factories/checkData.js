@@ -12,7 +12,7 @@ angular.module('mailApp').factory('checkData', function($http, $state, letterCon
     }
 
     function continueSession() {
-        $http({method: 'GET', url: 'json-data/json-data.json'}).
+        $http({method: 'GET', url: 'json-data/mails.json'}).
             success(function (data) {
                 permission = true;
                 letterController.base.letters = data;
