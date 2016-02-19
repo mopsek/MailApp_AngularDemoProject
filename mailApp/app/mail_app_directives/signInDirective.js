@@ -3,7 +3,7 @@ angular.module('mailApp').directive('signIn', function() {
         restrict: 'E',
         templateUrl: 'mailApp/templates/signIn.html',
         scope: {},
-        controller: function(checkData){
+        controller: function(authorizationService){
             this.login = '';
             this.password = '';
 
@@ -12,7 +12,7 @@ angular.module('mailApp').directive('signIn', function() {
             };
 
             this.signIn = function() {
-                checkData.signIn({login: this.login, password: this.password})
+                authorizationService.signIn({login: this.login, password: this.password})
             }
         },
         controllerAs: 'user'

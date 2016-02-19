@@ -1,4 +1,4 @@
-angular.module('mailApp').factory('animating', function() {
+angular.module('mailApp').factory('animationService', function() {
     function light(elem) {
         var shadow1 = '3px 0px 9px rgba(0, 255, 0, ',
             shadow2 = ')',

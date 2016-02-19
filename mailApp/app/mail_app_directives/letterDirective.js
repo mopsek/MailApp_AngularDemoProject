@@ -1,4 +1,4 @@
-angular.module('mailApp').directive('letter', function(letterController, dirController) {
+angular.module('mailApp').directive('letter', function(letterService, stateService, dataService) {
     return {
         restrict: 'E',
         templateUrl: 'mailApp/templates/letter.html',
@@ -6,7 +6,7 @@ angular.module('mailApp').directive('letter', function(letterController, dirCont
 
             scope.remove = function(event) {
                 event.stopPropagation();
-                letterController.removeLetter(scope.letter)
+                letterService.removeLetter(scope.letter)
             };
 
             scope.preview = function(scope) {
@@ -15,14 +15,14 @@ angular.module('mailApp').directive('letter', function(letterController, dirCont
                 if (directory === 'favorites') {
                     directory = scope.letter.directory;
                 }
-                var index = (letterController.base.letters[directory].indexOf(scope.letter)) + '_' + directory;
-                dirController.setActiveDir('preview',{dir: scope.directory, index: index});
+                var index = (dataService.base.letters[directory].indexOf(scope.letter)) + '_' + directory;
+                stateService.setActiveState('preview',{dir: scope.directory, index: index});
                 if (scope.letter.unread) scope.letter.unread = false;
             };
 
             scope.toggleFavorite = function(letter, event) {
                 if(event) event.stopPropagation();
-                letterController.toggleFavorite(letter);
+                letterService.toggleFavorite(letter);
             };
 
             scope.checkUnreadClass = function() {

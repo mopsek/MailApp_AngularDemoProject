@@ -52,18 +52,18 @@ angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
 
 
     $urlRouterProvider.otherwise(function ($injector) {
-        if ($injector.get('checkData').getPermission()) return '/mail/inbox';
+        if ($injector.get('authorizationService').getPermission()) return '/mail/inbox';
         return '/signin';
     });
 });
 
-angular.module('mailApp').run(function($rootScope, $state, checkData, letterController) {
+angular.module('mailApp').run(function($rootScope, $state, authorizationService, dataService) {
     $rootScope.$on('$stateChangeStart', function(event, toState) {
-        if ( (document.cookie.indexOf('session') + 1) && !letterController.base.letters) {
-            checkData.continueSession();
+        if ( (document.cookie.indexOf('session') + 1) && !dataService.base.letters) {
+            authorizationService.continueSession();
             return;
         }
-        if (toState.name !=='signIn' && !checkData.getPermission()) {
+        if (toState.name !=='signIn' && !authorizationService.getPermission()) {
             $state.go('signIn');
             event.preventDefault();
         }

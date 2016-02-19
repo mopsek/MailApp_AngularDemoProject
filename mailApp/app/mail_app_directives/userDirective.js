@@ -1,4 +1,4 @@
-angular.module('mailApp').directive('user', function(letterController, dirController) {
+angular.module('mailApp').directive('user', function(letterService, stateService, dataService) {
     return {
         restrict: 'E',
         templateUrl: 'mailApp/templates/user.html',
@@ -6,15 +6,15 @@ angular.module('mailApp').directive('user', function(letterController, dirContro
             scope.editMode = false;
             scope.toggleMode = function() {
                 scope.editMode = !scope.editMode;
-                letterController.saveUserToStorage();
+                dataService.saveUserToStorage();
             };
 
             scope.selectUser = function() {
                 if (!scope.user.email) {
                     alert('У данного контакта нет Email!!!')
                 }
-                letterController.selected.user = scope.user.name;
-                dirController.setActiveDir('filtered')
+                letterService.selected.user = scope.user.name;
+                stateService.setActiveState('filtered')
             }
         }
     }

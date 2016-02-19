@@ -3,29 +3,29 @@ angular.module('mailApp').directive('menu', function($document) {
         restrict: 'E',
         templateUrl: 'mailApp/templates/menu.html',
         scope: {},
-        controller: function (dirController, letterController, $stateParams, checkData) {
-            this.setDirectory = dirController.setActiveDir;
-            this.currentState = dirController.currentState;
+        controller: function (stateService, letterService, $stateParams, authorizationService) {
+            this.setDirectory = stateService.setActiveState;
+            this.currentState = stateService.currentState;
 
             this.getPreviewDir = function() {
-                if (!letterController.selected.letter) return;
+                if (!letterService.selected.letter) return;
                 return $stateParams.directory;
             };
 
-            this.remove = letterController.removeLetter;
-            this.recover = letterController.recoverLetter;
-            this.send = letterController.moveNewLetter;
-            this.edit = letterController.editDraft;
-            this.loginOut = checkData.loginOut;
+            this.remove = letterService.removeLetter;
+            this.recover = letterService.recoverLetter;
+            this.send = letterService.moveNewLetter;
+            this.edit = letterService.editDraft;
+            this.loginOut = authorizationService.loginOut;
 
             this.newLetter = function() {
-                letterController.newLetter.letter = {};
-                dirController.setActiveDir('newLetterForm');
+                letterService.newLetter.letter = {};
+                stateService.setActiveState('newLetterForm');
             };
 
             this.replay = function() {
-                letterController.newLetter.letter.to = letterController.selected.letter.sender;
-                dirController.setActiveDir('newLetterForm');
+                letterService.newLetter.letter.to = letterService.selected.letter.sender;
+                stateService.setActiveState('newLetterForm');
             }
 
         },

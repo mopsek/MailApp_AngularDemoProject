@@ -1,4 +1,4 @@
-angular.module('mailApp').directive('contacts', function(letterController, dirController) {
+angular.module('mailApp').directive('contacts', function(letterService, stateService, dataService) {
     return {
         restrict: 'E',
         templateUrl: 'mailApp/templates/forMainContainer/contacts.html',
@@ -10,17 +10,17 @@ angular.module('mailApp').directive('contacts', function(letterController, dirCo
             scope.addContact = function() {
                 scope.users.push(scope.newUser);
                 scope.newUser = {};
-                letterController.saveUserToStorage();
+                dataService.saveUserToStorage();
             };
             scope.removeContact = function(id) {
                 scope.users.splice(id, 1);
-                letterController.saveUserToStorage();
+                dataService.saveUserToStorage();
             };
             scope.mailTo = function(mail) {
-                letterController.newLetter.letter = {
+                letterService.newLetter.letter = {
                     to: mail
                 };
-                dirController.setActiveDir('newLetterForm')
+                stateService.setActiveState('newLetterForm')
             }
         }
     }

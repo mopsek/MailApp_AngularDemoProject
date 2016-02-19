@@ -2,12 +2,12 @@ angular.module('mailApp').directive('mainContainer', function() {
     return {
         restrict:'AE',
         scope: true,
-        controller: function(dirController, letterController) {
+        controller: function(letterService, dataService) {
             var self = this;
 
-            this.base = letterController.base;
-            this.selected = letterController.selected;
-            this.newLetter = letterController.newLetter;
+            this.base = dataService.base;
+            this.selected = letterService.selected;
+            this.newLetter = letterService.newLetter;
         },
         controllerAs: 'directory'
     }

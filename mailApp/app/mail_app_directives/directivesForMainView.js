@@ -47,16 +47,16 @@ angular.module('mailApp').directive('newLetter', function() {
     }
 });
 
-angular.module('mailApp').directive('loading', function(animating) {
+angular.module('mailApp').directive('loading', function(animationService) {
     return {
         restrict: 'E',
         templateUrl: 'mailApp/templates/forMainContainer/loading.html',
         scope: {},
-        controller: function(dirController, $state) {
-            if (!dirController.getInit()) $state.go('mail.inbox');
+        controller: function(initializationService, $state) {
+            if (!initializationService.getInit()) $state.go('mail.inbox');
         },
         link: function(scope, element) {
-            animating.loading(element.children()[0]);
+            animationService.loading(element.children()[0]);
         }
     }
 });
@@ -101,9 +101,9 @@ angular.module('mailApp').directive('filteredLetters', function() {
             letters: '=',
             user: '='
         },
-        controller: function(dirController) {
+        controller: function(stateService) {
             this.back = function() {
-                dirController.setActiveDir('contacts')
+                stateService.setActiveState('contacts')
             }
         },
         controllerAs: 'filterDir',

@@ -21,12 +21,12 @@ module.exports = function (config) {
             'mailApp/ngMockHttp.js',
             'mailApp/mail_app.js',
             'mailApp/router-config.js',
-            'mailApp/app/mail_app_factories/*.js',
-            'mailApp/app/mail_app_factories/tests/mailsService.js',
-            'mailApp/app/mail_app_factories/tests/userService.js',
-            'mailApp/app/mail_app_factories/tests/profileService.js',
+            'mailApp/app/services/*.js',
+            'data/js/mailsService.js',
+            'data/js/userService.js',
+            'data/js/profileService.js',
             'mailApp/app/mail_app_directives/*.js',
-            'mailApp/app/mail_app_factories/tests/services-test.js'
+            'mailApp/app/services/tests/services-test.js'
         ],
 
 

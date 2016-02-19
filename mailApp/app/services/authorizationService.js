@@ -1,4 +1,4 @@
-angular.module('mailApp').factory('checkData', function($http, $state, letterController, dirController) {
+angular.module('mailApp').factory('authorizationService', function($http, $state, letterService, initializationService, dataService) {
 
     var permission = false;
 
@@ -12,11 +12,11 @@ angular.module('mailApp').factory('checkData', function($http, $state, letterCon
     }
 
     function continueSession() {
-        $http({method: 'GET', url: 'json-data/mails.json'}).
+        $http({method: 'GET', url: 'data/mails.json'}).
             success(function (data) {
                 permission = true;
-                letterController.base.letters = data;
-                dirController.finishInit();
+                dataService.base.letters = data;
+                initializationService.finishInit();
             }).
             error(function (err, status) {
                 console.log(err + status);
@@ -26,7 +26,8 @@ angular.module('mailApp').factory('checkData', function($http, $state, letterCon
     function loginOut() {
         document.cookie = 'session=' + '; max-age=0';
         permission = false;
-        letterController.loginOut();
+        letterService.selected = dataService.base = {};
+        initializationService.resetInit();
         $state.go('signIn');
     }
 
@@ -38,14 +39,14 @@ angular.module('mailApp').factory('checkData', function($http, $state, letterCon
         if (data.login === 'test' && data.password === '123') {
             permission = true;
             $state.go('mail.loading');
-            letterController.init();
+            dataService.init();
         } else {
             alert('Введенный пороль не верен!')
         }
     }
 /*
     function signIn(data) {
-        $http.get('json-data/usersProfiles.json')
+        $http.get('data/usersProfiles.json')
             .then(function(profiles) {
                 profiles = profiles.data;
                 if (!profiles[data.login]) {
@@ -56,7 +57,7 @@ angular.module('mailApp').factory('checkData', function($http, $state, letterCon
                     alert('KH');
                     permission = true;
                     $state.go('mail.loading');
-                    letterController.init();
+                    dataService.init();
                 } else {
                     alert('Введенный пороль не верен!')
                 }

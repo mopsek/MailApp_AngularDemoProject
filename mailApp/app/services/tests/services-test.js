@@ -15,8 +15,8 @@ describe('tests', function () {
             $rootScope = _$rootScope_;
             $timeout = _$timeout_;
 
-            $httpBackend.whenGET('json-data/users.json').respond(_users_);
-            $httpBackend.whenGET('json-data/mails.json').respond(_mails_);
+            $httpBackend.whenGET('data/users.json').respond(_users_);
+            $httpBackend.whenGET('data/mails.json').respond(_mails_);
         }));
 
 
@@ -64,7 +64,7 @@ describe('tests', function () {
             $state = _$state_;
             $rootScope = _$rootScope_;
 
-            $httpBackend.whenGET('json-data/users.json').respond(users)
+            $httpBackend.whenGET('data/users.json').respond(users)
         }));
 
         it('should check init', function() {
@@ -87,8 +87,8 @@ describe('tests', function () {
             letterController =_letterController_;
             dirController = _dirController_;
 
-            $httpBackend.whenGET('json-data/mails.json').respond(mails);
-            $httpBackend.whenGET('json-data/users.json').respond(users);
+            $httpBackend.whenGET('data/mails.json').respond(mails);
+            $httpBackend.whenGET('data/users.json').respond(users);
 
             spyOn(dirController, 'resetInit')
         }));
@@ -116,8 +116,8 @@ describe('tests', function () {
             $rootScope = _$rootScope_;
             dirController = _dirController_;
 
-            $httpBackend.whenGET('json-data/users.json').respond(users);
-            $httpBackend.whenGET('json-data/mails.json').respond(mails);
+            $httpBackend.whenGET('data/users.json').respond(users);
+            $httpBackend.whenGET('data/mails.json').respond(mails);
             $httpBackend.whenGET(/\.html$/).respond(200, '');
         }));
 
@@ -151,8 +151,8 @@ describe('tests', function () {
             spyOn($state, 'go');
             spyOn(letterController, 'init');
 
-            $httpBackend.whenGET('json-data/users.json').respond(users);
-            $httpBackend.whenGET('json-data/mails.json').respond(mails);
+            $httpBackend.whenGET('data/users.json').respond(users);
+            $httpBackend.whenGET('data/mails.json').respond(mails);
             $httpBackend.whenGET(/\.html$/).respond(200, '');
 
 
