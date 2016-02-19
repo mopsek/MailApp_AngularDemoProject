@@ -6,12 +6,14 @@ describe('tests', function () {
 
         var $httpBackend,
             letterController,
-            $rootScope;
+            $rootScope,
+            $timeout;
 
-        beforeEach(inject(function (_$httpBackend_, _letterController_, _mails_, _users_, _$rootScope_) {
+        beforeEach(inject(function (_$httpBackend_, _letterController_, _mails_, _users_, _$rootScope_, _$timeout_) {
             $httpBackend = _$httpBackend_;
             letterController = _letterController_;
             $rootScope = _$rootScope_;
+            $timeout = _$timeout_;
 
             $httpBackend.whenGET('json-data/users.json').respond(_users_);
             $httpBackend.whenGET('json-data/mails.json').respond(_mails_);
@@ -32,8 +34,6 @@ describe('tests', function () {
         });
 
 
-        // --------- V вот этот V -----------
-
        it('should load letters', function (done) {
 
             expect(letterController.base.letters).not.toBeDefined();
@@ -45,6 +45,7 @@ describe('tests', function () {
                     done();
                 });
 
+            $timeout.flush();
             $httpBackend.flush();
             $rootScope.$digest();
         });
@@ -110,12 +111,14 @@ describe('tests', function () {
             $rootScope,
             dirController;
 
-        beforeEach(inject(function(_$state_, _$rootScope_, _dirController_, $httpBackend, users) {
+        beforeEach(inject(function(_$state_, _$rootScope_, _dirController_, $httpBackend, users, mails) {
             $state = _$state_;
             $rootScope = _$rootScope_;
             dirController = _dirController_;
 
             $httpBackend.whenGET('json-data/users.json').respond(users);
+            $httpBackend.whenGET('json-data/mails.json').respond(mails);
+            $httpBackend.whenGET(/\.html$/).respond(200, '');
         }));
 
         it('Must change state', function() {
@@ -132,12 +135,13 @@ describe('tests', function () {
             $httpBackend,
             $rootScope,
             $state,
-            letterController;
+            letterController,
+            $timeout;
 
         //beforeEach(angular.mock.http.init);
         //afterEach(angular.mock.http.reset);
 
-        beforeEach(inject(function(_checkData_, _$httpBackend_, profiles, _$rootScope_, _$state_, users, _letterController_) {
+        beforeEach(inject(function(_checkData_, _$httpBackend_, _$rootScope_, _$state_, users, mails, _letterController_) {
             checkData = _checkData_;
             $httpBackend = _$httpBackend_;
             $rootScope = _$rootScope_;
@@ -148,13 +152,13 @@ describe('tests', function () {
             spyOn(letterController, 'init');
 
             $httpBackend.whenGET('json-data/users.json').respond(users);
+            $httpBackend.whenGET('json-data/mails.json').respond(mails);
             $httpBackend.whenGET(/\.html$/).respond(200, '');
 
-            jasmine.DEFAULT_TIMEOUT_INTERVAL = 9000;
+
         }));
 
         it('should sign in', function() {
-            //$httpBackend.whenGET(/\.html$/).passThrough();
             expect(checkData.getPermission()).toBe(false);
             checkData.signIn({login: 'test', password: '123'});
             $rootScope.$digest();
@@ -162,17 +166,6 @@ describe('tests', function () {
             expect(checkData.getPermission()).toBe(true);
             expect($state.go).toHaveBeenCalled();
             expect(letterController.init).toHaveBeenCalled();
-        /*
-            setTimeout(function() {
-                console.log(letterController.base.letters);
-                done();
-            }, 8000);
-
-         */
-            expect($state.current.name).toBe('loading');
-            expect(letterController.base.letters).toBeDefined();
-
-
         })
     })
 });
