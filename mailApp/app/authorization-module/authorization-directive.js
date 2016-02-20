@@ -1,7 +1,7 @@
 angular.module('mailApp').directive('signIn', function() {
     return {
         restrict: 'E',
-        templateUrl: 'mailApp/templates/signIn.html',
+        templateUrl: 'mailApp/app/authorization-module/template/authorization.html',
         scope: {},
         controller: function(authorizationService){
             this.login = '';

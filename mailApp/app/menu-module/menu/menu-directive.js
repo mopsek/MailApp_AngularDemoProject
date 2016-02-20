@@ -1,7 +1,7 @@
-angular.module('mailApp').directive('menu', function($document) {
+angular.module('menu').directive('menu', function($document) {
     return {
         restrict: 'E',
-        templateUrl: 'mailApp/templates/menu.html',
+        templateUrl: 'mailApp/app/menu-module/menu/template/menu.html',
         scope: {},
         controller: function (stateService, letterService, $stateParams, authorizationService) {
             this.setDirectory = stateService.setActiveState;

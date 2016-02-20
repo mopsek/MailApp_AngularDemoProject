@@ -1,7 +1,7 @@
-angular.module('mailApp').directive('contacts', function(letterService, stateService, dataService) {
+angular.module('main-view').directive('contacts', function(letterService, stateService, dataService) {
     return {
         restrict: 'E',
-        templateUrl: 'mailApp/templates/forMainContainer/contacts.html',
+        templateUrl: 'mailApp/app/main-view-module/contacts-directive/template/contacts.html',
         scope: {
             users: '='
         },

@@ -78,6 +78,10 @@ angular.module('mailApp').factory('letterService', function(stateService, $state
         letter.favorite = !letter.favorite;
     }
 
+    function resetSelected() {
+        selected = {}
+    }
+
     return {
         selected: selected,
         newLetter: newLetter,
@@ -85,7 +89,8 @@ angular.module('mailApp').factory('letterService', function(stateService, $state
         recoverLetter: recoverLetter,
         moveNewLetter: moveNewLetter,
         editDraft: editDraft,
-        toggleFavorite: toggleFavorite
+        toggleFavorite: toggleFavorite,
+        resetSelected: resetSelected
     }
 
 });

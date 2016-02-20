@@ -1,7 +1,7 @@
-angular.module('mailApp').directive('preview', function() {
+angular.module('main-view').directive('preview', function() {
     return {
         restrict: 'E',
-        templateUrl: 'mailApp/templates/forMainContainer/preview.html',
+        templateUrl: 'mailApp/app/main-view-module/preview-directive/template/preview.html',
         scope: {
             selected: '='
         },

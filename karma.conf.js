@@ -25,7 +25,7 @@ module.exports = function (config) {
             'data/js/mailsService.js',
             'data/js/userService.js',
             'data/js/profileService.js',
-            'mailApp/app/mail_app_directives/*.js',
+            'mailApp/app/main-view-module/*.js',
             'mailApp/app/services/tests/services-test.js'
         ],
 

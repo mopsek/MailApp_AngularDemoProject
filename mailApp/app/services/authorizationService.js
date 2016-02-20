@@ -12,7 +12,7 @@ angular.module('mailApp').factory('authorizationService', function($http, $state
     }
 
     function continueSession() {
-        $http({method: 'GET', url: 'data/mails.json'}).
+        $http({method: 'GET', url: 'data/JSON/mails.json'}).
             success(function (data) {
                 permission = true;
                 dataService.base.letters = data;
@@ -26,7 +26,8 @@ angular.module('mailApp').factory('authorizationService', function($http, $state
     function loginOut() {
         document.cookie = 'session=' + '; max-age=0';
         permission = false;
-        letterService.selected = dataService.base = {};
+        letterService.resetSelected();
+        dataService.resetBase();
         initializationService.resetInit();
         $state.go('signIn');
     }

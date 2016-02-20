@@ -1,7 +1,7 @@
-angular.module('mailApp').directive('letter', function(letterService, stateService, dataService) {
+angular.module('main-view').directive('letter', function(letterService, stateService, dataService) {
     return {
         restrict: 'E',
-        templateUrl: 'mailApp/templates/letter.html',
+        templateUrl: 'mailApp/app/main-view-module/letter-directive/template/letter.html',
         link: function(scope) {
 
             scope.remove = function(event) {

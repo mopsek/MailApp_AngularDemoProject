@@ -1,4 +1,4 @@
-angular.module('mailApp', ['ui.router']);
+angular.module('mailApp', ['ui.router', 'menu', 'authorization', 'main-view']);
 
 
 

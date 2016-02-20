@@ -7,7 +7,7 @@ angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
         .state('mail', {
             url: '/mail',
             abstract: true,
-            templateUrl: 'mailApp/templates/main.html'
+            templateUrl: 'mailApp/app/main-view-module/main-container-directive/template/main.html'
         })
         .state('mail.inbox', {
             url: '/inbox',

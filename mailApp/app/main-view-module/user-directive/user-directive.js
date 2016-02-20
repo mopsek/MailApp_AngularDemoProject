@@ -1,7 +1,7 @@
-angular.module('mailApp').directive('user', function(letterService, stateService, dataService) {
+angular.module('main-view').directive('user', function(letterService, stateService, dataService) {
     return {
         restrict: 'E',
-        templateUrl: 'mailApp/templates/user.html',
+        templateUrl: 'mailApp/app/main-view-module/user-directive/template/user.html',
         link: function(scope) {
             scope.editMode = false;
             scope.toggleMode = function() {
