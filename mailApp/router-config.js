@@ -13,6 +13,10 @@ angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
             url: '/inbox',
             template: '<inbox-letters letters="directory.base.letters.inbox"></inbox-letters>'
         })
+        .state('mail.loading', {
+            url: "/loading",
+            template: '<loading></loading>'
+        })
         .state('mail.sent', {
             url: '/sent',
             template: '<sent-letters letters="directory.base.letters.sent"></sent-letters>'
