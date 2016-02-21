@@ -3,9 +3,6 @@
 angular.module('mailApp').factory('dataService', function($rootScope, $http, $q, $timeout, initializationService, stateService) {
     var base = {};
 
-
-
-
     function getUsers() {
         return $http.get('data/JSON/users.json').
             then(function(data) {
@@ -56,6 +53,7 @@ angular.module('mailApp').factory('dataService', function($rootScope, $http, $q,
         init: initialisation,
         saveUserToStorage: saveUsersToStorage,
         getUsers: getUsers,
+        getLetters: getLetters,
         resetBase: resetBase
     }
 });

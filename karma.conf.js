@@ -25,8 +25,13 @@ module.exports = function (config) {
             'data/js/mailsService.js',
             'data/js/userService.js',
             'data/js/profileService.js',
-            'mailApp/app/main-view-module/*.js',
-            'mailApp/app/services/tests/services-test.js'
+            'mailApp/app/main-view-module/module.js',
+            'mailApp/app/menu-module/module.js',
+            'mailApp/app/authorization-module/module.js',
+            'mailApp/app/authorization-module/authorization-directive.js',
+            'mailApp/app/main-view-module/**/*.js',
+            'mailApp/app/menu-module/**/*.js',
+            'mailApp/app/services/tests/services-tests.js'
         ],
 
 
@@ -36,14 +41,20 @@ module.exports = function (config) {
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: {},
+        preprocessors: {
+        },
 
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress'],
+        reporters: ['progress', 'coverage'],
 
+
+        coverageReporter: {
+            type: 'html',
+            dir: 'coverage/'
+        },
 
         // web server port
         port: 9876,
@@ -59,7 +70,7 @@ module.exports = function (config) {
 
 
         // enable / disable watching file and executing tests whenever any file changes
-        autoWatch: true,
+        autoWatch: false,
 
 
         // start these browsers
@@ -69,7 +80,7 @@ module.exports = function (config) {
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: false,
+        singleRun: true,
 
         // Concurrency level
         // how many browser should be started simultaneous

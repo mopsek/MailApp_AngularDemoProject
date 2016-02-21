@@ -12,20 +12,17 @@ angular.module('mailApp').factory('authorizationService', function($http, $state
     }
 
     function continueSession() {
-        $http({method: 'GET', url: 'data/JSON/mails.json'}).
-            success(function (data) {
-                permission = true;
-                dataService.base.letters = data;
-                initializationService.finishInit();
-            }).
-            error(function (err, status) {
-                console.log(err + status);
-            });
+        return $http({method: 'GET', url: 'data/JSON/mails.json'}).
+                    then((data) => {
+                        setPermission(true);
+                        dataService.base.letters = data;
+                        initializationService.finishInit();
+                    });
     }
 
     function loginOut() {
         document.cookie = 'session=' + '; max-age=0';
-        permission = false;
+        setPermission(false);
         letterService.resetSelected();
         dataService.resetBase();
         initializationService.resetInit();
@@ -38,9 +35,9 @@ angular.module('mailApp').factory('authorizationService', function($http, $state
             return;
         }
         if (data.login === 'test' && data.password === '123') {
-            permission = true;
+            setPermission(true);
             $state.go('mail.loading');
-            dataService.init();
+            return dataService.init();
         } else {
             alert('Введенный пороль не верен!')
         }

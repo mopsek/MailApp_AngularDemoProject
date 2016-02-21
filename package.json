@@ -12,7 +12,10 @@
     "karma-chrome-launcher": "^0.2.2",
     "karma-jasmine": "^0.3.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "karma": "^0.13.21",
+    "karma-coverage": "^0.5.3"
+  },
   "scripts": {
     "test": "karma start"
   },

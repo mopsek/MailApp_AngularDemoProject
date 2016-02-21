@@ -15,6 +15,7 @@ angular.module('mailApp').factory('letterService', function(stateService, $state
         if (currentDir === 'preview') currentDir = $stateParams.directory;
         if (currentDir === 'favorites' || currentDir === 'filtered') currentDir = selected.letter.directory;
         var index = dataService.base.letters[currentDir].indexOf(selected.letter);
+
         dataService.base.letters[currentDir].splice(index, 1)
     }
 
@@ -79,12 +80,14 @@ angular.module('mailApp').factory('letterService', function(stateService, $state
     }
 
     function resetSelected() {
-        selected = {}
+        delete selected.letter;
     }
 
     return {
         selected: selected,
         newLetter: newLetter,
+        moveToDir: moveToDir,
+        removeFromDir: removeFromDir,
         removeLetter: removeLetter,
         recoverLetter: recoverLetter,
         moveNewLetter: moveNewLetter,
