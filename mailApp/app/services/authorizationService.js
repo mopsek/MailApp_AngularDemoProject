@@ -12,10 +12,13 @@ angular.module('mailApp').factory('authorizationService', function($http, $state
     }
 
     function continueSession() {
+        dataService.base.users = window.localStorage.users ? JSON.parse(window.localStorage.users) : undefined;
+        if (!dataService.base.users) dataService.getUsers();
+
         return $http({method: 'GET', url: 'data/JSON/mails.json'}).
                     then((data) => {
                         setPermission(true);
-                        dataService.base.letters = data;
+                        dataService.base.letters = data.data;
                         initializationService.finishInit();
                     });
     }
