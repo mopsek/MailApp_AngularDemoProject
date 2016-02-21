@@ -41,10 +41,6 @@ angular.module('mailApp').config(function($stateProvider, $urlRouterProvider) {
             url: '/:directory/:index',
             template: '<preview selected="directory.selected"></preview>'
         })
-        .state('mail.loading', {
-            url: "/loading",
-            template: '<loading></loading>'
-        })
         .state('mail.filtered', {
             url: '/filtered',
             template: '<filtered-letters letters="directory.base.letters.inbox" user="directory.selected.user"></filtered-letters>'
