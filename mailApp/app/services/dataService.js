@@ -17,6 +17,12 @@ angular.module('mailApp').factory('dataService', function($rootScope, $http, $q,
         var def = $q.defer();
 
         $timeout(function () {
+            if (window.localStorage.letters) {
+                let data = {};
+                data.data = JSON.parse(window.localStorage.letters);
+                def.resolve(data);
+            }
+
             $http({method: 'GET', url: 'data/JSON/mails.json'}).
                 then((data) => { def.resolve(data)}, (err) => console.log(err + status));
 
@@ -24,6 +30,12 @@ angular.module('mailApp').factory('dataService', function($rootScope, $http, $q,
 
         return def.promise;
     }
+
+    function saveLettersToStorage() {
+        if (!window.localStorage) return;
+        window.localStorage.letters = JSON.stringify(base.letters);
+    }
+
     function saveUsersToStorage() {
         if (!window.localStorage) return;
         window.localStorage.users = JSON.stringify(base.users);
@@ -52,6 +64,7 @@ angular.module('mailApp').factory('dataService', function($rootScope, $http, $q,
         base: base,
         init: initialisation,
         saveUserToStorage: saveUsersToStorage,
+        saveLettersToStorage: saveLettersToStorage,
         getUsers: getUsers,
         getLetters: getLetters,
         resetBase: resetBase

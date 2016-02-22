@@ -13,6 +13,15 @@ angular.module('mailApp').directive('signIn', function() {
 
             this.signIn = function() {
                 authorizationService.signIn({login: this.login, password: this.password})
+            };
+
+            this.clearLS = function() {
+                if (!window.localStorage || !window.localStorage.users && !window.localStorage.letters) alert('Данных нет! Удалять нечего!');
+                if (window.localStorage.users || window.localStorage.letters) {
+                    window.localStorage.removeItem('users');
+                    window.localStorage.removeItem('letters');
+                    alert('Данные успешно удалены!');
+                }
             }
         },
         controllerAs: 'user'

@@ -8,6 +8,7 @@ angular.module('mailApp').factory('letterService', function(stateService, $state
 
     function moveToDir(dir) {
         dataService.base.letters[dir].push(selected.letter);
+        dataService.saveLettersToStorage()
     }
 
     function removeFromDir() {
@@ -16,7 +17,9 @@ angular.module('mailApp').factory('letterService', function(stateService, $state
         if (currentDir === 'favorites' || currentDir === 'filtered') currentDir = selected.letter.directory;
         var index = dataService.base.letters[currentDir].indexOf(selected.letter);
 
-        dataService.base.letters[currentDir].splice(index, 1)
+        dataService.base.letters[currentDir].splice(index, 1);
+
+        dataService.saveLettersToStorage()
     }
 
     function removeLetter(letter) {
@@ -77,6 +80,7 @@ angular.module('mailApp').factory('letterService', function(stateService, $state
 
     function toggleFavorite(letter) {
         letter.favorite = !letter.favorite;
+        dataService.saveLettersToStorage();
     }
 
     function resetSelected() {

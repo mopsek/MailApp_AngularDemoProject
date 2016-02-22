@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('mailApp').factory('authorizationService', function($http, $state, letterService, initializationService, dataService) {
 
     var permission = false;
@@ -16,11 +18,19 @@ angular.module('mailApp').factory('authorizationService', function($http, $state
         if (!dataService.base.users) dataService.getUsers();
 
         return $http({method: 'GET', url: 'data/JSON/mails.json'}).
-                    then((data) => {
-                        setPermission(true);
-                        dataService.base.letters = data.data;
-                        initializationService.finishInit();
-                    });
+            then((data) => {
+                if (window.localStorage.letters) {
+                    setPermission(true);
+                    let letters = {};
+                    letters.data = JSON.parse(window.localStorage.letters);
+                    dataService.base.letters = letters.data;
+                    initializationService.finishInit();
+                } else {
+                    setPermission(true);
+                    dataService.base.letters = data.data;
+                    initializationService.finishInit();
+                }
+            });
     }
 
     function loginOut() {

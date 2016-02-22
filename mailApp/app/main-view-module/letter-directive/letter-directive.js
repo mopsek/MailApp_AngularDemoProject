@@ -18,6 +18,7 @@ angular.module('main-view').directive('letter', function(letterService, stateSer
                 var index = (dataService.base.letters[directory].indexOf(scope.letter)) + '_' + directory;
                 stateService.setActiveState('preview',{dir: scope.directory, index: index});
                 if (scope.letter.unread) scope.letter.unread = false;
+                dataService.saveLettersToStorage();
             };
 
             scope.toggleFavorite = function(letter, event) {
