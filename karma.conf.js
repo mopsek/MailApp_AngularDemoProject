@@ -18,20 +18,20 @@ module.exports = function (config) {
             'node_modules/angular/angular.js',
             'node_modules/angular-mocks/angular-mocks.js',
             'node_modules/angular-ui-router/release/angular-ui-router.js',
-            'mailApp/ngMockHttp.js',
             'mailApp/mail_app.js',
+            'mailApp/app/main-view-module/module.js',
+            'mailApp/app/menu-module/module.js',
+            'mailApp/app/authorization-module/module.js',
             'mailApp/router-config.js',
             'mailApp/app/services/*.js',
             'data/js/mailsService.js',
             'data/js/userService.js',
             'data/js/profileService.js',
-            'mailApp/app/main-view-module/module.js',
-            'mailApp/app/menu-module/module.js',
-            'mailApp/app/authorization-module/module.js',
             'mailApp/app/authorization-module/authorization-directive.js',
             'mailApp/app/main-view-module/**/*.js',
             'mailApp/app/menu-module/**/*.js',
-            'mailApp/app/services/tests/services-tests.js'
+            'mailApp/app/services/tests/services-tests.js',
+            'mailApp/app/authorization-module/tests/tests.js'
         ],
 
 
@@ -42,7 +42,7 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'mailApp/app/*/*.js': ['coverage'],
+            'mailApp/app/services/*.js': ['coverage']
 
         },
 

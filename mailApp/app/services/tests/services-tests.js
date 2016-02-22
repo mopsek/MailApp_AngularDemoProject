@@ -24,6 +24,9 @@ describe('tests', function () {
             spyOn(initializationService, 'finishInit');
             spyOn(stateService, 'setActiveState');
 
+            window.localStorage.removeItem('letters');
+            window.localStorage.removeItem('users');
+
             $httpBackend.whenGET('data/JSON/users.json').respond(users);
             $httpBackend.whenGET('data/JSON/mails.json').respond(mails);
         }));
@@ -58,6 +61,7 @@ describe('tests', function () {
         it('should make initialization', function(done) {
             expect(dataService.base).toEqual({});
 
+
             dataService.init()
                 .then(() => {
                     expect(dataService.base.letters).toBeDefined();
@@ -81,7 +85,18 @@ describe('tests', function () {
 
             $timeout.flush();
             $httpBackend.flush();
-        })
+        });
+
+        it('should save users to storage', function(done) {
+            dataService.getUsers().
+                then(() => {
+                    dataService.saveUserToStorage();
+                    expect(window.localStorage.users).toBeDefined();
+                    done();
+                });
+
+            $httpBackend.flush();
+        });
 
     });
 
@@ -127,6 +142,9 @@ describe('tests', function () {
 
 
             spyOn(stateService, 'setActiveState');
+
+            window.localStorage.removeItem('letters');
+            window.localStorage.removeItem('users');
 
             $httpBackend.whenGET('data/JSON/mails.json').respond(mails);
             $httpBackend.whenGET('data/JSON/users.json').respond(users);
@@ -256,6 +274,9 @@ describe('tests', function () {
                         stateService.setActiveState('trash');
                         $rootScope.$digest();
                         expect(stateService.currentState()).toBe('trash');
+                        stateService.setActiveState('preview', {dir: 'sent', index: 0});
+                        $rootScope.$digest();
+                        expect(stateService.currentState()).toBe('preview');
                         done();
                     })
 
@@ -263,7 +284,8 @@ describe('tests', function () {
 
             $timeout.flush();
             $httpBackend.flush();
-        })
+        });
+
     });
 
     describe('Authorisation Service tests', function() {
@@ -336,5 +358,7 @@ describe('tests', function () {
             $httpBackend.flush();
         });
     })
+
+
 });
 

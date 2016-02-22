@@ -24,6 +24,9 @@ angular.module('mailApp').directive('signIn', function() {
                 }
             }
         },
-        controllerAs: 'user'
+        controllerAs: 'user',
+        link: function(scope) {
+            scope.f = 10;
+        }
     }
 });
