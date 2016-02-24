@@ -1,21 +1,21 @@
 {
-  "name": "mail-app-project",
+  "name": "mail-app",
   "version": "1.0.0",
   "description": "2.0.0",
-  "main": "index.js",
+  "main": "bundle.js",
   "dependencies": {
     "angular": "^1.5.0",
     "angular-mocks": "^1.5.0",
     "angular-ui-router": "^0.2.18",
+    "ng-cache-loader": "^0.0.15",
+    "webpack": "^1.12.14",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.19",
     "karma-chrome-launcher": "^0.2.2",
-    "karma-jasmine": "^0.3.7"
+    "karma-jasmine": "^0.3.7",
+    "karma-webpack": "^1.7.0"
   },
-  "devDependencies": {
-    "karma": "^0.13.21",
-    "karma-coverage": "^0.5.3"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "karma start"
   },
