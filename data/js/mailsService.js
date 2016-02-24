@@ -1,4 +1,4 @@
-angular.module('mailApp').factory('mails', function() {
+angular.module('js').factory('mails', function() {
     return {
         "inbox": [
             {

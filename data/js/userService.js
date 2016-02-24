@@ -1,4 +1,4 @@
-angular.module('mailApp').factory('users', function() {
+angular.module('js').factory('users', function() {
     var users = [
         {
             "name": "Иванов Иван",

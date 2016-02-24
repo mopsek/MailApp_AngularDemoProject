@@ -1,4 +1,4 @@
-angular.module('mailApp').factory('profiles', function() {
+angular.module('js').factory('profiles', function() {
     return {
         "test": "123"
     }
