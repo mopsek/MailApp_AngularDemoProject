@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 let userTemplate = require('./template/user.html');
 

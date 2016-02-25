@@ -1,4 +1,4 @@
-angular.module('js').factory('mails', function() {
+module.exports = function() {
     return {
         "inbox": [
             {
@@ -141,4 +141,4 @@ angular.module('js').factory('mails', function() {
             }
         ]
     };
-});
+};

@@ -2,7 +2,7 @@
 
 describe('tests', function () {
 
-    beforeEach(module('js'));
+    beforeEach(module('mailApp'));
 
     describe('Data Service tests', function () {
 

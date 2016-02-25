@@ -1,4 +1,4 @@
-angular.module('js').factory('users', function() {
+module.exports = function() {
     var users = [
         {
             "name": "Иванов Иван",
@@ -41,4 +41,4 @@ angular.module('js').factory('users', function() {
     ];
 
     return users;
-});
+};

@@ -5,7 +5,7 @@ let filteredTemplate = require('./templates/filteredLetters.html');
 module.exports = function() {
     return {
         restrict: 'E',
-        template: filteredLetters,
+        template: filteredTemplate,
         scope: {
             letters: '=',
             user: '='

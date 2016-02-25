@@ -81,6 +81,10 @@ mailApp.service('initializationService', require('./services/initializationServi
 mailApp.service('letterService', require('./services/letterService'));
 mailApp.service('stateService', require('./services/stateService'));
 
+mailApp.service('mails', require('./services/data/mailsService'));
+mailApp.service('profiles', require('./services/data/profileService'));
+mailApp.service('users', require('./services/data/userService'));
+
 mailApp.filter('short_content', require('./services/filters'));
 
 

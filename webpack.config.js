@@ -17,7 +17,7 @@ module.exports = {
         aggregateTimeout: 100
     },
 
-    devtool: NODE_ENV === 'development' ? 'cheap-inline-module-source-map' : null,
+    devtool: NODE_ENV === 'development' ? 'source-map' : null,
 
     plugins: [
         new webpack.NoErrorsPlugin(),

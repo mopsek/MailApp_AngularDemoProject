@@ -9,7 +9,7 @@ module.exports = function(letterService, stateService, dataService) {
         link: function(scope) {
 
             scope.remove = function(event) {
-                event.stopPropagation();
+                if (event) event.stopPropagation();
                 letterService.removeLetter(scope.letter)
             };
 
