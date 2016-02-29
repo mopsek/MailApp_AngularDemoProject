@@ -357,8 +357,52 @@ describe('tests', function () {
 
             $httpBackend.flush();
         });
+    });
+
+    describe('Animation Service tests', function() {
+
+        var animationService,
+            $timeout,
+            $rootScope,
+            element;
+
+        beforeEach(inject(function(_animationService_, _$timeout_, _$rootScope_) {
+            animationService = _animationService_;
+            $timeout = _$timeout_;
+            $rootScope = _$rootScope_;
+
+            element = document.createElement('div');
+        }));
+
+        it('check addComa method', function(done) {
+            animationService.addComa(element);
+            setTimeout(() => {
+                expect(element.innerHTML).not.toBe('');
+
+                done();
+            }, 1000);
+        });
+
+        it('check addComa long', function(done) {
+            element.innerHTML = 'lllllllllllllllllll1l';
+            animationService.addComa(element);
+            setTimeout(() => {
+                $rootScope.$digest();
+                expect(element.innerHTML.indexOf('Loading letters') + 1).toBeGreaterThan(0);
+                done();
+            }, 1000);
+        });
+
+        it('check loading method', function(done) {
+            var length = element.innerHTML.length;
+            animationService.loading(element);
+
+            setTimeout(() => {
+                expect(element.innerHTML.length).toBeGreaterThan(length);
+                done()
+            }, 500)
+
+        });
     })
-
-
 });
 

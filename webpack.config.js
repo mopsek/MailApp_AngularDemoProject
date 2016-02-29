@@ -6,7 +6,7 @@ const webpack = require('webpack');
 console.log(NODE_ENV);
 
 module.exports = {
-    entry: './js/mail-app',
+    entry: './js/mail-app.js',
     output: {
         filename: 'bundle.js'
     },

@@ -36,7 +36,7 @@ module.exports = function($document) {
         controllerAs: 'menu',
         link: function(scope) {
             scope.showMenu = false;
-            $document.on('click', function(e) {
+            scope.clickEvent = function(e) {
                 if (e.target.id === 'settingsButton') {
                     scope.showMenu = !scope.showMenu;
                     e.target.classList.toggle('activeSetting');
@@ -46,7 +46,8 @@ module.exports = function($document) {
                     document.getElementById('settingsButton').classList.remove('activeSetting');
                     scope.$digest();
                 }
-            });
+            };
+            $document.on('click', scope.clickEvent);
         }
     }
 };

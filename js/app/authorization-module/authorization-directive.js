@@ -7,7 +7,9 @@ module.exports = function() {
         restrict: 'E',
         template: authTemplate,
         scope: {},
-        controller: function(authorizationService){
+        controller: function(authorizationService, $cookies, $state){
+            if ($cookies.get('session')) $state.go('mail.inbox');
+
             this.login = '';
             this.password = '';
 

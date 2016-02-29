@@ -1,6 +1,8 @@
 'use strict';
 
-const mailApp = angular.module('mailApp', ['ui.router', require('./authorization-module').name, require('./menu-module').name, require('./main-view-module').name]);
+require('angular-cookies');
+
+const mailApp = angular.module('mailApp', ['ui.router', 'ngCookies', require('./authorization-module').name, require('./menu-module').name, require('./main-view-module').name]);
 
 mailApp.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider

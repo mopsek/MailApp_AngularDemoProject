@@ -81,8 +81,19 @@ describe('tests', function () {
 
             $timeout.flush();
             $httpBackend.flush();
-        })
+        });
 
+        it('should check click event', function() {
+            var el = document.createElement('n');
+            el.id = 'settingsButton';
+
+            scope.clickEvent({target: el});
+            $rootScope.$digest();
+
+            expect(scope.showMenu).toBe(true);
+            expect(el.classList.contains('activeSetting')).toBe(true);
+
+        })
 
     });
 

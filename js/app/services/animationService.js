@@ -1,6 +1,11 @@
-'use strict';
+ 'use strict';
 
-module.exports = function() {
+
+
+
+module.exports = function($timeout) {
+
+
     function light(elem) {
         var shadow1 = '3px 0px 9px rgba(0, 255, 0, ',
             shadow2 = ')',
@@ -10,7 +15,7 @@ module.exports = function() {
             if (opacity < 0.9) {
                 opacity += 0.05;
                 elem.style.textShadow = shadow1 + opacity + shadow2;
-                setTimeout(incr, 75);
+                $timeout(incr, 75);
             } else return decr();
         }
 
@@ -18,7 +23,7 @@ module.exports = function() {
             if (opacity > 0.2) {
                 opacity -= 0.05;
                 elem.style.textShadow = shadow1 + opacity + shadow2;
-                setTimeout(decr, 75);
+                $timeout(decr, 75);
             } else return incr();
         }
 
@@ -29,7 +34,7 @@ module.exports = function() {
         function add() {
             if(elem.innerHTML.length === 21) elem.innerHTML = 'Loading letters';
             elem.innerHTML += '.';
-            setTimeout(add, 500)
+            $timeout(add, 500)
         }
         add()
     }
@@ -40,7 +45,8 @@ module.exports = function() {
     }
 
     return {
-        loading: loading
-
+        loading: loading,
+        addComa:addComa,
+        light: light
     }
 }

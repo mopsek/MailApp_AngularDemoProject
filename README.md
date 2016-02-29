@@ -1,3 +1,21 @@
-# MailApp_AngularDemoProject
+# Mail app
 
-Preview: http://vurban1d.bget.ru/My_mail.html
+This is simple mail application demo project, made by using angular.js
+
+## You can see preview at 
+
+ awaken666.github.io/MailApp_AngularDemoProject
+ 
+## You can use commands
+
+ To install dependencies:
+ 
+  - npm install
+  
+ To start project on local server:
+ 
+  - npm start
+   
+ To run tests:
+ 
+  - npm test
